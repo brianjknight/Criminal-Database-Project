@@ -1,4 +1,4 @@
-# JavaForce5 Team Charter
+# [team name] Team Charter
 
 ## Instructions
 

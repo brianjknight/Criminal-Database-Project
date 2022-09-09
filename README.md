@@ -14,15 +14,15 @@ We've included a template Java project and webpages. Feel free to use these exam
 
 ## Deadlines
 
-All project deadlines can be found in the [rubric](project_documents/rubric.md).
+All project deadlines can be found in the [rubric](project_documents/rubric_template.md).
   
 ## What Files are in This Repository?
 
-#### [Design Document](project_documents/design_document.md)
+#### [Design Document](project_documents/design_document_template.md)
 
 The design document is what you need to complete before you start coding. This document lays out what you will be building and how you will build it, and the more you put into it, the easier your implementation will be.
 
-#### [Project Rubric](project_documents/rubric.md)
+#### [Project Rubric](project_documents/rubric_template.md)
 
 The rubric contains the requirements for your project. You will fill out the rubric to show that your project successfully covers all the requirements.
 
@@ -38,6 +38,6 @@ We encourage you to keep track of your accomplishments throughout your time in L
 
 If you are working with a team, you must complete a team charter. This document will establish team norms and expectations, such as how you should communicate your work, how the team will create deadlines, what each person wants to get out of this experience, etc. Building your team charter will help your team work more effectively throughout this project.
 
-#### [Reflection](project_documents/reflection.md)
+#### [Reflection](project_documents/reflection_template.md)
 
 You will complete your reflection in Canvas, but feel free to see what questions we may ask here.

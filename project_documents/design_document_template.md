@@ -1,21 +1,33 @@
-# JavaForce5 Design Document
+# [team name] Design Document
 
-## Criminal Records Database Design
+## Instructions
+
+*Save a copy of this template for your team in the same folder that contains
+this template.*
+
+*Replace italicized text (including this text!) with details of the design you
+are proposing for your team project. (Your replacement text shouldn't be in
+italics)*
+
+*You should take a look at the example design document in the same folder as
+this template for more guidance on the types of information to capture, and the
+level of detail to aim for.*
+
+## *Project Title* Design
 
 ## 1. Problem Statement
-Many crimes are committed every day which each have a lot of associated information. It is important to keep a detailed database of these criminal records. They are used by a number of entities such as police, states, employers, landlords, stalkers, etc.  
 
-This design document describes a basic criminal records service that allows an agency such as a police department to read, add, update, and delete criminal records.
+*Explain clearly what problem you are trying to solve.*
+
+
 ## 2. Top Questions to Resolve in Review
 
 *List the most important questions you have about your design, or things that
 you are still debating internally that you might like help working through.*
 
-1. Should I create separate tables for Crimes, CriminalRecord, and Criminal/Person? I could possibly have a crime with multiple criminals and criminals with multiple crimes.
-   1. Maybe have a CriminalRecord for a person with their personal data and a list of Crimes committed.
-2. Depending on the structure what is a single partition primary key or composite primary key appropriate? 
-   1. Maybe use composite primary key for Person : Crime to look up crimes for each person.
-3. Is there a need to identify all CriminalRecords by date, Criminal, type, etc?
+1.   
+2.   
+3.  
 
 ## 3. Use Cases
 
@@ -23,19 +35,12 @@ you are still debating internally that you might like help working through.*
 would like to do (and why). You may also include use cases for yourselves, or
 for the organization providing the product to customers.*
 
-U1. As a customer, I want to retrieve a criminal record for a specific person to see which crimes they committed.
+U1. *As a [product] customer, I want to `<result>` when I `<action>`*
 
-U2. As a customer, I want to retrieve a criminal record for a specific person to see which crimes they committed.
-
-U3. As a customer, I want to create a new criminal record for a first time offender.
-
-U4. As a customer, I want to add a new Crime to person's criminal record.
-
-U5. As a customer, I want to update a person's criminal record if a case is appealed/over-turned.
-
-U6. As a customer, I want to delete a criminal record if ordered to be expunged by the court. 
-
-U7. 
+U2. *As a [product] customer, I want to view my grocery list when I log into the
+grocery list page*
+    
+U3. ...
 
 ## 4. Project Scope
 

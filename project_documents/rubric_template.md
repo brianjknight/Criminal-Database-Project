@@ -1,5 +1,4 @@
-# JavaForce5
-Project Rubric
+# [Team Name] Project Rubric
 
 ## Background
 

@@ -1,4 +1,4 @@
-# JavaForce5 Reflection
+# [Team name] Reflection
 
 ## Instructions
 
