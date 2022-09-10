@@ -26,7 +26,7 @@ We want you to see the full set of expectations for transparency’s sake.*
 |[Design Document](templates/design_document_template.md)                            |Sprint 1 REQUIRED TO GO ON| 9/10/22        |   https://github.com/BloomTechBackend/bd-team-project-javaforce5/blob/main/project_documents/design_document.md                                                     |
 |Project Completion (Feature Complete)                            |Sprint 3                  |                |                                                        |
 |[Team Reflection](templates/reflection_template.md)                                 |Sprint 3                  |                |                                                        |
-|[Accomplishment Tracking (person 1)](accomplishment_tracking.md) |Sprint 3                  |                |                                                        |
+|[Accomplishment Tracking (person 1)](accomplishment_tracking.md) |Sprint 3                  |                |      https://github.com/BloomTechBackend/bd-team-project-javaforce5/blob/Sprint_1/project_documents/accomplishment_tracking_Brian.md                                                  |
 |[Accomplishment Tracking (person 2)](accomplishment_tracking.md) |Sprint 3                  |                |                                                        |
 |[Accomplishment Tracking (person 3)](accomplishment_tracking.md) |Sprint 3                  |                |                                                        |
 |[Accomplishment Tracking (person 4)](accomplishment_tracking.md) |Sprint 3                  |                |                                                        |
