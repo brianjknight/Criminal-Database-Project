@@ -1,0 +1,15 @@
+@startuml
+title Create Criminal Record
+
+actor Client
+participant "Website Criminal Records page" as CriminalRecordsPage
+participant CreateCriminalRecordsActivity
+database CriminalRecord
+
+Client -> CriminalRecordsPage : POST /criminalrecords
+CriminalRecordsPage -> CreateCriminalRecordsActivity : Send POST request
+CreateCriminalRecordsActivity -> CriminalRecord : save CriminalRecord by SSN
+
+CriminalRecord --> CriminalRecordsPage : CriminalRecord
+
+@enduml

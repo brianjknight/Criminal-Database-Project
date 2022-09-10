@@ -21,11 +21,11 @@ We want you to see the full set of expectations for transparency’s sake.*
 |Deliverable                                                      |Due Date                  |Date Completed |URL                               |
 |---                                                              |---                       |---            |---                               |
 |Team name                                                        |Sprint 1 Module 1         |               |name:                             |
-|[Design Document - problem statement](design_document_template.md)        |Sprint 1 Module 2         |               |                                  |
+|[Design Document - problem statement](templates/design_document_template.md)        |Sprint 1 Module 2         |               |                                  |
 |[Team Charter](team_charter.md)                                  |Sprint 1 Module 3         |               |                                  |
-|[Design Document](design_document_template.md)                            |Sprint 1 REQUIRED TO GO ON|               |                                  |
+|[Design Document](templates/design_document_template.md)                            |Sprint 1 REQUIRED TO GO ON|               |                                  |
 |Project Completion (Feature Complete)                            |Sprint 3                  |               |                                  |
-|[Team Reflection](reflection_template.md)                                 |Sprint 3                  |               |                                  |
+|[Team Reflection](templates/reflection_template.md)                                 |Sprint 3                  |               |                                  |
 |[Accomplishment Tracking (person 1)](accomplishment_tracking.md) |Sprint 3                  |               |                                  |
 |[Accomplishment Tracking (person 2)](accomplishment_tracking.md) |Sprint 3                  |               |                                  |
 |[Accomplishment Tracking (person 3)](accomplishment_tracking.md) |Sprint 3                  |               |                                  |

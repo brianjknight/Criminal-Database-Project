@@ -21,7 +21,7 @@ We want you to see the full set of expectations for transparency’s sake.*
 |---                                                              |---                       |---            |---                               |
 |Team name                                                        |Sprint 1 Module 1         |               |name:                             |
 |[Design Document - problem statement](design_document_template.md)        |Sprint 1 Module 2         |               |                                  |
-|[Team Charter](team_charter.md)                                  |Sprint 1 Module 3         |               |                                  |
+|[Team Charter](../team_charter.md)                                  |Sprint 1 Module 3         |               |                                  |
 |[Design Document](design_document_template.md)                            |Sprint 1 REQUIRED TO GO ON|               |                                  |
 |Project Completion (Feature Complete)                            |Sprint 3                  |               |                                  |
 |[Team Reflection](reflection_template.md)                                 |Sprint 3                  |               |                                  |
