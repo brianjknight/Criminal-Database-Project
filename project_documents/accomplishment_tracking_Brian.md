@@ -37,16 +37,28 @@ instructors by the end of the unit._
 ## Week 1
 
 **Goals:**
+* Stay on track with modules.
 
 **Activity:**
+* Cloned repo
+* Create team name
+* Project Ideation completed choosing a project for a Criminal Records Database
+* Wrote a problem statement
+* Completed mock Team Charter
+* Completed draft of design document
 
 **Important Docs, Commits, or Code Reviews**:
+* Completed work was pushed to Git under Sprint_1 branch.
 
 **Things learned:**
+* I used PUML plugin to create images for my endpoints.
+* I learned the thought process of first creating use cases in order to determine requirements and endpoints.
 
 ## Week 2
 
 **Goals:**
+* Get fingers to keyboard and begin coding. 
+* Setup my POJO classes and tables in DynamoDB.
 
 **Activity:**
 

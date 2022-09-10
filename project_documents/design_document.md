@@ -110,7 +110,7 @@ Integer sentence;
 * Accepts a Social Security Number (SSN) and returns the record for that person.
   * If the SSN is not found, throw a NoCriminalRecordException
 
-![img.png](img.png)
+![img.png](images/design_document_images/get-criminal-record.png)
 
 ## 6.3 Create CriminalRecord Endpoint
 
@@ -119,7 +119,7 @@ Integer sentence;
 * For security concerns, we will validate the provided playlist name does not contain any invalid characters: " ' \`
   If the playlist name contains any of the invalid characters, will throw an InvalidAttributeValueException.
 
-![img_1.png](img_1.png)
+![img_1.png](images/design_document_images/create-criminal-record.png)
 
 ## 6.4 Delete CriminalRecord Endpoint
 
@@ -127,7 +127,7 @@ Integer sentence;
 * Accepts a Social Security Number (SSN) and deletes the record for that person.
     * If the SSN is not found, throw a NoCriminalRecordException
   
-![img_2.png](img_2.png)
+![img_2.png](images/design_document_images/delete-criminal-record.png)
 
 ## 6.5 Add Crime to CriminalRecord Endpoint
 
@@ -136,7 +136,7 @@ Integer sentence;
   * If the SSN is not found, throw a NoCriminalRecordException
   * If the Crime is not found, throw CrimeNotFoundException
 
-![img_3.png](img_3.png)
+![img_3.png](images/design_document_images/add-crime-to-criminal-record.png)
 
 ## 6.6 Get CriminalRecord crimes Endpoint
 
@@ -144,7 +144,7 @@ Integer sentence;
 * Retrieves list of all crimes committed by the person with given SSN
   * If the SSN is not found, throw a NoCriminalRecordException
 
-![img_4.png](img_4.png)
+![img_4.png](images/design_document_images/get-crimes-from-criminal-record.png)
 
 # 7. Tables
 
@@ -170,6 +170,6 @@ sentence // integer
 
 # 8. Pages
 
-![img_5.png](img_5.png)
+![img_5.png](images/design_document_images/criminal-records-webpage.png)
 
-![img_6.png](img_6.png)
+![img_6.png](images/design_document_images/crimes-webpage.png)
