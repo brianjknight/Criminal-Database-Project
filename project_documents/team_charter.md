@@ -1,11 +1,5 @@
 # JavaForce5 Team Charter
 
-## Instructions
-
-*Answer the questions below and fill out the process sections with your team’s
-mechanisms to follow your answers. Remove the italicized examples text as you
-go.*
-
 ## Purpose
 
 As we learned from the reading, highly performing teams have the following
@@ -33,112 +27,97 @@ These resources may be helpful as you fill out your team charter. They are optio
 
 ### Administrative Information:
 
-|Name            |Preferred Contact Method (Zoom, Slack, email, etc.) |
-|---	           |---                                           |
-|Team Member (a) |                                              |
-|Team Member (b) |                                              |
-|Team Member (c) |                                              |
-|Team Member (d) |                                              |
+|Name            | Preferred Contact Method (Zoom, Slack, email, etc.) |
+|---	           |-----------------------------------------------------|
+|Team Member (a) | Brian Knight (Slack, Zoom)                          |
+|Team Member (b) | Captain Picard (communicator badge, subspace radio) |
+|Team Member (c) | Neo (The Matrix)                                    |
+|Team Member (d) |                                                     |
 
 ### Psychological safety
 
 * **How can we take risks on this team without feeling insecure or
-  embarrassed?**
-    *E.g., Be open to opinions that differ from your own, actively ask for
-    opinions from each member of the team, do not interrupt each other, don’t
-    place blame, all suggestions or questions are encouraged, listened to,
-    considered equally, and never judged*
+  embarrassed?**  
+    Try to be open and honest. Be proactive in asking others peoples opinions rather than waiting 
+    them to speak up on their own. Give suggestions and constructive criticism rather than passing judgements.   
+
 
 * **How do we address situations where any team member feels unsafe?**
-    *E.g., communicate when there is a misunderstanding, don’t move forward
-    until the situation is resolved, directly address and resolve negativity,
-    give and receive feedback with a positive, strength-building mindset, if
-    necessary, escalate to a BloomTech staff member*  
+  
+  Address negativity, disagreements, and arguments that may arise during meetings 
+  or communications. If you notice any derogatory, harmful, or unsafe language, 
+  speak with others to see if they feel unsafe or intimidated. Convey your concerns to the team
+  in a mindful manner. If issues persist speak with your Learner Coach or Instructor.
 
 ### Dependability, Structure, Clarity
 
 * **How can we count on each other to do high quality work on time?**
-     *E.g., estimate task size, break down large tasks, call out tasks at risk
-     early, ask each other for help, how to ensure timely code reviews, how to
-     share knowledge, help each other hold accountability give frequent,
-     scheduled updates*  
+    Estimate task work and set deadlines. Break up tasks evenly across the team based on workload.
+    Encourage questions and communication if someone gets stuck on a problem so the project can
+    continue to move forward.
 
 * **How do we address missed deadlines?**
-     *E.g., acknowledge, but don’t punish slipped dates, figure out what went
-     wrong, identify lessons for future*
+    Look into why a deadline was missed. Were tasks divided evenly? Were there unanticipated
+    changes that caused more work or issues?
 
 * **How can we make goals, roles, and execution plans on our team clear?**
-     *E.g., where to track goals and when to review them, use definitive,
-     quantifiable terminology, include clear background on why this goal is
-     necessary, include “done” criteria for the goal (code is pushed with
-     integration tests, document is reviewed, etc.)*
-
+    Keep a documented structure for clarity. Assign goals and timelines. Keep the design document
+    up to date with any changes.  Track progress in the rubric document.
 
 ### Goals
 
 * **Overall: What is our overall objective for the Learn & Be Curious unit?**
-    *E.g., “Apply what we’ve learned throughout BloomTech in a team project to prepare
-    ourselves for internships and full-time SDE roles.”*
+    Incorporate what we have learned so far in past Units and learn a new technology. 
 
 
 * **Performance: What do we want to prioritize in terms of what we achieve?**
-    *What will be true when you have 'succeeded' on this project? E.g. enjoy
+    What will be true when you have 'succeeded' on this project? E.g. enjoy
     ourselves, maintain our energy to the end, ensure all team members
     participate, create professional connections, exceed instructor
     expectations, efficiently pace the project so we’re not rushing at the end,
-    etc.*
+    etc.
 
 
 * **Learning: What are the things that our team wants to learn?**
-    *E.g., develop SDE knowledge, enhance leadership skills, master project
-    planning, improve testing skills, etc*
+    Working with HTML, CSS, and JS to become more familiar with the front end.
 
 
 * **Task processes: What processes will our team follow to meet our goals,
   complete tasks, or to build team relationships?**
-    *E.g., leadership, meeting procedures/length of meetings, expectations for
-    meeting attendance and timeliness, other types of meetings (happy hours,
-    lunch and learns)*
-
+    Hold daily meetings to stay track progress, address problem areas, and check in
+    with well-being.
 
 ## Meaning & Impact
 
 **What is personally important for each team member about joining BloomTech? About
 becoming an software engineer?**
 
-* *Team member name*:
-* *Team member name*:
-* *Team member name*:
-* *Team member name*:
+* Brian Knight: I'm excited to change my career to an industry I am more interested in. 
+* Captain Picard: Be able better understand ship engineering to assist Geordi La Forge.
+* Neo: Download a new skill into his knowledge base. 
 
 **What each team member wants to achieve: e.g. improve analytical skills, learn
 project management skills, develop public speaking skills, speak up more, speak
 up less, etc.**
 
-* *Team member name*:
-* *Team member name*:
-* *Team member name*:
-* *Team member name*:
+* Brian Knight: Improve project management skills, learn front end with CSS, HTML, & JS.
+* Captain Picard: Improve knowledge of warp drive software.
+* Neo: Be able to visualize all the green letters and numbers in the matrix.
 
 ## Team Member Roles and Responsibilities
 
-*Filling out the following roles and responsibilities is suggested only. Some
-roles will be permanent and some may be temporary. Some roles may be assigned to
-one or two people, and others may be rotated. Feel free to create additional
-rotating or permanent roles as you go.*
-
-|**Role**               |**Responsibilities** |**Primary person** |**Secondary person** |
-|---                    |---                  |---                |---                  |
-|Liaison to Instructors | Main contact to instructor to give status updates, including team dynamics, project progress, etc |||
-|Rotating Role 1        |                     |                   |                     |
-|Rotating Role 2        |                     |                   |                     |
-|Rotating Role 3        |                     |                   |                     |
+|**Role**               | **Responsibilities**                                                                              | **Primary person** | **Secondary person** |
+|---                    |---------------------------------------------------------------------------------------------------|--------------------|----------------------|
+|Liaison to Instructors | Main contact to instructor to give status updates, including team dynamics, project progress, etc | Brian              | Picard               |
+|Rotating Role 1        | Security and Defense                                                                              | Neo                | Picard               |
+|Rotating Role 2        | Recording meeting minutes  | Picard  | Neo                  |
+|Rotating Role 3        |                                                                                                   |                    |                      |
 
 ## Acknowledgement
 
 **I agree to the terms and conditions of these team agreements:**
 
-* Team member (a) Name & Date:
-* Team member (b) Name & Date:
-* Team member (c) Name & Date:
+* Team member (a) Name & Date: Brian Knight 9/10/22
+* Team member (b) Name & Date: Captain Picard Stardate 100290.25
+* Team member (c) Name & Date: Neo 9/10/22
 * Team member (d) Name & Date:
