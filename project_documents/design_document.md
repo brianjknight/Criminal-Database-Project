@@ -1,33 +1,22 @@
-# [team name] Design Document
+# JavaForce5 Design Document
 
-## Instructions
-
-*Save a copy of this template for your team in the same folder that contains
-this template.*
-
-*Replace italicized text (including this text!) with details of the design you
-are proposing for your team project. (Your replacement text shouldn't be in
-italics)*
-
-*You should take a look at the example design document in the same folder as
-this template for more guidance on the types of information to capture, and the
-level of detail to aim for.*
-
-## *Project Title* Design
+## Criminal Records Database Design
 
 ## 1. Problem Statement
+Many crimes are committed every day which each have a lot of associated information. It is important to keep a detailed database of these criminal records. They are used by a number of entities such as police, states, employers, landlords, stalkers, etc.  
 
-*Explain clearly what problem you are trying to solve.*
-
-
+This design document describes a basic criminal records service that allows an agency such as a police department to read, add, update, and delete criminal records.
 ## 2. Top Questions to Resolve in Review
 
 *List the most important questions you have about your design, or things that
 you are still debating internally that you might like help working through.*
 
-1.   
-2.   
-3.  
+1. Should I create separate tables for Crimes, CriminalRecord, and Criminal/Person? I could possibly have a crime with multiple criminals and criminals with multiple crimes.
+   1. Maybe have a CriminalRecord for a person with their personal data and a list of Crimes committed.
+2. Depending on the structure what is a single partition primary key or composite primary key appropriate?
+3. Is there a need to identify all CriminalRecords by location, date, Criminal, type, status, etc?
+   1. This could be an opportunity for creating DDB indexes.
+
 
 ## 3. Use Cases
 
@@ -35,87 +24,154 @@ you are still debating internally that you might like help working through.*
 would like to do (and why). You may also include use cases for yourselves, or
 for the organization providing the product to customers.*
 
-U1. *As a [product] customer, I want to `<result>` when I `<action>`*
+U1. As a customer, I want to create a new criminal record for a first time offender.
 
-U2. *As a [product] customer, I want to view my grocery list when I log into the
-grocery list page*
-    
-U3. ...
+U2. As a customer, I want to retrieve a CriminalRecord to see if it exists for a person.
+
+U3. As a customer, if a CriminalRecord exists, I want to retrieve a list of their crimes. 
+
+U4. As a customer, I want to add a new crime to person's list of crimes.
+
+U5. As a customer, I want to update a crime in a person's list if a case status changes (pending, convicted, acquitted, etc.).
+
+U6. As a customer, I want to delete a criminal record if ordered to be expunged by the court.
+
+U7. As a customer, I want to retrieve crimes by status.
+
+U8. As a customer, I want to retrieve crimes by date.
+
+U9. As a customer, I want to retrieve crimes by offense level.
+
+U10. As a customer, I want to retrieve crimes by location.
+
+U11. As a customer, I want to retrieve all CriminalRecords by state for statistical purposes.
+
 
 ## 4. Project Scope
 
-*Clarify which parts of the problem you intend to solve. It helps reviewers know
-what questions to ask to make sure you are solving for what you say and stops
-discussions from getting sidetracked by aspects you do not intend to handle in
-your design.*
-
 ### 4.1. In Scope
+* CRUD operations for a single criminal record.
+   * Create a new record
+   * Retrieve existing record
+   * Update a record by adding a crime to the list
+   * Delete a record
+* Use at least one secondary index on the DDB table to run a query.
+  * U11 retrieve records by status.
 
-*Which parts of the problem defined in Sections 1 and 3 will you solve with this
-design?*
 
 ### 4.2. Out of Scope
-
-*Based on your problem description in Sections 1 and 3, are there any aspects
-you are not planning to solve? Do potential expansions or related problems occur
-to you that you want to explicitly say you are not worrying about now? Feel free
-to put anything here that you think your team can't accomplish in the unit, but
-would love to do with more time.*
+* U5 updating a Crime within the list of Crimes in a CriminalRecord.
+* There would be multiple needs to look up crime statistics by secondary indexes (use cases U7-U10). 
+   For purposes of this project U7-U10 will be out of scope.
+* CRUD operations for Crimes table. Will populate with a set of fixed set of Crimes.
 
 # 5. Proposed Architecture Overview
 
-*Describe broadly how you are proposing to solve for the requirements you
-described in Section 3.*
+This initial iteration will provide the minimum lovable product (MLP) including
+creating, retrieving, updating, and deleting a criminal record.
 
-*This may include class diagram(s) showing what components you are planning to
-build.*
+We will use API Gateway and Lambda to create four endpoints (`CreateCriminalRecord`, `GetCriminalRecord`,
+ `UpdateCriminalRecord`, and `DeleteCriminalRecord`)
+that will handle the creation, updating, retrieval, and deleting criminal records to satisfy the requirements.
 
-*You should argue why this architecture (organization of components) is
-reasonable. That is, why it represents a good data flow and a good separation of
-concerns. Where applicable, argue why this architecture satisfies the stated
-requirements.*
+Criminal records will be stored in DynamoDB table using a composite primary key of 
+Social Security Number for the partition key and case number for sort key.
+
+We will provide a web interface for users to manage the criminal record database.
 
 # 6. API
 
 ## 6.1. Public Models
 
-*Define the data models your service will expose in its responses via your
-*`-Model`* package. These will be equivalent to the *`PlaylistModel`* and
-*`SongModel`* from the Unit 3 project.*
+```
+// CriminalRecord
 
-## 6.2. *First Endpoint*
+String ssn;
+String name;
+String dob;
+String state;
+Integer crimeCount;
+List<Crime> crimes;
+```
+```
+// Crime
 
-*Describe the behavior of the first endpoint you will build into your service
-API. This should include what data it requires, what data it returns, and how it
-will handle any known failure cases. You should also include a sequence diagram
-showing how a user interaction goes from user to website to service to database,
-and back. This first endpoint can serve as a template for subsequent endpoints.
-(If there is a significant difference on a subsequent endpoint, review that with
-your team before building it!)*
+String caseNumber;
+String ssn;
+String charge;
+String offenseLevel;
+String status;
+String date;
+Integer sentence;
 
-*(You should have a separate section for each of the endpoints you are expecting
-to build...)*
+```
 
-## 6.3 *Second Endpoint*
+## 6.2. Get CriminalRecord Endpoint
 
-*(repeat, but you can use shorthand here, indicating what is different, likely
-primarily the data in/out and error conditions. If the sequence diagram is
-nearly identical, you can say in a few words how it is the same/different from
-the first endpoint)*
+* Accepts GET requests to /criminalrecords/{ssn}
+* Accepts a Social Security Number (SSN) and returns the record for that person.
+  * If the SSN is not found, throw a NoCriminalRecordException
+
+![img.png](images/design_document_images/get-criminal-record.png)
+
+## 6.3 Create CriminalRecord Endpoint
+
+* Accepts POST requests to /criminalrecords
+* Accepts data to create a new CriminalRecord with SSN, name, DOB, zipcode, and state.
+* For security concerns, we will validate the provided playlist name does not contain any invalid characters: " ' \`
+  If the playlist name contains any of the invalid characters, will throw an InvalidAttributeValueException.
+
+![img_1.png](images/design_document_images/create-criminal-record.png)
+
+## 6.4 Delete CriminalRecord Endpoint
+
+* Accepts DELETE requests to /criminalrecords/{ssn}
+* Accepts a Social Security Number (SSN) and deletes the record for that person.
+    * If the SSN is not found, throw a NoCriminalRecordException
+  
+![img_2.png](images/design_document_images/delete-criminal-record.png)
+
+## 6.5 Add Crime to CriminalRecord Endpoint
+
+* Accepts PUT requests to /criminalrecords/{ssn}/crimes
+* Accepts a SSN and a Crime to be added to that person's list of Crimes
+  * If the SSN is not found, throw a NoCriminalRecordException
+  * If the Crime is not found, throw CrimeNotFoundException
+
+![img_3.png](images/design_document_images/add-crime-to-criminal-record.png)
+
+## 6.6 Get CriminalRecord crimes Endpoint
+
+* Accepts GET requests to /criminalrecords/{ssn}/crimes
+* Retrieves list of all crimes committed by the person with given SSN
+  * If the SSN is not found, throw a NoCriminalRecordException
+
+![img_4.png](images/design_document_images/get-crimes-from-criminal-record.png)
 
 # 7. Tables
 
-*Define the DynamoDB tables you will need for the data your service will use. It
-may be helpful to first think of what objects your service will need, then
-translate that to a table structure, like with the *`Playlist` POJO* versus the
-`playlists` table in the Unit 3 project.*
+## 7.1 criminal_records
+```
+ssn // partition key, string
+name // string
+dob // string
+state // string
+crimeCount // integer
+crimes // List of Crimes
+```
+
+## 7.2 crimes
+```
+caseNumber // partition key, string
+charge // string
+offenseLevel // string
+status // string
+date // string
+sentence // integer
+```
 
 # 8. Pages
 
-*Include mock-ups of the web pages you expect to build. These can be as
-sophisticated as mockups/wireframes using drawing software, or as simple as
-hand-drawn pictures that represent the key customer-facing components of the
-pages. It should be clear what the interactions will be on the page, especially
-where customers enter and submit data. You may want to accompany the mockups
-with some description of behaviors of the page (e.g. “When customer submits the
-submit-dog-photo button, the customer is sent to the doggie detail page”)*
+![img_5.png](images/design_document_images/criminal-records-webpage.png)
+
+![img_6.png](images/design_document_images/crimes-webpage.png)
