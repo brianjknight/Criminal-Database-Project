@@ -32,20 +32,19 @@ U3. As a customer, if a CriminalRecord exists, I want to retrieve a list of thei
 
 U4. As a customer, I want to add a new crime to person's list of crimes.
 
-U5. As a customer, I want to update a crime in a person's list if a case status changes (pending, convicted, acquitted, etc.).
+U5. As a customer, I want to update a state if a person moves.
 
 U6. As a customer, I want to delete a criminal record if ordered to be expunged by the court.
 
-U7. As a customer, I want to retrieve crimes by status.
+U7. As a customer, I want to retrieve all CriminalRecords by state for statistical purposes.
 
-U8. As a customer, I want to retrieve crimes by date.
+U8. As a customer, I want to retrieve crimes by status.
 
-U9. As a customer, I want to retrieve crimes by offense level.
+U9. As a customer, I want to retrieve crimes by date.
 
-U10. As a customer, I want to retrieve crimes by location.
+U10. As a customer, I want to retrieve crimes by offense level.
 
-U11. As a customer, I want to retrieve all CriminalRecords by state for statistical purposes.
-
+U11. As a customer, I want to retrieve crimes by location.
 
 ## 4. Project Scope
 
@@ -56,14 +55,14 @@ U11. As a customer, I want to retrieve all CriminalRecords by state for statisti
    * Update a record by adding a crime to the list
    * Delete a record
 * Use at least one secondary index on the DDB table to run a query.
-  * U11 retrieve records by status.
+  * U7 retrieve records by state.
 
 
 ### 4.2. Out of Scope
 * U5 updating a Crime within the list of Crimes in a CriminalRecord.
-* There would be multiple needs to look up crime statistics by secondary indexes (use cases U7-U10). 
-   For purposes of this project U7-U10 will be out of scope.
-* CRUD operations for Crimes table. Will populate with a set of fixed set of Crimes.
+* There would be multiple needs to look up crime statistics by secondary indexes (use cases U8-U11). 
+   For purposes of this project these will be out of scope.
+* CRUD operations for Crimes table. We will populate data with a fixed set of Crimes.
 
 # 5. Proposed Architecture Overview
 
