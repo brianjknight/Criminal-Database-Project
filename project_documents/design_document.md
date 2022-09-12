@@ -80,7 +80,7 @@ We will provide a web interface for users to manage the criminal record database
 
 # 6. API
 
-## 6.1. Public Models
+## 6.1. Public models
 
 ```
 // CriminalRecord
