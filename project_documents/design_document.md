@@ -14,8 +14,9 @@ you are still debating internally that you might like help working through.*
 1. Should I create separate tables for Crimes, CriminalRecord, and Criminal/Person? I could possibly have a crime with multiple criminals and criminals with multiple crimes.
    1. Maybe have a CriminalRecord for a person with their personal data and a list of Crimes committed.
 2. Depending on the structure what is a single partition primary key or composite primary key appropriate?
-3. Is there a need to identify all CriminalRecords by date, Criminal, type, status, location, etc?
-   1. This could be a case for creating DDB indexes.
+3. Is there a need to identify all CriminalRecords by location, date, Criminal, type, status, etc?
+   1. This could be an opportunity for creating DDB indexes.
+
 
 ## 3. Use Cases
 
@@ -76,7 +77,7 @@ that will handle the creation, updating, retrieval, and deleting criminal record
 Criminal records will be stored in DynamoDB table using a composite primary key of 
 Social Security Number for the partition key and case number for sort key.
 
-We wil provide a web interface for users to manage the criminal record database.
+We will provide a web interface for users to manage the criminal record database.
 
 # 6. API
 
@@ -96,6 +97,7 @@ List<Crime> crimes;
 // Crime
 
 String caseNumber;
+String ssn;
 String charge;
 String offenseLevel;
 String status;
