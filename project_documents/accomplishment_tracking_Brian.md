@@ -65,6 +65,19 @@ instructors by the end of the unit._
 **Important Docs, Commits, or Code Reviews**:
 
 **Things learned:**
+* Building the initial project.
+  * I created and populated my Crimes DDB table using a JSON file and AWS CLI commands.
+  * I figured out how to save the ATAResources.jar file and add it to dependencies in order to import DynamoDB classes. 
+    * Project Structure > Modules > Dependencies > add file
+  * My initial attempt to run a test to map an item to DDB table failed: 
+  "the output path is not specified for module...". 
+  I created a "build" directory and updated the settings: 
+    * Project Structure > Project > Compiler output: > ~\BloomTech\Unit_5\bd-team-project-javaforce5\build 
+  * In previous projects for DDB table we stored a List<Type> as a string in JSON format. 
+   In order for DDB mapper to load a table item with a List in this format, a DynamoDBTypeConverter is needed. 
+    * "@DynamoDBTypeConverted(converter = CrimeListConverter.class)" annotation was added to the attribute in CriminalRecord class.
+  * 
+  
 
 ## Week 3
 

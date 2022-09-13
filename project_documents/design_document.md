@@ -116,7 +116,7 @@ Integer sentence;
 ## 6.3 Create CriminalRecord Endpoint
 
 * Accepts POST requests to /criminalrecords
-* Accepts data to create a new CriminalRecord with SSN, name, DOB, zipcode, and state.
+* Accepts data to create a new CriminalRecord with SSN, name, DOB, and state.
 * For security concerns, we will validate the provided playlist name does not contain any invalid characters: " ' \`
   If the playlist name contains any of the invalid characters, will throw an InvalidAttributeValueException.
 
