@@ -107,7 +107,8 @@ public class Crime {
     @Override
     public String toString() {
         return "Crime{" +
-                "ssn='" + ssn + '\'' +
+                "caseNumber='" + caseNumber + '\'' +
+                ", ssn='" + ssn + '\'' +
                 ", charge='" + charge + '\'' +
                 ", offenseLevel='" + offenseLevel + '\'' +
                 ", status='" + status + '\'' +

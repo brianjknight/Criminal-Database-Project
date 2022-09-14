@@ -65,7 +65,6 @@ instructors by the end of the unit._
 **Important Docs, Commits, or Code Reviews**:
 
 **Things learned:**
-* Building the initial project.
   * I created and populated my Crimes DDB table using a JSON file and AWS CLI commands.
   * I figured out how to save the ATAResources.jar file and add it to dependencies in order to import DynamoDB classes. 
     * Project Structure > Modules > Dependencies > add file
@@ -76,6 +75,7 @@ instructors by the end of the unit._
   * In previous projects for DDB table we stored a List<Type> as a string in JSON format. 
    In order for DDB mapper to load a table item with a List in this format, a DynamoDBTypeConverter is needed. 
     * "@DynamoDBTypeConverted(converter = CrimeListConverter.class)" annotation was added to the attribute in CriminalRecord class.
+  * In order to delete an item using DynamoDB mapper.delete() you need to pass in the object not just the key.
   * 
   
 

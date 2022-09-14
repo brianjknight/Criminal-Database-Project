@@ -33,7 +33,7 @@ public class CriminalRecordDao {
             throw new NoCriminalRecordFoundException(ssn);
         }
 
-        dynamoDBMapper.delete(ssn);
+        dynamoDBMapper.delete(criminalRecord);
         return "Criminal record for SSN: " + ssn + " has been expunged from the database.";
     }
 }

@@ -147,6 +147,12 @@ Integer sentence;
 
 ![img_4.png](images/design_document_images/get-crimes-from-criminal-record.png)
 
+## 6.7 Get CriminalRecords by state endpoint
+
+* Accepts GET requests to /criminalrecords/{ssn}
+  * Query parameter for state?
+* Retrieves a list of Criminal Records that match the given state.
+
 # 7. Tables
 
 ## 7.1 criminal_records
