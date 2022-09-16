@@ -48,7 +48,7 @@ instructors by the end of the unit._
 * Completed draft of design document
 
 **Important Docs, Commits, or Code Reviews**:
-* Completed work was pushed to Git under Sprint_1 branch.
+* Completed work was pushed to GitHub under Sprint_1 branch.
 
 **Things learned:**
 * I used PUML plugin to create images for my endpoints.
@@ -61,8 +61,11 @@ instructors by the end of the unit._
 * Setup my POJO classes and tables in DynamoDB.
 
 **Activity:**
+* Created Trello account and project board
+* Started building the project
 
 **Important Docs, Commits, or Code Reviews**:
+* Updates are pushing to Sprint_1 branch in GitHub.
 
 **Things learned:**
   * I created and populated my Crimes DDB table using a JSON file and AWS CLI commands.
@@ -76,6 +79,16 @@ instructors by the end of the unit._
    In order for DDB mapper to load a table item with a List in this format, a DynamoDBTypeConverter is needed. 
     * "@DynamoDBTypeConverted(converter = CrimeListConverter.class)" annotation was added to the attribute in CriminalRecord class.
   * In order to delete an item using DynamoDB mapper.delete() you need to pass in the object not just the key.
+  * When classes and files are shown in different colors in IntelliJ's Project directory tree, it represents a status. 
+    * https://www.jetbrains.com/help/idea/file-status-highlights.html#views
+    * ![img_1.png](img_1.png)
+  * After reading Module 5 activity Intro to Global Secondary Indexes, 
+    I would have taken a different approach to designing my DDB tables.
+    It would make more sense to have the Crime table as a composite primary key SSN : Case Number.
+    I could then lookup all crimes for an individual and also allow for more options
+    querying for statistical purposes on other attributes.
+  * AWS CloudFormation would not let me update a table with multiple GSIs at the same time.
+    I had to do them one at a time using CLI commands to "aws cloudformation update-stack"
   * 
   
 

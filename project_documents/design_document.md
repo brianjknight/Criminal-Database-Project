@@ -32,7 +32,7 @@ U3. As a customer, if a CriminalRecord exists, I want to retrieve a list of thei
 
 U4. As a customer, I want to add a new crime to person's list of crimes.
 
-U5. As a customer, I want to update a state if a person moves.
+U5. As a customer, I want to update a state if a person moves. 
 
 U6. As a customer, I want to delete a criminal record if ordered to be expunged by the court.
 
@@ -56,6 +56,7 @@ U11. As a customer, I want to retrieve crimes by location.
    * Delete a record
 * Use at least one secondary index on the DDB table to run a query.
   * U7 retrieve records by state.
+  * U5 Updating the state for a person's criminal record. 
 
 
 ### 4.2. Out of Scope

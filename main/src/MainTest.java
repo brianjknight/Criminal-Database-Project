@@ -3,6 +3,7 @@ import activity.CreateCriminalRecordActivity;
 import activity.DeleteCriminalRecordActivity;
 import activity.GetCrimesForCriminalRecordActivity;
 import activity.GetCriminalRecordActivity;
+import activity.GetCriminalsRecordsByStateActivity;
 import com.amazon.ata.aws.dynamodb.DynamoDbClientProvider;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import dao.CrimeDao;
@@ -18,7 +19,7 @@ public class MainTest {
         DynamoDBMapper mapper = new DynamoDBMapper(DynamoDbClientProvider.getDynamoDBClient());
         CriminalRecordDao criminalRecordDao = new CriminalRecordDao(mapper);
         CrimeDao crimeDao = new CrimeDao(mapper);
-        
+
 //        GetCriminalRecordActivity getCriminalRecordActivity = new GetCriminalRecordActivity(criminalRecordDao);
 //        CriminalRecord crJoeBiden = getCriminalRecordActivity.handleRequest("000-99-4444");
 //        System.out.println(crJoeBiden);
@@ -37,6 +38,11 @@ public class MainTest {
 //        System.out.println(joeB3);
 //        System.out.println("-".repeat(80));
 
+        GetCriminalsRecordsByStateActivity getCRbyState = new GetCriminalsRecordsByStateActivity(criminalRecordDao);
+        List<CriminalRecord> recordsForCA = getCRbyState.handleRequest("TX");
+        for (CriminalRecord cr : recordsForCA) {
+            System.out.println(cr);
+        }
 
     }
 }

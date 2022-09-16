@@ -1,8 +1,13 @@
 package dao;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
+import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
 import exceptions.NoCriminalRecordFoundException;
 import models.CriminalRecord;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CriminalRecordDao {
     private final DynamoDBMapper dynamoDBMapper;
@@ -19,6 +24,21 @@ public class CriminalRecordDao {
         }
 
         return criminalRecord;
+    }
+
+    public List<CriminalRecord> getCriminalRecordsByState(String state) {
+        CriminalRecord criminalRecord = new CriminalRecord();
+        criminalRecord.setState(state);
+        DynamoDBQueryExpression<CriminalRecord> queryExpression = new DynamoDBQueryExpression<CriminalRecord>()
+                .withIndexName(CriminalRecord.STATE_INDEX)
+                .withConsistentRead(false)
+                .withHashKeyValues(criminalRecord);
+
+        PaginatedQueryList<CriminalRecord> criminalRecordsByStateList = dynamoDBMapper.query(CriminalRecord.class, queryExpression);
+        if(criminalRecordsByStateList == null || criminalRecordsByStateList.size() == 0) {
+            throw new NoCriminalRecordFoundException("n/a. ", "No criminal records found for the state: " + state);
+        }
+        return criminalRecordsByStateList;
     }
 
     public CriminalRecord saveCriminalRecord(CriminalRecord criminalRecord) {

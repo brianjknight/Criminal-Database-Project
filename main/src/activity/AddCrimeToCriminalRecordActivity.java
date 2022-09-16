@@ -5,6 +5,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import dao.CrimeDao;
 import dao.CriminalRecordDao;
 import exceptions.CrimeAlreadyInCriminalRecordException;
+import exceptions.CriminalRecordCrimeMismatchException;
 import models.Crime;
 import models.CriminalRecord;
 
@@ -24,6 +25,10 @@ public class AddCrimeToCriminalRecordActivity {
     public CriminalRecord handleRequest(String ssn, String caseNumber) {
         Crime requestedCrime = crimeDao.getCrime(caseNumber);
         CriminalRecord requestedCriminalRecord = criminalRecordDao.getCriminalRecord(ssn);
+
+        if(!ssn.equals(requestedCrime.getSsn())) {
+            throw new CriminalRecordCrimeMismatchException(ssn, caseNumber);
+        }
 
         List<Crime> crimeList = requestedCriminalRecord.getCrimes();
 

@@ -6,7 +6,29 @@ Resources:
       AttributeDefinitions:
         - AttributeName: "ssn"
           AttributeType: "S"
+        - AttributeName: "state"
+          AttributeType: "S"
+        - AttributeName: "crimeCount"
+          AttributeType: "N"
       KeySchema:
         - AttributeName: "ssn"
           KeyType: "HASH"
       BillingMode: "PAY_PER_REQUEST"
+      GlobalSecondaryIndexes:
+        - IndexName: "StateIndex"
+          KeySchema:
+            - AttributeName: "state"
+              KeyType: "HASH"
+          Projection:
+            ProjectionType: "INCLUDE"
+            NonKeyAttributes:
+              - "name"
+              - "crimeCount"
+        - IndexName: "CrimeCountIndex"
+          KeySchema:
+            - AttributeName: "crimeCount"
+              KeyType: "HASH"
+          Projection:
+            ProjectionType: "INCLUDE"
+            NonKeyAttributes:
+              - "name"

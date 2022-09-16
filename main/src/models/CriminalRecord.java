@@ -2,6 +2,7 @@ package models;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBIndexHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTypeConverted;
 import converter.CrimeListConverter;
@@ -11,6 +12,9 @@ import java.util.Objects;
 
 @DynamoDBTable(tableName = "CriminalRecords")
 public class CriminalRecord {
+    public static final String STATE_INDEX = "StateIndex";
+    public static final String CRIME_COUNT_INDEX = "CrimeCountIndex";
+
     private String ssn;
     private String name;
     private String dob;
@@ -56,7 +60,7 @@ public class CriminalRecord {
         this.dob = dob;
     }
 
-    @DynamoDBAttribute(attributeName = "state")
+    @DynamoDBIndexHashKey(globalSecondaryIndexName = STATE_INDEX, attributeName = "state")
     public String getState() {
         return state;
     }
@@ -65,7 +69,7 @@ public class CriminalRecord {
         this.state = state;
     }
 
-    @DynamoDBAttribute(attributeName = "crimeCount")
+    @DynamoDBIndexHashKey(globalSecondaryIndexName = CRIME_COUNT_INDEX, attributeName = "crimeCount")
     public Integer getCrimeCount() {
         return crimeCount;
     }
