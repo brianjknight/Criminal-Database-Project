@@ -1,0 +1,382 @@
+{
+  "Crimes": [
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "XY123456"
+          },
+          "charge": {
+            "S": "picking nose"
+          },
+          "date": {
+            "S": "9/9/2022"
+          },
+          "offenseLevel": {
+            "S": "felony"
+          },
+          "sentenceInDays": {
+            "N": "100"
+          },
+          "ssn": {
+            "S": "123-45-6789"
+          },
+          "status": {
+            "S": "guilty"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "AB110033"
+          },
+          "charge": {
+            "S": "Taking up 2 parking spaces"
+          },
+          "date": {
+            "S": "10/10/1954"
+          },
+          "offenseLevel": {
+            "S": "misdemeanor"
+          },
+          "sentenceInDays": {
+            "N": "0"
+          },
+          "ssn": {
+            "S": "111-22-0000"
+          },
+          "status": {
+            "S": "pending"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "DD242424"
+          },
+          "charge": {
+            "S": "not returning shopping cart to coral"
+          },
+          "date": {
+            "S": "1/20/2000"
+          },
+          "offenseLevel": {
+            "S": "misdemeanor"
+          },
+          "sentenceInDays": {
+            "N": "30"
+          },
+          "ssn": {
+            "S": "333-22-1111"
+          },
+          "status": {
+            "S": "guilty"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "BB009900"
+          },
+          "charge": {
+            "S": "driving slow in the passing lane"
+          },
+          "date": {
+            "S": "1/20/2015"
+          },
+          "offenseLevel": {
+            "S": "felony"
+          },
+          "sentenceInDays": {
+            "N": "365"
+          },
+          "ssn": {
+            "S": "000-99-4444"
+          },
+          "status": {
+            "S": "guilty"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "XY987654"
+          },
+          "charge": {
+            "S": "wearing socks with sandals"
+          },
+          "date": {
+            "S": "5/20/2007"
+          },
+          "offenseLevel": {
+            "S": "misdemeanor"
+          },
+          "sentenceInDays": {
+            "N": "0"
+          },
+          "ssn": {
+            "S": "000-99-4444"
+          },
+          "status": {
+            "S": "pending"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "PP010101"
+          },
+          "charge": {
+            "S": "falling off bike"
+          },
+          "date": {
+            "S": "8/27/1984"
+          },
+          "offenseLevel": {
+            "S": "misdemeanor"
+          },
+          "sentenceInDays": {
+            "N": "60"
+          },
+          "ssn": {
+            "S": "000-99-4444"
+          },
+          "status": {
+            "S": "pending"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "TR440912"
+          },
+          "charge": {
+            "S": "farting on airplane"
+          },
+          "date": {
+            "S": "12/17/1999"
+          },
+          "offenseLevel": {
+            "S": "felony"
+          },
+          "sentenceInDays": {
+            "N": "180"
+          },
+          "ssn": {
+            "S": "777-66-5555"
+          },
+          "status": {
+            "S": "guilty"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "EW001122"
+          },
+          "charge": {
+            "S": "cutting in line"
+          },
+          "date": {
+            "S": "3/10/2018"
+          },
+          "offenseLevel": {
+            "S": "misdemeanor"
+          },
+          "sentenceInDays": {
+            "N": "30"
+          },
+          "ssn": {
+            "S": "777-66-5555"
+          },
+          "status": {
+            "S": "guilty"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "QQ010199"
+          },
+          "charge": {
+            "S": "not wearing deodorant"
+          },
+          "date": {
+            "S": "6/29/1995"
+          },
+          "offenseLevel": {
+            "S": "misdemeanor"
+          },
+          "sentenceInDays": {
+            "N": "30"
+          },
+          "ssn": {
+            "S": "123-45-8888"
+          },
+          "status": {
+            "S": "guilty"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "TU789789"
+          },
+          "charge": {
+            "S": "disrespecting the king"
+          },
+          "date": {
+            "S": "4/15/1585"
+          },
+          "offenseLevel": {
+            "S": "felony"
+          },
+          "sentenceInDays": {
+            "N": "10000"
+          },
+          "ssn": {
+            "S": "999-77-5555"
+          },
+          "status": {
+            "S": "guilty"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "KK990099"
+          },
+          "charge": {
+            "S": "pooped in pants"
+          },
+          "date": {
+            "S": "12/31/2020"
+          },
+          "offenseLevel": {
+            "S": "misdemeanor"
+          },
+          "sentenceInDays": {
+            "N": "0"
+          },
+          "ssn": {
+            "S": "555-00-5555"
+          },
+          "status": {
+            "S": "pending"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "LM123132"
+          },
+          "charge": {
+            "S": "stealing"
+          },
+          "date": {
+            "S": "9/15/1923"
+          },
+          "offenseLevel": {
+            "S": "misdemeanor"
+          },
+          "sentenceInDays": {
+            "N": "60"
+          },
+          "ssn": {
+            "S": "123-11-8888"
+          },
+          "status": {
+            "S": "appealing"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "VC991133"
+          },
+          "charge": {
+            "S": "used 'password' for a password"
+          },
+          "date": {
+            "S": "9/15/2022"
+          },
+          "offenseLevel": {
+            "S": "misdemeanor"
+          },
+          "sentenceInDays": {
+            "N": "45"
+          },
+          "ssn": {
+            "S": "121-99-7777"
+          },
+          "status": {
+            "S": "guilty"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "HH112200"
+          },
+          "charge": {
+            "S": "chewing with mouth open"
+          },
+          "date": {
+            "S": "2/20/1995"
+          },
+          "offenseLevel": {
+            "S": "misdemeanor"
+          },
+          "sentenceInDays": {
+            "N": "15"
+          },
+          "ssn": {
+            "S": "222-22-2020"
+          },
+          "status": {
+            "S": "guilty"
+          }
+        }
+      }
+    }
+  ]
+}

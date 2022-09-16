@@ -32,7 +32,7 @@ U3. As a customer, if a CriminalRecord exists, I want to retrieve a list of thei
 
 U4. As a customer, I want to add a new crime to person's list of crimes.
 
-U5. As a customer, I want to update a state if a person moves.
+U5. As a customer, I want to update a state if a person moves. 
 
 U6. As a customer, I want to delete a criminal record if ordered to be expunged by the court.
 
@@ -56,6 +56,7 @@ U11. As a customer, I want to retrieve crimes by location.
    * Delete a record
 * Use at least one secondary index on the DDB table to run a query.
   * U7 retrieve records by state.
+  * U5 Updating the state for a person's criminal record. 
 
 
 ### 4.2. Out of Scope
@@ -80,7 +81,7 @@ We will provide a web interface for users to manage the criminal record database
 
 # 6. API
 
-## 6.1. Public Models
+## 6.1. Public models
 
 ```
 // CriminalRecord
@@ -116,7 +117,7 @@ Integer sentence;
 ## 6.3 Create CriminalRecord Endpoint
 
 * Accepts POST requests to /criminalrecords
-* Accepts data to create a new CriminalRecord with SSN, name, DOB, zipcode, and state.
+* Accepts data to create a new CriminalRecord with SSN, name, DOB, and state.
 * For security concerns, we will validate the provided playlist name does not contain any invalid characters: " ' \`
   If the playlist name contains any of the invalid characters, will throw an InvalidAttributeValueException.
 
@@ -146,6 +147,12 @@ Integer sentence;
   * If the SSN is not found, throw a NoCriminalRecordException
 
 ![img_4.png](images/design_document_images/get-crimes-from-criminal-record.png)
+
+## 6.7 Get CriminalRecords by state endpoint
+
+* Accepts GET requests to /criminalrecords/{ssn}
+  * Query parameter for state?
+* Retrieves a list of Criminal Records that match the given state.
 
 # 7. Tables
 

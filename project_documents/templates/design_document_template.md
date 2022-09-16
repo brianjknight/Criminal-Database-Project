@@ -77,7 +77,7 @@ requirements.*
 
 # 6. API
 
-## 6.1. Public Models
+## 6.1. Public models
 
 *Define the data models your service will expose in its responses via your
 *`-Model`* package. These will be equivalent to the *`PlaylistModel`* and

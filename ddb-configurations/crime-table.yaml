@@ -1,0 +1,12 @@
+Resources:
+  CrimesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: Crimes
+      AttributeDefinitions:
+        - AttributeName: "caseNumber"
+          AttributeType: "S"
+      KeySchema:
+        - AttributeName: "caseNumber"
+          KeyType: "HASH"
+      BillingMode: "PAY_PER_REQUEST"
