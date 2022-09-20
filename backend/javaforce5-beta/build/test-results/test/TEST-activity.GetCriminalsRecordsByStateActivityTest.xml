@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="activity.GetCriminalsRecordsByStateActivityTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-09-20T19:01:11" hostname="DESKTOP-QFNEL2B" time="0.349">
-  <properties/>
-  <testcase name="handleRequest_provideStateWithExistingCriminalRecords_returnListOfCriminalRecords()" classname="activity.GetCriminalsRecordsByStateActivityTest" time="0.342"/>
-  <testcase name="handleRequest_provideStateWithNoCriminalRecords_throwsNoCriminalRecordForStateException()" classname="activity.GetCriminalsRecordsByStateActivityTest" time="0.006"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dao.CriminalRecordDaoTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-20T20:42:26" hostname="DESKTOP-QFNEL2B" time="0.454">
+  <properties/>
+  <testcase name="deleteCriminalRecord_provideExistingRecordToDelete_verifyCallsDynamoDBMapperDeleteMethod()" classname="dao.CriminalRecordDaoTest" time="0.454"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

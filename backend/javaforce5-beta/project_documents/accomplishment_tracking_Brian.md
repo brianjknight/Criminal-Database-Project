@@ -118,6 +118,8 @@ instructors by the end of the unit._
     ![img.png](images/build-fail-unit-test.png)
     Adding these lines fixed the problem:
     ![img_1.png](images/build-fail-unit-test-fix.png)
+* Mockito has a mocking tool to convert a PaginatedQueryList\<T> returned by DynamoDBMapper query into a List\<T>:
+    ![img.png](mockito-return-list-from-query.png)
 * 
 
 ## Week 4
