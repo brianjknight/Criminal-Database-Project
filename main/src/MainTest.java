@@ -39,7 +39,7 @@ public class MainTest {
 //        System.out.println("-".repeat(80));
 
         GetCriminalsRecordsByStateActivity getCRbyState = new GetCriminalsRecordsByStateActivity(criminalRecordDao);
-        List<CriminalRecord> recordsForCA = getCRbyState.handleRequest("TX");
+        List<CriminalRecord> recordsForCA = getCRbyState.handleRequest("CA");
         for (CriminalRecord cr : recordsForCA) {
             System.out.println(cr);
         }

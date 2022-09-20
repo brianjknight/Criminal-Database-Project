@@ -3,6 +3,7 @@ package dao;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
+import exceptions.NoCriminalRecordForStateException;
 import exceptions.NoCriminalRecordFoundException;
 import models.CriminalRecord;
 
@@ -36,7 +37,7 @@ public class CriminalRecordDao {
 
         PaginatedQueryList<CriminalRecord> criminalRecordsByStateList = dynamoDBMapper.query(CriminalRecord.class, queryExpression);
         if(criminalRecordsByStateList == null || criminalRecordsByStateList.size() == 0) {
-            throw new NoCriminalRecordFoundException("n/a. ", "No criminal records found for the state: " + state);
+            throw new NoCriminalRecordForStateException(state);
         }
         return criminalRecordsByStateList;
     }

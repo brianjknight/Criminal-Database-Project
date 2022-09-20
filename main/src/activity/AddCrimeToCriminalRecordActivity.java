@@ -9,6 +9,7 @@ import exceptions.CriminalRecordCrimeMismatchException;
 import models.Crime;
 import models.CriminalRecord;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class AddCrimeToCriminalRecordActivity {
     CriminalRecordDao criminalRecordDao;
     CrimeDao crimeDao;
 
+    @Inject
     public AddCrimeToCriminalRecordActivity(CriminalRecordDao criminalRecordDao, CrimeDao crimeDao) {
         this.criminalRecordDao = criminalRecordDao;
         this.crimeDao = crimeDao;

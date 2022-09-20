@@ -81,7 +81,7 @@ instructors by the end of the unit._
   * In order to delete an item using DynamoDB mapper.delete() you need to pass in the object not just the key.
   * When classes and files are shown in different colors in IntelliJ's Project directory tree, it represents a status. 
     * https://www.jetbrains.com/help/idea/file-status-highlights.html#views
-    * ![img_1.png](img_1.png)
+    * ![img_1.png](images/design_document_images/img_1.png)
   * After reading Module 5 activity Intro to Global Secondary Indexes, 
     I would have taken a different approach to designing my DDB tables.
     It would make more sense to have the Crime table as a composite primary key SSN : Case Number.
@@ -95,12 +95,19 @@ instructors by the end of the unit._
 ## Week 3
 
 **Goals:**
+* Write unit tests
+* create AWS Lambda Functions
+* Create endpoints
+* Create webpages
 
 **Activity:**
 
 **Important Docs, Commits, or Code Reviews**:
 
 **Things learned:**
+* The order of dependencies in a project structure matters. IntelliJ processes them as they are ordered in the specified dependency list. I had to rearrange my dependencies in order for my test module to import my main classes.
+  * ![img.png](img.png)
+* 
 
 ## Week 4
 

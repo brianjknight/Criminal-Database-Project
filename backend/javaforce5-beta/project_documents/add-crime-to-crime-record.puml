@@ -1,0 +1,22 @@
+@startuml
+title Add Crime to Criminal Record
+
+actor Client
+participant "Website Crime page" as CrimePage
+participant AddCrimeToCriminalRecordActivity
+database CriminalRecord
+
+Client -> CrimePage : PUT /criminalrecords/{ssn}/crimes
+CrimePage -> AddCrimeToCriminalRecordActivity : Send PUT request to add a crime
+AddCrimeToCriminalRecordActivity -> CriminalRecord : add crime to list and save list
+
+alt if SSN does not exist
+CriminalRecord --> AddCrimeToCriminalRecordActivity : throw NoCriminalRecordException
+AddCrimeToCriminalRecordActivity --> CrimePage : return message "No Criminal Records"
+CriminalRecord --> AddCrimeToCriminalRecordActivity : throw CrimeNotFoundException
+AddCrimeToCriminalRecordActivity --> CrimePage : return message "Crime not found"
+end
+
+CriminalRecord --> CrimePage : CriminalRecord
+
+@enduml

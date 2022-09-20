@@ -1,0 +1,3 @@
+rootProject.name = 'javaforce5-beta'
+include 'LibrariesAndUtilities'
+

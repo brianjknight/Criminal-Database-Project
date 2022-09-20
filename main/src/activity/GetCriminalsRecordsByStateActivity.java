@@ -3,11 +3,13 @@ package activity;
 import dao.CriminalRecordDao;
 import models.CriminalRecord;
 
+import javax.inject.Inject;
 import java.util.List;
 
 public class GetCriminalsRecordsByStateActivity {
     CriminalRecordDao criminalRecordDao;
 
+    @Inject
     public GetCriminalsRecordsByStateActivity(CriminalRecordDao criminalRecordDao) {
         this.criminalRecordDao = criminalRecordDao;
     }

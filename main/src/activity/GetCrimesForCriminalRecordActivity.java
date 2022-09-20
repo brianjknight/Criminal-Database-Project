@@ -4,6 +4,7 @@ import dao.CriminalRecordDao;
 import models.Crime;
 import models.CriminalRecord;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,7 @@ public class GetCrimesForCriminalRecordActivity {
 
     CriminalRecordDao criminalRecordDao;
 
+    @Inject
     public GetCrimesForCriminalRecordActivity(CriminalRecordDao criminalRecordDao) {
         this.criminalRecordDao = criminalRecordDao;
     }

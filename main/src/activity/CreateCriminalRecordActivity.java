@@ -3,9 +3,12 @@ package activity;
 import dao.CriminalRecordDao;
 import models.CriminalRecord;
 
+import javax.inject.Inject;
+
 public class CreateCriminalRecordActivity {
     private final CriminalRecordDao criminalRecordDao;
 
+    @Inject
     public CreateCriminalRecordActivity(CriminalRecordDao criminalRecordDao) {
         this.criminalRecordDao = criminalRecordDao;
     }
