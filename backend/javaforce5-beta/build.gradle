@@ -58,7 +58,6 @@ dependencies {
     // https://mvnrepository.com/artifact/org.testng/testng
     implementation group: 'org.testng', name: 'testng', version: '6.14.3'
 
-
     // Added for AWS Lambda Functions
     implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.1000')
     implementation 'com.amazonaws:aws-java-sdk-s3'
@@ -70,6 +69,10 @@ dependencies {
     implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.14.1'
     implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.1'
 
+}
+
+test {
+    useJUnitPlatform()
 }
 
 task buildZip(type: Zip) {

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="activitytests.CreateCriminalRecordActivityTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-20T16:15:52" hostname="DESKTOP-QFNEL2B" time="0.34">
+  <properties/>
+  <testcase name="handleRequest_provideParamsToCreateCriminalRecord_returnsCriminalRecord()" classname="activitytests.CreateCriminalRecordActivityTest" time="0.34"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

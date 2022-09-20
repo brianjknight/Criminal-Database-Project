@@ -105,8 +105,19 @@ instructors by the end of the unit._
 **Important Docs, Commits, or Code Reviews**:
 
 **Things learned:**
-* The order of dependencies in a project structure matters. IntelliJ processes them as they are ordered in the specified dependency list. I had to rearrange my dependencies in order for my test module to import my main classes.
-  * ![img.png](img.png)
+* GRADLE
+  * Setting up the initial project with a proper structure and Gradle build is crucial.
+    * Somehow I initially setup the project with multiple main modules which was causing issues with dependencies, importing classes, and unit tests.
+    * The order in which the dependencies are listed is same order in which IntelliJ will process them. I attempted to change this order which fixed some issues but cause other problems.   
+    ![img.png](images/first-project-structure.png)
+      After restructuring the project:
+      ![img_1.png](images/fixed-project-structure.png)
+  * build.gradle file needs to have the proper dependencies, tasks, sources, etc
+    * I had to add some dependencies that were missing.
+    * My Unit Tests were failing to build. I read Gradle documentation (https://docs.gradle.org/current/userguide/userguide.html) and tried a tutorial. I figured out the build.gradle file was missing a component for tests to run properly.
+    ![img.png](images/build-fail-unit-test.png)
+    Adding these lines fixed the problem:
+    ![img_1.png](images/build-fail-unit-test-fix.png)
 * 
 
 ## Week 4

@@ -38,7 +38,7 @@ public class CreateCriminalRecordActivityTest {
                 .withState(state)
                 .withCrimeCount(0)
                 .build();
-        when(criminalRecordDao.saveCriminalRecord(any())).thenReturn(testCriminalRecord);
+        when(criminalRecordDao.saveCriminalRecord(testCriminalRecord)).thenReturn(testCriminalRecord);
 
         //WHEN
         CriminalRecord criminalRecord = createCriminalRecordActivity.handleRequest(ssn, name, dob, state);
