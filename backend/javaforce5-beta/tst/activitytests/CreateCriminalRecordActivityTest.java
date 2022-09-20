@@ -47,6 +47,4 @@ public class CreateCriminalRecordActivityTest {
         assertEquals(criminalRecord, testCriminalRecord, "Expected CreateCriminalRecordActivity to return the created criminal record.");
     }
 
-
-
 }

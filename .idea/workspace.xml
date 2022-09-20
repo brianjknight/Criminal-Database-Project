@@ -5,126 +5,165 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acf22fa8-aa1b-488b-a67d-766ae4adb376" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/LibrariesAndUtilities/LibrariesAndUtilities.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/.idea/libraries/ATAResources__2_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/accomplishment_tracking_Brian.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/add-crime-to-crime-record.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/create-criminal-record.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/dagger-dependency-graph.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/delete-criminal-record.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/design_document.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/example_design_document.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/final_presentation_outline.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/get-crimes-from-criminal-record.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/get-criminal-record.puml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/design_document_images/add-crime-to-criminal-record.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/design_document_images/create-criminal-record.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/design_document_images/crimes-webpage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/design_document_images/criminal-records-webpage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/design_document_images/delete-criminal-record.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/design_document_images/get-crimes-from-criminal-record.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/design_document_images/get-criminal-record.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/design_document_images/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/example_design_document/AddSong.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/example_design_document/AddSongSD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/example_design_document/CreatePlaylist.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/example_design_document/GetPlaylistSD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/example_design_document/Homepage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/example_design_document/OverallWorkflow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/example_design_document/UpdatePlaylistSD.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/example_design_document/ViewPlaylist.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/project_ideation.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/reflection.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/rubric.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/team_charter.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/templates/accomplishment_tracking_template.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/templates/design_document_template.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/templates/reflection_template.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/templates/rubric_template.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/templates/team_charter_template.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/App/TestApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/activity/AddCrimeToCriminalRecordActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/activity/CreateCriminalRecordActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/activity/DeleteCriminalRecordActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/activity/GetCrimesForCriminalRecordActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/activity/GetCriminalRecordActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/activity/GetCriminalsRecordsByStateActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/converter/CrimeListConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/converter/ModelConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/dao/CrimeDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/dao/CriminalRecordDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/data/PopulateCriminalRecords.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/dependency/CriminalRecordServiceComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/dependency/DaoModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/exceptions/CrimeAlreadyInCriminalRecordException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/exceptions/CriminalRecordCrimeMismatchException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/exceptions/NoCrimeFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/exceptions/NoCriminalRecordForStateException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/exceptions/NoCriminalRecordFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/lambda/AddCrimeToCriminalRecordActivityProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/lambda/CreateCriminalRecordActivityProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/lambda/DeleteCriminalRecordActivityProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/lambda/GetCrimesForCriminalRecordActivityProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/lambda/GetCriminalRecordActivityProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/lambda/GetCriminalsRecordsByStateActivityProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/models/Crime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/src/main/java/models/CriminalRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/template_java_project/.gitattributes" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/template_java_project/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/template_java_project/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/template_java_project/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/template_java_project/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/template_java_project/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/template_java_project/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/template_java_project/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/tst/activitytests/CreateCriminalRecordActivityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/javaforce5-beta/tst/activitytests/GetCriminalRecordActivityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/src/dependency/CriminalRecordServiceComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/src/dependency/DaoModule.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/src/exceptions/NoCriminalRecordForStateException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_documents/dagger-dependency-graph.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_documents/images/design_document_images/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_documents/images/design_document_images/img_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tst/activitytests/CreateCriminalRecordActivityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tst/activitytests/GetCriminalRecordActivityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/main/MainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/main/MainTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/main/activity/AddCrimeToCriminalRecordActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/main/activity/AddCrimeToCriminalRecordActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/main/activity/CreateCriminalRecordActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/main/activity/CreateCriminalRecordActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/main/activity/DeleteCriminalRecordActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/main/activity/DeleteCriminalRecordActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/main/activity/GetCrimesForCriminalRecordActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/main/activity/GetCrimesForCriminalRecordActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/main/activity/GetCriminalRecordActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/main/activity/GetCriminalRecordActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/main/activity/GetCriminalsRecordsByStateActivity.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/main/activity/GetCriminalsRecordsByStateActivity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/production/main/dao/CriminalRecordDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/production/main/dao/CriminalRecordDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/MainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/activity/AddCrimeToCriminalRecordActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/activity/AddCrimeToCriminalRecordActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/activity/CreateCriminalRecordActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/activity/CreateCriminalRecordActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/activity/DeleteCriminalRecordActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/activity/DeleteCriminalRecordActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/activity/GetCrimesForCriminalRecordActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/activity/GetCrimesForCriminalRecordActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/activity/GetCriminalRecordActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/activity/GetCriminalRecordActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/activity/GetCriminalsRecordsByStateActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/activity/GetCriminalsRecordsByStateActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/dao/CriminalRecordDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/dao/CriminalRecordDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/src/lambda/GetCriminalRecordActivityProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/src/lambda/GetCriminalRecordActivityProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_documents/accomplishment_tracking_Brian.md" beforeDir="false" afterPath="$PROJECT_DIR$/project_documents/accomplishment_tracking_Brian.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_documents/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/project_documents/img.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_documents/img_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaforce5-beta/project_documents/images/design_document_images/img_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst/activity_tests/CreateCriminalRecordActivityTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/bd-team-project-javaforce5.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibrariesAndUtilities/ATAResources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibrariesAndUtilities/LibrariesAndUtilities.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaforce5-beta/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaforce5-beta/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaforce5-beta/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaforce5-beta/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/javaforce5-beta/tst/activitytests/CreateCriminalRecordActivityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/javaforce5-beta/tst/activitytests/CreateCriminalRecordActivityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/bd-team-project-javaforce5.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/MainTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/activity/AddCrimeToCriminalRecordActivity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/activity/CreateCriminalRecordActivity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/activity/DeleteCriminalRecordActivity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/activity/GetCrimesForCriminalRecordActivity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/activity/GetCriminalRecordActivity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/activity/GetCriminalsRecordsByStateActivity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/converter/CrimeListConverter$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/converter/CrimeListConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/converter/ModelConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/dao/CrimeDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/dao/CriminalRecordDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/data/PopulateCriminalRecords.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/dependency/CriminalRecordServiceComponent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/dependency/DaoModule.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/exceptions/CrimeAlreadyInCriminalRecordException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/exceptions/CriminalRecordCrimeMismatchException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/exceptions/NoCrimeFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/exceptions/NoCriminalRecordForStateException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/exceptions/NoCriminalRecordFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/lambda/AddCrimeToCriminalRecordActivityProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/lambda/CreateCriminalRecordActivityProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/lambda/DeleteCriminalRecordActivityProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/lambda/GetCrimesForCriminalRecordActivityProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/lambda/GetCriminalRecordActivityProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/lambda/GetCriminalsRecordsByStateActivityProvider.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/models/Crime$CrimeBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/models/Crime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/models/CriminalRecord$CriminalRecordBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/production/main/models/CriminalRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddb-configurations/crime-data.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddb-configurations/crime-table.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ddb-configurations/criminal-records-table.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example_frontend/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example_frontend/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example_frontend/playlist.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example_frontend/playlist.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example_frontend/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/MainTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/activity/AddCrimeToCriminalRecordActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/activity/CreateCriminalRecordActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/activity/DeleteCriminalRecordActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/activity/GetCrimesForCriminalRecordActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/activity/GetCriminalRecordActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/activity/GetCriminalsRecordsByStateActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/converter/CrimeListConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/converter/ModelConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/dao/CrimeDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/dao/CriminalRecordDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/data/PopulateCriminalRecords.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/dependency/CriminalRecordServiceComponent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/dependency/DaoModule.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/exceptions/CrimeAlreadyInCriminalRecordException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/exceptions/CriminalRecordCrimeMismatchException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/exceptions/NoCrimeFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/exceptions/NoCriminalRecordForStateException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/exceptions/NoCriminalRecordFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/lambda/AddCrimeToCriminalRecordActivityProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/lambda/CreateCriminalRecordActivityProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/lambda/DeleteCriminalRecordActivityProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/lambda/GetCrimesForCriminalRecordActivityProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/lambda/GetCriminalRecordActivityProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/lambda/GetCriminalsRecordsByStateActivityProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/models/Crime.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/src/models/CriminalRecord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/accomplishment_tracking_Brian.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/add-crime-to-crime-record.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/create-criminal-record.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/dagger-dependency-graph.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/delete-criminal-record.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/design_document.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/example_design_document.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/final_presentation_outline.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/get-crimes-from-criminal-record.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/get-criminal-record.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/design_document_images/add-crime-to-criminal-record.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/design_document_images/create-criminal-record.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/design_document_images/crimes-webpage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/design_document_images/criminal-records-webpage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/design_document_images/delete-criminal-record.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/design_document_images/get-crimes-from-criminal-record.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/design_document_images/get-criminal-record.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/design_document_images/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/design_document_images/img_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/example_design_document/AddSong.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/example_design_document/AddSongSD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/example_design_document/CreatePlaylist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/example_design_document/GetPlaylistSD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/example_design_document/Homepage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/example_design_document/OverallWorkflow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/example_design_document/UpdatePlaylistSD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/images/example_design_document/ViewPlaylist.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/project_ideation.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/reflection.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/rubric.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/team_charter.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/templates/accomplishment_tracking_template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/templates/design_document_template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/templates/reflection_template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/templates/rubric_template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_documents/templates/team_charter_template.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/template_java_project/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/activitytests/CreateCriminalRecordActivityTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tst/activitytests/GetCriminalRecordActivityTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,24 +217,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/bknig/BloomTech/Unit_4/bd-working-with-databases-music-playlist-service-brianjknight&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-11",
+    "last_opened_file_path": "C:/Users/bknig/BloomTech/Unit_5/bd-team-project-javaforce5/backend/javaforce5-beta",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.sourceCode"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\bknig\BloomTech\Unit_5\bd-team-project-javaforce5\project_documents" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bknig\BloomTech\Unit_5\bd-team-project-javaforce5\backend\javaforce5-beta" />
       <recent name="C:\Users\bknig\BloomTech\Unit_5\bd-team-project-javaforce5\project_documents\images\design_document_images" />
       <recent name="C:\Users\bknig\BloomTech\Unit_5\bd-team-project-javaforce5\project_documents\templates" />
     </key>
