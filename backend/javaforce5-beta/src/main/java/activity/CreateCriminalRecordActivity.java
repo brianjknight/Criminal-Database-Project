@@ -1,6 +1,5 @@
 package main.java.activity;
 
-import com.amazonaws.Request;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import main.java.dao.CriminalRecordDao;

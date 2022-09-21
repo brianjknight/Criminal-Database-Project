@@ -4,6 +4,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
 import main.java.dao.CriminalRecordDao;
+import main.java.exceptions.MissingAttributeToSaveRecordException;
 import main.java.exceptions.NoCriminalRecordForStateException;
 import main.java.exceptions.NoCriminalRecordFoundException;
 import main.java.models.CriminalRecord;
@@ -121,6 +122,18 @@ public class CriminalRecordDaoTest {
 
         //THEN
         verify(dynamoDBMapper).save(any());
+    }
+
+    @Test
+    public void saveCriminalRecord_provideIncompleteRecord_throwsMissingAttributeToSaveRecordException() {
+        //GIVEN
+        CriminalRecord john = CriminalRecord.builder()
+                .withSsn("000-00-0000")
+                .build();
+
+        //WHEN THEN
+        assertThrows(MissingAttributeToSaveRecordException.class, () -> criminalRecordDao.saveCriminalRecord(john),
+                "Expected exception to be throw for incomplete attributes.");
     }
 
     @Test

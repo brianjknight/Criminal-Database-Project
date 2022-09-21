@@ -2,10 +2,12 @@ package main.java.App;
 
 import com.amazon.ata.aws.dynamodb.DynamoDbClientProvider;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import main.java.activity.GetCriminalRecordActivity;
 import main.java.activity.GetCriminalsRecordsByStateActivity;
 import main.java.dao.CrimeDao;
 import main.java.dao.CriminalRecordDao;
 import main.java.models.CriminalRecord;
+import main.java.models.requests.GetCriminalRecordRequest;
 
 import java.util.List;
 
@@ -16,30 +18,14 @@ public class TestApp {
         CriminalRecordDao criminalRecordDao = new CriminalRecordDao(mapper);
         CrimeDao crimeDao = new CrimeDao(mapper);
 
-//        GetCriminalRecordActivity getCriminalRecordActivity = new GetCriminalRecordActivity(criminalRecordDao);
-//        CriminalRecord crJoeBiden = getCriminalRecordActivity.handleRequest("000-99-4444");
-//        System.out.println(crJoeBiden);
+        GetCriminalRecordRequest getBartFart = GetCriminalRecordRequest.builder()
+                .withSsn("777-66-5555")
+                .build();
 
-//        DeleteCriminalRecordActivity deleteCriminalRecordActivity = new DeleteCriminalRecordActivity(criminalRecordDao);
-//        System.out.println(deleteCriminalRecordActivity.handleRequest("000-99-4444"));
+        GetCriminalRecordActivity getCriminalRecordActivity = new GetCriminalRecordActivity(criminalRecordDao);
 
-//        AddCrimeToCriminalRecordActivity addCrime = new AddCrimeToCriminalRecordActivity(criminalRecordDao, crimeDao);
-//        CriminalRecord joeB1 = addCrime.handleRequest("000-99-4444", "XY987654");
-//        System.out.println(joeB1);
-//        System.out.println("-".repeat(80));
-//        CriminalRecord joeB2 = addCrime.handleRequest("000-99-4444", "BB009900");
-//        System.out.println(joeB2);
-//        System.out.println("-".repeat(80));
-//        CriminalRecord joeB3 = addCrime.handleRequest("000-99-4444", "PP010101");
-//        System.out.println(joeB3);
-//        System.out.println("-".repeat(80));
-
-//        GetCriminalsRecordsByStateActivity getCRbyState = new GetCriminalsRecordsByStateActivity(criminalRecordDao);
-//        List<CriminalRecord> recordsForCA = getCRbyState.handleRequest("CA");
-//        for (CriminalRecord cr : recordsForCA) {
-//            System.out.println(cr);
-//        }
-
+        CriminalRecord bartFart = getCriminalRecordActivity.handleRequest(getBartFart, null);
+        System.out.println(bartFart);
     }
 
 }

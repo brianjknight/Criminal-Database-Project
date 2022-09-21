@@ -120,6 +120,11 @@ instructors by the end of the unit._
     ![img_1.png](images/build-fail-unit-test-fix.png)
 * Mockito has a mocking tool to convert a PaginatedQueryList\<T> returned by DynamoDBMapper query into a List\<T>:
     ![img.png](images/mockito-return-list-from-query.png)
+* RequestHandler<I,O> interface and Request POJOs
+  * In Unit 4's project I did not understand why Request & Result POJOs were being used. 
+  I initially created my activity classes to accept String and Integer parameters instead of Request objects.
+  When trying to test my AWS Lambda functions with a JSON event, I ran into issues. If there was a single string parameter, I could get it to work but not otherwise. 
+  Implenting the RequestHandler interface and Request objects, is more versatile for executing the Lambda functions. 
 * 
 
 ## Week 4

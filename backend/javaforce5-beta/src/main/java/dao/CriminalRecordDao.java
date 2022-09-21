@@ -3,6 +3,7 @@ package main.java.dao;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
+import main.java.exceptions.MissingAttributeToSaveRecordException;
 import main.java.exceptions.NoCriminalRecordForStateException;
 import main.java.exceptions.NoCriminalRecordFoundException;
 import main.java.models.CriminalRecord;
@@ -44,6 +45,15 @@ public class CriminalRecordDao {
     }
 
     public CriminalRecord saveCriminalRecord(CriminalRecord criminalRecord) {
+        boolean missingSSN = criminalRecord.getSsn() == null || "".equals(criminalRecord.getSsn());
+        boolean missingName = criminalRecord.getName() == null || "".equals(criminalRecord.getName());
+        boolean missingDob = criminalRecord.getDob() == null || "".equals(criminalRecord.getDob());
+        boolean missingState = criminalRecord.getState() == null || "".equals(criminalRecord.getState());
+
+        if(missingSSN || missingName || missingDob || missingState) {
+            throw new MissingAttributeToSaveRecordException();
+        }
+
         dynamoDBMapper.save(criminalRecord);
         return criminalRecord;
     }
