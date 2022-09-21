@@ -5,6 +5,7 @@ import main.java.dao.CriminalRecordDao;
 import main.java.exceptions.NoCriminalRecordFoundException;
 import main.java.models.Crime;
 import main.java.models.CriminalRecord;
+import main.java.models.requests.GetCrimesForCriminalRecordRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -52,10 +53,14 @@ public class GetCrimesForCriminalRecordActivityTest {
                 .withCrimeCount(0)
                 .build();
 
+        GetCrimesForCriminalRecordRequest getCrimesForCriminalRecordRequest = GetCrimesForCriminalRecordRequest.builder()
+                .withSsn(ssn)
+                .build();
+
         when(criminalRecordDao.getCriminalRecord(ssn)).thenReturn(exampleRecord);
 
         //WHEN
-        List<Crime> result = getCrimesForCriminalRecordActivity.handleRequest(ssn);
+        List<Crime> result = getCrimesForCriminalRecordActivity.handleRequest(getCrimesForCriminalRecordRequest, null);
 
         //THEN
         assertEquals(crimeList, result, "Expected the list of crimes to be equal");
@@ -72,10 +77,14 @@ public class GetCrimesForCriminalRecordActivityTest {
                 .withCrimeCount(0)
                 .build();
 
+        GetCrimesForCriminalRecordRequest getCrimesForCriminalRecordRequest = GetCrimesForCriminalRecordRequest.builder()
+                .withSsn(ssn)
+                .build();
+
         when(criminalRecordDao.getCriminalRecord(ssn)).thenReturn(exampleRecord);
 
         //WHEN
-        List<Crime> result = getCrimesForCriminalRecordActivity.handleRequest(ssn);
+        List<Crime> result = getCrimesForCriminalRecordActivity.handleRequest(getCrimesForCriminalRecordRequest, null);
 
         //THEN
         verify(criminalRecordDao, times(1)).getCriminalRecord(any());
@@ -91,10 +100,14 @@ public class GetCrimesForCriminalRecordActivityTest {
                 .withCrimeCount(0)
                 .build();
 
+        GetCrimesForCriminalRecordRequest getCrimesForCriminalRecordRequest = GetCrimesForCriminalRecordRequest.builder()
+                .withSsn(ssn)
+                .build();
+
         when(criminalRecordDao.getCriminalRecord(ssn)).thenReturn(exampleRecord);
 
         //WHEN
-        List<Crime> result = getCrimesForCriminalRecordActivity.handleRequest(ssn);
+        List<Crime> result = getCrimesForCriminalRecordActivity.handleRequest(getCrimesForCriminalRecordRequest, null);
 
         //THEN
         assertTrue(result.size() == 0, "Expected an empty list for a Criminal Record with no crimes added yet");
@@ -104,10 +117,14 @@ public class GetCrimesForCriminalRecordActivityTest {
     @Test
     public void handleRequest_getCrimeListForNonExistingCriminalRecord_throwsNoCriminalRecordFoundException() {
         //GIVEN
+        GetCrimesForCriminalRecordRequest getCrimesForCriminalRecordRequest = GetCrimesForCriminalRecordRequest.builder()
+                .withSsn("XXX-XX-XXXX")
+                .build();
         when(criminalRecordDao.getCriminalRecord("XXX-XX-XXXX")).thenThrow(NoCriminalRecordFoundException.class);
 
         //WHEN THEN
-        assertThrows(NoCriminalRecordFoundException.class, () -> getCrimesForCriminalRecordActivity.handleRequest("XXX-XX-XXXX"));
+        assertThrows(NoCriminalRecordFoundException.class, () -> getCrimesForCriminalRecordActivity
+                .handleRequest(getCrimesForCriminalRecordRequest, null));
     }
 
 }

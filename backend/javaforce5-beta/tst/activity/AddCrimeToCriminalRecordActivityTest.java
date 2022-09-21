@@ -8,6 +8,7 @@ import main.java.exceptions.CriminalRecordCrimeMismatchException;
 import main.java.exceptions.NoCriminalRecordFoundException;
 import main.java.models.Crime;
 import main.java.models.CriminalRecord;
+import main.java.models.requests.AddCrimeToCriminalRecordRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -55,11 +56,16 @@ public class AddCrimeToCriminalRecordActivityTest {
                 .build();
         List<Crime> expectedList = exampleRecord.getCrimes();
 
+        AddCrimeToCriminalRecordRequest addCrimeToCriminalRecordRequest = AddCrimeToCriminalRecordRequest.builder()
+                .withSsn(ssn)
+                .withCaseNumber(caseNumber)
+                .build();
+
         when(crimeDao.getCrime(caseNumber)).thenReturn(crimeToAdd);
         when(criminalRecordDao.getCriminalRecord(ssn)).thenReturn(exampleRecord);
 
         //WHEN
-        CriminalRecord resultRecord = addCrimeToCriminalRecordActivity.handleRequest(ssn, caseNumber);
+        CriminalRecord resultRecord = addCrimeToCriminalRecordActivity.handleRequest(addCrimeToCriminalRecordRequest, null);
         List<Crime> actualList = resultRecord.getCrimes();
 
         //THEN
@@ -82,11 +88,16 @@ public class AddCrimeToCriminalRecordActivityTest {
                 .withCrimeCount(0)
                 .build();
 
+        AddCrimeToCriminalRecordRequest addCrimeToCriminalRecordRequest = AddCrimeToCriminalRecordRequest.builder()
+                .withSsn(ssn)
+                .withCaseNumber(caseNumber)
+                .build();
+
         when(crimeDao.getCrime(caseNumber)).thenReturn(crimeToAdd);
         when(criminalRecordDao.getCriminalRecord(ssn)).thenReturn(exampleRecord);
 
         //WHEN
-        CriminalRecord resultRecord = addCrimeToCriminalRecordActivity.handleRequest(ssn, caseNumber);
+        CriminalRecord resultRecord = addCrimeToCriminalRecordActivity.handleRequest(addCrimeToCriminalRecordRequest, null);
 
         //THEN
         verify(criminalRecordDao).saveCriminalRecord(any());
@@ -110,11 +121,16 @@ public class AddCrimeToCriminalRecordActivityTest {
                 .withCrimeCount(0)
                 .build();
 
+        AddCrimeToCriminalRecordRequest addCrimeToCriminalRecordRequest = AddCrimeToCriminalRecordRequest.builder()
+                .withSsn(ssn)
+                .withCaseNumber(caseNumber)
+                .build();
+
         when(crimeDao.getCrime(caseNumber)).thenReturn(crimeToAdd);
         when(criminalRecordDao.getCriminalRecord(ssn)).thenReturn(exampleRecord);
 
         //WHEN
-        CriminalRecord resultRecord = addCrimeToCriminalRecordActivity.handleRequest(ssn, caseNumber);
+        CriminalRecord resultRecord = addCrimeToCriminalRecordActivity.handleRequest(addCrimeToCriminalRecordRequest, null);
         Integer actual = resultRecord.getCrimeCount();
         //THEN
         assertEquals(1, actual, "Expected the crime count attribute to be incremented by one.");
@@ -137,11 +153,18 @@ public class AddCrimeToCriminalRecordActivityTest {
                 .build();
         List<Crime> expectedList = exampleRecord.getCrimes();
 
+        AddCrimeToCriminalRecordRequest addCrimeToCriminalRecordRequest = AddCrimeToCriminalRecordRequest.builder()
+                .withSsn(ssn)
+                .withCaseNumber(caseNumber)
+                .build();
+
         when(crimeDao.getCrime(caseNumber)).thenReturn(crimeToAdd);
         when(criminalRecordDao.getCriminalRecord(ssn)).thenReturn(exampleRecord);
 
         //WHEN THEN
-        assertThrows(CrimeAlreadyInCriminalRecordException.class, () -> addCrimeToCriminalRecordActivity.handleRequest(ssn, caseNumber), "Expected exception to be thrown for crime already in the person's record.");
+        assertThrows(CrimeAlreadyInCriminalRecordException.class, () -> addCrimeToCriminalRecordActivity
+                .handleRequest(addCrimeToCriminalRecordRequest, null),
+                "Expected exception to be thrown for crime already in the person's record.");
     }
 
     @Test
@@ -161,20 +184,32 @@ public class AddCrimeToCriminalRecordActivityTest {
                 .withSsn(otherSSN)
                 .build();
 
+        AddCrimeToCriminalRecordRequest addCrimeToCriminalRecordRequest = AddCrimeToCriminalRecordRequest.builder()
+                .withSsn(otherSSN)
+                .withCaseNumber(caseNumber)
+                .build();
+
         when(crimeDao.getCrime(caseNumber)).thenReturn(crimeToAdd);
         when(criminalRecordDao.getCriminalRecord(otherSSN)).thenReturn(exampleRecord);
 
         //WHEN THEN
-        assertThrows(CriminalRecordCrimeMismatchException.class, () -> addCrimeToCriminalRecordActivity.handleRequest(otherSSN, caseNumber), "Expected exception to be thrown for crime not belonging to the record with different SSN.");
+        assertThrows(CriminalRecordCrimeMismatchException.class, () -> addCrimeToCriminalRecordActivity
+                .handleRequest(addCrimeToCriminalRecordRequest, null),
+                "Expected exception to be thrown for crime not belonging to the record with different SSN.");
     }
 
     @Test
     public void handleRequest_addCrimeForNonExistingCriminalRecord_throwsNoCriminalRecordFoundException() {
         //GIVEN
+        AddCrimeToCriminalRecordRequest addCrimeToCriminalRecordRequest = AddCrimeToCriminalRecordRequest.builder()
+                .withSsn("XXX-XX-XXXX")
+                .withCaseNumber("XX")
+                .build();
         when(criminalRecordDao.getCriminalRecord("XXX-XX-XXXX")).thenThrow(NoCriminalRecordFoundException.class);
 
         //WHEN THEN
-        assertThrows(NoCriminalRecordFoundException.class, () -> addCrimeToCriminalRecordActivity.handleRequest("XXX-XX-XXXX", "xx"));
+        assertThrows(NoCriminalRecordFoundException.class, () -> addCrimeToCriminalRecordActivity
+                .handleRequest(addCrimeToCriminalRecordRequest, null));
     }
 
 }

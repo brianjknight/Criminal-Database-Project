@@ -1,15 +1,18 @@
 package main.java.lambda;
 
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
 import main.java.activity.CreateCriminalRecordActivity;
 import main.java.dependency.CriminalRecordServiceComponent;
 import main.java.dependency.DaggerCriminalRecordServiceComponent;
 import main.java.models.CriminalRecord;
+import main.java.models.requests.CreateCriminalRecordRequest;
 
-public class CreateCriminalRecordActivityProvider {
+public class CreateCriminalRecordActivityProvider implements RequestHandler<CreateCriminalRecordRequest, CriminalRecord> {
     private CriminalRecordServiceComponent dagger = DaggerCriminalRecordServiceComponent.create();
     private CreateCriminalRecordActivity createCriminalRecordActivity = dagger.provideCreateCriminalRecordActivity();
 
-    public CriminalRecord handleRequest(String ssn, String name, String dob, String state) {
-        return createCriminalRecordActivity.handleRequest(ssn, name, dob, state);
+    public CriminalRecord handleRequest(CreateCriminalRecordRequest createCriminalRecordRequest, Context context) {
+        return createCriminalRecordActivity.handleRequest(createCriminalRecordRequest, context);
     }
 }

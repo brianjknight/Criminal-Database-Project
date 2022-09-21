@@ -4,6 +4,7 @@ import main.java.activity.GetCriminalsRecordsByStateActivity;
 import main.java.dao.CriminalRecordDao;
 import main.java.exceptions.NoCriminalRecordForStateException;
 import main.java.models.CriminalRecord;
+import main.java.models.requests.GetCriminalsRecordsByStateRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -49,8 +50,12 @@ public class GetCriminalsRecordsByStateActivityTest {
         List<CriminalRecord> expectedList = new ArrayList<>(Arrays.asList(john, bob));
         when(criminalRecordDao.getCriminalRecordsByState("CO")).thenReturn(expectedList);
 
+        GetCriminalsRecordsByStateRequest getCriminalsRecordsByStateRequest = GetCriminalsRecordsByStateRequest.builder()
+                .withState("CO")
+                .build();
+
         //WHEN
-        List<CriminalRecord> actualList = getCriminalsRecordsByStateActivity.handleRequest("CO");
+        List<CriminalRecord> actualList = getCriminalsRecordsByStateActivity.handleRequest(getCriminalsRecordsByStateRequest, null);
 
         //THEN
         assertEquals(expectedList, actualList, "Expected the list of CriminalRecords to match.");
@@ -61,8 +66,12 @@ public class GetCriminalsRecordsByStateActivityTest {
         //GIVEN
         when(criminalRecordDao.getCriminalRecordsByState("NM")).thenThrow(NoCriminalRecordForStateException.class);
 
+        GetCriminalsRecordsByStateRequest getCriminalsRecordsByStateRequest = GetCriminalsRecordsByStateRequest.builder()
+                .withState("NM")
+                .build();
+
         //WHEN THEN
-        assertThrows(NoCriminalRecordForStateException.class, () -> getCriminalsRecordsByStateActivity.handleRequest("NM"), "Expected exception to be thrown when no records exist for that state.");
+        assertThrows(NoCriminalRecordForStateException.class, () -> getCriminalsRecordsByStateActivity.handleRequest(getCriminalsRecordsByStateRequest, null), "Expected exception to be thrown when no records exist for that state.");
     }
 
 }

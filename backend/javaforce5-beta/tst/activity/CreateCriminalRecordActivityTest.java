@@ -3,6 +3,7 @@ package activity;
 import main.java.activity.CreateCriminalRecordActivity;
 import main.java.dao.CriminalRecordDao;
 import main.java.models.CriminalRecord;
+import main.java.models.requests.CreateCriminalRecordRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -32,20 +33,28 @@ public class CreateCriminalRecordActivityTest {
         String name = "test name";
         String dob = "1/1/1900";
         String state = "test state";
-        CriminalRecord testCriminalRecord = CriminalRecord.builder()
+        CreateCriminalRecordRequest createCriminalRecordRequest = CreateCriminalRecordRequest.builder()
+                .withSsn(ssn)
+                .withName(name)
+                .withDob(dob)
+                .withState(state)
+                .build();
+
+        CriminalRecord expectedCriminalRecord = CriminalRecord.builder()
                 .withSsn(ssn)
                 .withName(name)
                 .withDob(dob)
                 .withState(state)
                 .withCrimeCount(0)
                 .build();
-        when(criminalRecordDao.saveCriminalRecord(testCriminalRecord)).thenReturn(testCriminalRecord);
+
+        when(criminalRecordDao.saveCriminalRecord(expectedCriminalRecord)).thenReturn(expectedCriminalRecord);
 
         //WHEN
-        CriminalRecord criminalRecord = createCriminalRecordActivity.handleRequest(ssn, name, dob, state);
+        CriminalRecord actualCriminalRecord = createCriminalRecordActivity.handleRequest(createCriminalRecordRequest, null);
 
         //THEN
-        assertEquals(criminalRecord, testCriminalRecord, "Expected CreateCriminalRecordActivity to return the created criminal record.");
+        assertEquals(actualCriminalRecord, expectedCriminalRecord, "Expected CreateCriminalRecordActivity to return the created criminal record.");
     }
 
     @Test
@@ -55,22 +64,26 @@ public class CreateCriminalRecordActivityTest {
         String name = "test name";
         String dob = "1/1/1900";
         String state = "test state";
-        CriminalRecord testCriminalRecord = CriminalRecord.builder()
+        CreateCriminalRecordRequest createCriminalRecordRequest = CreateCriminalRecordRequest.builder()
+                .withSsn(ssn)
+                .withName(name)
+                .withDob(dob)
+                .withState(state)
+                .build();
+        CriminalRecord expectedCriminalRecord = CriminalRecord.builder()
                 .withSsn(ssn)
                 .withName(name)
                 .withDob(dob)
                 .withState(state)
                 .withCrimeCount(0)
                 .build();
-        when(criminalRecordDao.saveCriminalRecord(testCriminalRecord)).thenReturn(testCriminalRecord);
+        when(criminalRecordDao.saveCriminalRecord(expectedCriminalRecord)).thenReturn(expectedCriminalRecord);
 
         //WHEN
-        CriminalRecord criminalRecord = createCriminalRecordActivity.handleRequest(ssn, name, dob, state);
+        CriminalRecord actualCriminalRecord = createCriminalRecordActivity.handleRequest(createCriminalRecordRequest, null);
 
         //THEN
         verify(criminalRecordDao).saveCriminalRecord(any());
     }
-
-
 
 }

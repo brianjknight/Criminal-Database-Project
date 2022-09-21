@@ -1,0 +1,202 @@
+{
+  "CriminalRecords": [
+    {
+      "PutRequest": {
+        "Item": {
+          "ssn": {
+            "S": "111-22-0000"
+          },
+          "name": {
+            "S": "John McClane"
+          },
+          "dob": {
+            "S": "01/30/1953"
+          },
+          "state": {
+            "S": "CA"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "ssn": {
+            "S": "121-99-7777"
+          },
+          "name": {
+            "S": "Marsellus Wallace"
+          },
+          "dob": {
+            "S": "10/31/1948"
+          },
+          "state": {
+            "S": "CA"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "ssn": {
+            "S": "123-11-8888"
+          },
+          "name": {
+            "S": "Billy Joe Bob III"
+          },
+          "dob": {
+            "S": "3/1/2010"
+          },
+          "state": {
+            "S": "AL"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "ssn": {
+            "S": "123-45-6789"
+          },
+          "name": {
+            "S": "Mr. Pink"
+          },
+          "dob": {
+            "S": "8/27/1970"
+          },
+          "state": {
+            "S": "CA"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "ssn": {
+            "S": "123-45-8888"
+          },
+          "name": {
+            "S": "Beatrix Kiddo"
+          },
+          "dob": {
+            "S": "1977"
+          },
+          "state": {
+            "S": "CA"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "ssn": {
+            "S": "222-22-2020"
+          },
+          "name": {
+            "S": "Django"
+          },
+          "dob": {
+            "S": "7/5/1825"
+          },
+          "state": {
+            "S": "AL"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "ssn": {
+            "S": "333-22-1111"
+          },
+          "name": {
+            "S": "Lt. Aldo Raine"
+          },
+          "dob": {
+            "S": "6/6/1915"
+          },
+          "state": {
+            "S": "AL"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "ssn": {
+            "S": "555-00-5555"
+          },
+          "name": {
+            "S": "Indiana Jones"
+          },
+          "dob": {
+            "S": "4/20/1905"
+          },
+          "state": {
+            "S": "CA"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "ssn": {
+            "S": "777-66-5555"
+          },
+          "name": {
+            "S": "Bart Fart"
+          },
+          "dob": {
+            "S": "1/1/2015"
+          },
+          "state": {
+            "S": "CA"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "ssn": {
+            "S": "999-77-5555"
+          },
+          "name": {
+            "S": "Ivan the Insubordinate"
+          },
+          "dob": {
+            "S": "11/22/1517"
+          },
+          "state": {
+            "S": "n/a"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "ssn": {
+            "S": "000-99-4444"
+          },
+          "name": {
+            "S": "Joe Biden"
+          },
+          "dob": {
+            "S": "05/11/1942"
+          },
+          "state": {
+            "S": "MA"
+          }
+        }
+      }
+    }
+  ]
+}

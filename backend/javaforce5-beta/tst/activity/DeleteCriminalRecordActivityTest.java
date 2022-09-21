@@ -3,6 +3,7 @@ package activity;
 import main.java.activity.DeleteCriminalRecordActivity;
 import main.java.dao.CriminalRecordDao;
 import main.java.exceptions.NoCriminalRecordFoundException;
+import main.java.models.requests.DeleteCriminalRecordRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -33,8 +34,12 @@ public class DeleteCriminalRecordActivityTest {
         String expected = "Criminal record for SSN: " + ssn + " has been expunged from the database.";
         when(criminalRecordDao.deleteCriminalRecord(ssn)).thenReturn(expected);
 
+        DeleteCriminalRecordRequest deleteCriminalRecordRequest = DeleteCriminalRecordRequest.builder()
+                .withSsn(ssn)
+                .build();
+
         //WHEN
-        String actual = deleteCriminalRecordActivity.handleRequest(ssn);
+        String actual = deleteCriminalRecordActivity.handleRequest(deleteCriminalRecordRequest, null);
 
         //THEN
         assertEquals(expected, actual, "Expected the confirmation string message to be returned.");
@@ -47,8 +52,12 @@ public class DeleteCriminalRecordActivityTest {
         String expected = "Criminal record for SSN: " + ssn + " has been expunged from the database.";
         when(criminalRecordDao.deleteCriminalRecord(ssn)).thenReturn(expected);
 
+        DeleteCriminalRecordRequest deleteCriminalRecordRequest = DeleteCriminalRecordRequest.builder()
+                .withSsn(ssn)
+                .build();
+
         //WHEN
-        String actual = deleteCriminalRecordActivity.handleRequest(ssn);
+        String actual = deleteCriminalRecordActivity.handleRequest(deleteCriminalRecordRequest, null);
 
         //THEN
         verify(criminalRecordDao).deleteCriminalRecord(any());
@@ -62,7 +71,11 @@ public class DeleteCriminalRecordActivityTest {
         String ssn = "000-00-0000";
         when(criminalRecordDao.deleteCriminalRecord(ssn)).thenThrow(NoCriminalRecordFoundException.class);
 
+        DeleteCriminalRecordRequest deleteCriminalRecordRequest = DeleteCriminalRecordRequest.builder()
+                .withSsn(ssn)
+                .build();
+
         //WHEN THEN
-        assertThrows(NoCriminalRecordFoundException.class, () -> deleteCriminalRecordActivity.handleRequest(ssn));
+        assertThrows(NoCriminalRecordFoundException.class, () -> deleteCriminalRecordActivity.handleRequest(deleteCriminalRecordRequest, null));
     }
 }

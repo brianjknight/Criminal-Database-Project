@@ -34,11 +34,11 @@ public class TestApp {
 //        System.out.println(joeB3);
 //        System.out.println("-".repeat(80));
 
-        GetCriminalsRecordsByStateActivity getCRbyState = new GetCriminalsRecordsByStateActivity(criminalRecordDao);
-        List<CriminalRecord> recordsForCA = getCRbyState.handleRequest("CA");
-        for (CriminalRecord cr : recordsForCA) {
-            System.out.println(cr);
-        }
+//        GetCriminalsRecordsByStateActivity getCRbyState = new GetCriminalsRecordsByStateActivity(criminalRecordDao);
+//        List<CriminalRecord> recordsForCA = getCRbyState.handleRequest("CA");
+//        for (CriminalRecord cr : recordsForCA) {
+//            System.out.println(cr);
+//        }
 
     }
 

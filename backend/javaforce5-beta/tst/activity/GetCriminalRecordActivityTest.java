@@ -4,6 +4,7 @@ import main.java.activity.GetCriminalRecordActivity;
 import main.java.dao.CriminalRecordDao;
 import main.java.exceptions.NoCriminalRecordFoundException;
 import main.java.models.CriminalRecord;
+import main.java.models.requests.GetCriminalRecordRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -37,10 +38,15 @@ public class GetCriminalRecordActivityTest {
                 .withState("XX")
                 .withCrimeCount(0)
                 .build();
+
+        GetCriminalRecordRequest getCriminalRecordRequest = GetCriminalRecordRequest.builder()
+                .withSsn("000-00-0000")
+                .build();
+
         when(criminalRecordDao.getCriminalRecord("000-00-0000")).thenReturn(john);
 
         //WHEN
-        CriminalRecord result = getCriminalRecordActivity.handleRequest("000-00-0000");
+        CriminalRecord result = getCriminalRecordActivity.handleRequest(getCriminalRecordRequest, null);
 
         //THEN
         assertEquals(john, result, "Expected the criminal record returned to be for provided SSN.");
@@ -56,10 +62,15 @@ public class GetCriminalRecordActivityTest {
                 .withState("XX")
                 .withCrimeCount(0)
                 .build();
+
+        GetCriminalRecordRequest getCriminalRecordRequest = GetCriminalRecordRequest.builder()
+                .withSsn("000-00-0000")
+                .build();
+
         when(criminalRecordDao.getCriminalRecord("000-00-0000")).thenReturn(john);
 
         //WHEN
-        CriminalRecord result = getCriminalRecordActivity.handleRequest("000-00-0000");
+        CriminalRecord result = getCriminalRecordActivity.handleRequest(getCriminalRecordRequest, null);
 
         //THEN
         verify(criminalRecordDao, times(1)).getCriminalRecord(any());
@@ -70,12 +81,13 @@ public class GetCriminalRecordActivityTest {
     @Test
     public void handleRequest_provideSSNWithNoRecords_throwsNoCriminalRecordFoundException() {
         //GIVEN
-        CriminalRecord noCriminal = CriminalRecord.builder()
+        GetCriminalRecordRequest getCriminalRecordRequest = GetCriminalRecordRequest.builder()
                 .withSsn("XXX-XX-XXXX")
                 .build();
+
         when(criminalRecordDao.getCriminalRecord("XXX-XX-XXXX")).thenThrow(NoCriminalRecordFoundException.class);
 
         //WHEN THEN
-        assertThrows(NoCriminalRecordFoundException.class, () -> getCriminalRecordActivity.handleRequest("XXX-XX-XXXX"));
+        assertThrows(NoCriminalRecordFoundException.class, () -> getCriminalRecordActivity.handleRequest(getCriminalRecordRequest, null));
     }
 }
