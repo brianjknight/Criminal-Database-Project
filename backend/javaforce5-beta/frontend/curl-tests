@@ -1,0 +1,20 @@
+Create new record:
+curl -X POST https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords -d '{"ssn": "999-99-9999","name": "James Hetfield","dob": "8/3/1963","state": "CA"}' -H 'Content-Type: application/json'
+{"ssn":"999-99-9999","name":"James Hetfield","dob":"8/3/1963","state":"CA","crimeCount":0}
+
+Get a record
+curl https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/999-77-5555
+
+Delete a record
+curl -X DELETE https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/999-99-9999
+"Criminal record for SSN: 999-99-9999 has been expunged from the database."
+
+Get records for a specific state
+curl https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/filter/CA
+
+Add Crime to existing record 999-99-9999
+curl -X PUT https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/crimes/999-99-9999 -d '{"caseNumber":"MT333333"}' -H 'Content-Type: application/json'
+
+Get list of Crimes for a record
+curl https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/crimes/777-66-5555
+

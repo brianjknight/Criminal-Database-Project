@@ -20,10 +20,6 @@ you are still debating internally that you might like help working through.*
 
 ## 3. Use Cases
 
-*This is where we work backwards from the customer and define what our customers
-would like to do (and why). You may also include use cases for yourselves, or
-for the organization providing the product to customers.*
-
 U1. As a customer, I want to create a new criminal record for a first time offender.
 
 U2. As a customer, I want to retrieve a CriminalRecord to see if it exists for a person.
@@ -50,13 +46,13 @@ U11. As a customer, I want to retrieve crimes by location.
 
 ### 4.1. In Scope
 * CRUD operations for a single criminal record.
-   * Create a new record
-   * Retrieve existing record
-   * Update a record by adding a crime to the list
-   * Delete a record
+   * U1 Create a new record
+   * U2 Retrieve existing record
+   * U6 Delete a record
+   * U3 Retrieve crime list from the record
+   * U4 Update a record by adding a crime to the crime list
 * Use at least one secondary index on the DDB table to run a query.
   * U7 retrieve records by state.
-  * U5 Updating the state for a person's criminal record. 
 
 
 ### 4.2. Out of Scope
@@ -131,28 +127,27 @@ Integer sentence;
   
 ![img_2.png](images/design_document_images/delete-criminal-record.png)
 
-## 6.5 Add Crime to CriminalRecord Endpoint
+## 6.5 Get CriminalRecords by state endpoint
+* Accepts GET requests to /criminalrecords/filter/{state}
+  * Query parameter for state?
+* Retrieves a list of Criminal Records that match the given state.
 
-* Accepts PUT requests to /criminalrecords/{ssn}/crimes
+## 6.6 Add Crime to CriminalRecord Endpoint
+
+* Accepts PUT requests to /criminalrecords/crimes
 * Accepts a SSN and a Crime to be added to that person's list of Crimes
   * If the SSN is not found, throw a NoCriminalRecordException
   * If the Crime is not found, throw CrimeNotFoundException
 
 ![img_3.png](images/design_document_images/add-crime-to-criminal-record.png)
 
-## 6.6 Get CriminalRecord crimes Endpoint
+## 6.7 Get CriminalRecord crimes Endpoint
 
-* Accepts GET requests to /criminalrecords/{ssn}/crimes
+* Accepts GET requests to /criminalrecords/crimes/{ssn}
 * Retrieves list of all crimes committed by the person with given SSN
   * If the SSN is not found, throw a NoCriminalRecordException
 
 ![img_4.png](images/design_document_images/get-crimes-from-criminal-record.png)
-
-## 6.7 Get CriminalRecords by state endpoint
-
-* Accepts GET requests to /criminalrecords/{ssn}
-  * Query parameter for state?
-* Retrieves a list of Criminal Records that match the given state.
 
 # 7. Tables
 

@@ -1,0 +1,499 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Criminal Record Database",
+    "version": "0.0.1"
+  },
+  "paths": {
+    "/criminalrecords/{ssn}": {
+      "get": {
+        "description": "Get a criminal record for a given SSN if it exists.",
+        "parameters": [
+          {
+            "name": "ssn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{3}-\\d{2}-\\d{4}",
+              "example": "ddd-dd-dddd"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/CriminalRecord"
+                  },
+                  "example": {
+                    "ssn": "ddd-dd-dddd",
+                    "name": "First Last",
+                    "dob": "dd/dd/dddd",
+                    "state": "XX",
+                    "crimeCount": 1,
+                    "crimes": []
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/Error"
+                  },
+                  "example": {
+                    "code": 400,
+                    "message": "Invalid input(s)"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/Error"
+                  },
+                  "example": {
+                    "code": 500,
+                    "message": "Server error"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "description": "Deletes a criminal record for a given SSN if it exists.",
+        "parameters": [
+          {
+            "name": "ssn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{3}-\\d{2}-\\d{4}",
+              "example": "ddd-dd-dddd"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/Confirmation"
+                  },
+                  "example": "Criminal record was expunged from the database."
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/Error"
+                  },
+                  "example": {
+                    "code": 400,
+                    "message": "Invalid input(s)"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/Error"
+                  },
+                  "example": {
+                    "code": 500,
+                    "message": "Server error"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/criminalrecords": {
+      "post": {
+        "description": "Creates a new criminal record.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "items": {
+                  "$ref": "#/components/schemas/CriminalRecord"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/CriminalRecord"
+                  },
+                  "example": {
+                    "ssn": "ddd-dd-dddd",
+                    "name": "First Last",
+                    "dob": "dd/dd/dddd",
+                    "state": "XX",
+                    "crimeCount": 1,
+                    "crimes": []
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/Error"
+                  },
+                  "example": {
+                    "code": 400,
+                    "message": "Invalid input(s)"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/Error"
+                  },
+                  "example": {
+                    "code": 500,
+                    "message": "Server error"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/criminalrecords/crimes/{ssn}": {
+      "get": {
+        "description": "Retrieves the list of crimes in a person's criminal record.",
+        "parameters": [
+          {
+            "name": "ssn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{3}-\\d{2}-\\d{4}",
+              "example": "ddd-dd-dddd"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Crime"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/Error"
+                  },
+                  "example": {
+                    "code": 400,
+                    "message": "Invalid input(s)"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/Error"
+                  },
+                  "example": {
+                    "code": 500,
+                    "message": "Server error"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "description": "Add a new crime to a person's criminal record.",
+        "parameters": [
+          {
+            "name": "ssn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d{3}-\\d{2}-\\d{4}",
+              "example": "ddd-dd-dddd"
+            }
+          },
+          {
+            "name": "caseNumber",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "XX000000"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/CriminalRecord"
+                  },
+                  "example": {
+                    "ssn": "ddd-dd-dddd",
+                    "name": "First Last",
+                    "dob": "dd/dd/dddd",
+                    "state": "XX",
+                    "crimeCount": 1,
+                    "crimes": []
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/Error"
+                  },
+                  "example": {
+                    "code": 400,
+                    "message": "Invalid input(s)"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/Error"
+                  },
+                  "example": {
+                    "code": 500,
+                    "message": "Server error"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/criminalrecords/filter/{state}": {
+      "get": {
+        "description": "Retrieves all criminal records for a specified state.",
+        "parameters": [
+          {
+            "name": "state",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "CO"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CriminalRecord"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/Error"
+                  },
+                  "example": {
+                    "code": 400,
+                    "message": "Invalid input(s)"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "items": {
+                    "$ref": "#/components/schemas/Error"
+                  },
+                  "example": {
+                    "code": 500,
+                    "message": "Server error"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CriminalRecord": {
+        "type": "object",
+        "properties": {
+          "ssn": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "dob": {
+            "type": "string"
+          },
+          "crimeCount": {
+            "type": "integer"
+          },
+          "crimes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Crime"
+            }
+          }
+        }
+      },
+      "Crime": {
+        "type": "object",
+        "properties": {
+          "caseNumber": {
+            "type": "string"
+          },
+          "ssn": {
+            "type": "string"
+          },
+          "charge": {
+            "type": "string"
+          },
+          "offenseLevel": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "sentenceInDays": {
+            "type": "integer"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "ssn": {
+            "type": "string"
+          }
+        }
+      },
+      "Confirmation": {
+        "type": "string"
+      }
+    }
+  }
+}

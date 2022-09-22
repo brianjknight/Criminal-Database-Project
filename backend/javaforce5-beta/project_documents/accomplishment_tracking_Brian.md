@@ -124,8 +124,20 @@ instructors by the end of the unit._
   * In Unit 4's project I did not understand why Request & Result POJOs were being used. 
   I initially created my activity classes to accept String and Integer parameters instead of Request objects.
   When trying to test my AWS Lambda functions with a JSON event, I ran into issues. If there was a single string parameter, I could get it to work but not otherwise. 
-  Implenting the RequestHandler interface and Request objects, is more versatile for executing the Lambda functions. 
-* 
+  Implementing the RequestHandler interface and Request objects, is more versatile for executing the Lambda functions. 
+  *This caused a significant amount of reworking my code needing to implement the interface and updating methods, contructors, and unit tests.* 
+* Swagger/API Gateway
+  * You can use "pattern:" to require a specific formatting for a string.
+    * For example with a SSN format ddd-dd-dddd:
+    
+    ![img_2.png](images/swagger-string-pattern.png)
+ 
+  * Defining a List type can be done with an array in Swagger broken down into further types string, integer, etc.
+    You can also create the List/array as its own component and use the reference:
+    
+  ![img_1.png](images/swagger-array-type.png)
+
+  * 
 
 ## Week 4
 

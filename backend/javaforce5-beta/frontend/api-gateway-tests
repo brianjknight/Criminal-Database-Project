@@ -1,0 +1,18 @@
+/criminalrecords POST
+{
+  "ssn": "999-99-9999",
+  "name": "James Hetfield",
+  "dob": "8/3/1963",
+  "state": "CA"
+}
+
+/criminalrecords/{ssn} - GET
+/criminalrecords/{ssn} - DELETE
+criminalrecords/crimes/{ssn} - GET
+999-99-9999
+
+/criminalrecords/crimes/{ssn} - PUT
+999-99-9999
+{
+    "caseNumber":"XXzz222"
+}
