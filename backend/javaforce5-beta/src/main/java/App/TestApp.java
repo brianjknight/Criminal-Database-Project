@@ -26,18 +26,18 @@ public class TestApp {
         GetCriminalRecordActivity getCriminalRecordActivity = new GetCriminalRecordActivity(criminalRecordDao);
         CriminalRecord bart = getCriminalRecordActivity.handleRequest(getBartFart, null);
         System.out.println(bart);
-        System.out.println("-".repeat(80));
+        System.out.println("-".repeat(150));
 
         //Test get records by state:
         GetCriminalsRecordsByStateRequest getRecordsCalifornia = GetCriminalsRecordsByStateRequest.builder()
-                .withState("CA")
+                .withState("AL")
                 .build();
         GetCriminalsRecordsByStateActivity getCriminalsRecordsByStateActivity = new GetCriminalsRecordsByStateActivity(criminalRecordDao);
         List<CriminalRecord> result = getCriminalsRecordsByStateActivity.handleRequest(getRecordsCalifornia, null);
         for(CriminalRecord criminalRecord : result) {
             System.out.println(criminalRecord);
         }
-        System.out.println("-".repeat(80));
+        System.out.println("-".repeat(150));
 
     }
 
