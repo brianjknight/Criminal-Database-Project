@@ -137,7 +137,10 @@ instructors by the end of the unit._
     
   ![img_1.png](images/swagger-array-type.png)
 
-  * 
+* DynamoDB has reserved keywords.
+  * My attribute for state is a reserved keyword in DDB. By using ExpressionAttributeName you can assign placeholders as an alternative.
+  
+* 
 
 ## Week 4
 

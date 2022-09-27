@@ -3,6 +3,7 @@ package main.java.dao;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
+import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import main.java.exceptions.MissingAttributeToSaveRecordException;
 import main.java.exceptions.NoCriminalRecordForStateException;
 import main.java.exceptions.NoCriminalRecordFoundException;
@@ -10,7 +11,9 @@ import main.java.models.CriminalRecord;
 import main.java.models.requests.GetCriminalsRecordsByStateRequest;
 
 import javax.inject.Inject;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CriminalRecordDao {
     private final DynamoDBMapper dynamoDBMapper;
@@ -51,12 +54,25 @@ public class CriminalRecordDao {
             maxNumCrimes = getCriminalsRecordsByStateRequest.getMaxNumCrimes();
         }
 
-        CriminalRecord criminalRecord = new CriminalRecord();
-        criminalRecord.setState(state);
+
+        Map<String, AttributeValue> valueMap = new HashMap<>();
+        valueMap.put(":state",  new AttributeValue().withS(state));
+        Map<String, String> valueNames = new HashMap<>();
+        valueNames.put("#s", "state");
         DynamoDBQueryExpression<CriminalRecord> queryExpression = new DynamoDBQueryExpression<CriminalRecord>()
                 .withIndexName(CriminalRecord.STATE_INDEX)
                 .withConsistentRead(false)
-                .withHashKeyValues(criminalRecord);
+                .withExpressionAttributeNames(valueNames)
+                .withKeyConditionExpression("#s = :state")
+                .withExpressionAttributeValues(valueMap);
+
+
+//        CriminalRecord criminalRecord = new CriminalRecord();
+//        criminalRecord.setState(state);
+//        DynamoDBQueryExpression<CriminalRecord> queryExpression = new DynamoDBQueryExpression<CriminalRecord>()
+//                .withIndexName(CriminalRecord.STATE_INDEX)
+//                .withConsistentRead(false)
+//                .withHashKeyValues(criminalRecord);
 
         PaginatedQueryList<CriminalRecord> criminalRecordsByStateList = dynamoDBMapper.query(CriminalRecord.class, queryExpression);
         if(criminalRecordsByStateList == null || criminalRecordsByStateList.size() == 0) {
