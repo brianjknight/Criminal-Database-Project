@@ -150,10 +150,14 @@ instructors by the end of the unit._
       ![img.png](images/ddb-expression-attribute-name.png)
   <br>
   <br>
-  * There is one attribute for FilterExpression, but you can set multiple filters by using keywords like "and".
-  <br><br>
-    ![img.png](images/ddb-filter-expression.png)
+  * There is an attribute for FilterExpression which is used to filter the DDB table query. 
+    * You can set multiple filters by using a keyword like "and".
+    * The filter is done AFTER the query returns items matching the KeyConditionExpression. 
+      It does not result in additional read capacity units. 
+      Depending on use cases and frequency it might be better to create a more appropriate GSI to reduce the initial read capacity.
     <br><br>
+      ![img.png](images/ddb-filter-expression.png)
+      <br><br>
   * 
 
 ## Week 4

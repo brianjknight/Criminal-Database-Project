@@ -129,8 +129,10 @@ Integer sentence;
 
 ## 6.5 Get CriminalRecords by state endpoint
 * Accepts GET requests to /criminalrecords/filter/{state}
-  * Query parameter for state?
-* Retrieves a list of Criminal Records that match the given state.
+  * Optional query parameters for minimum and maximum number of crimeCount to include in results?
+* Retrieves a list of Criminal Records that match the given state and crimeCount.
+
+![img.png](images/get-criminal-record-by-state.puml.png)
 
 ## 6.6 Add Crime to CriminalRecord Endpoint
 

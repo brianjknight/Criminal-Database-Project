@@ -1,0 +1,25 @@
+@startuml
+title Get Criminal Record By State with Optional Crime Count Filter
+
+actor Client
+participant "Website Criminal Records by State page" as CriminalRecordsByStatePage
+participant GetCriminalRecordsByStateActivity
+participant CriminalRecordDao
+database CriminalRecord
+
+Client -> CriminalRecordsByStatePage : GET /criminalrecords/filter/{state}
+CriminalRecordsByStatePage -> GetCriminalRecordsByStateActivity : Send GET request
+
+GetCriminalRecordsByStateActivity -> CriminalRecordDao
+CriminalRecordDao -> CriminalRecord : load CriminalRecords for state
+CriminalRecord -> CriminalRecordDao : return results
+CriminalRecordDao -> CriminalRecordDao : uses optional query filters for min/max crimeCount
+
+alt if SSN does not exist
+CriminalRecordDao --> GetCriminalRecordsByStateActivity : throw NoCriminalRecordForStateException
+GetCriminalRecordsByStateActivity --> CriminalRecordsByStatePage : return message "No Criminal Records"
+end
+
+CriminalRecordDao --> CriminalRecordsByStatePage : CriminalRecord
+
+@enduml

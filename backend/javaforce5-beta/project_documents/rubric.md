@@ -41,23 +41,33 @@ definition for your endpoints (can be code/configuration, or can be
 documentation). List one thing that your team learned about designing a good
 API.
 
-*Endpoint definition location:*       
-*What we learned:*    
+*Endpoint definition location:*      
+https://criminal-records-api-bucket.s3.us-west-2.amazonaws.com/api.html 
+
+*What we learned:*      
+* Swagger is an excellent tool for coding your API documentation so that you can save the file to import into AWS API Gateway.
+* YAML files are very sensitive to indents and spacing.
 
 **Develop a service endpoint definition that uses complex inputs and outputs.**
 Select one of your endpoints and list the operation’s input and output objects.
 Under each, list its attributes.
 
-*Endpoint:*     
-*Input object(s):*      
+*Endpoint:*   /criminalrecords -d '{"ssn": "999-99-9999","name": "James Hetfield","dob": "8/3/1963","state": "CA"}'
 
-* attribute 1
-* ...
+*Input object(s):* takes in 4 attributes
 
-*Output object(s):*      
+* ssn
+* name
+* dob
+* state
 
-* attribute 1
-* ...
+*Output object(s):*
+
+* ssn
+* name
+* dob
+* state
+* count of crimes initialized as 0
 
 **Given a user story that requires a user to provide values to a service
 endpoint, design a service endpoint including inputs, outputs, and errors.**
@@ -65,19 +75,27 @@ Select one of your endpoints that accepts input values from a client. List the
 error cases you identified and how the service responds in each case. Provide at
 most 3 error cases.
 
-|**Endpoint:**  |                     |
+U4. As a customer, I want to add a new crime to person's list of crimes.
+
+|**Endpoint:**  |  /criminalrecords/crimes                   |
 |---            |---                  |
 |**Error case** |**Service response** |
-|               |                     |
-|               |                     |
-|               |                     |
+| CriminalRecord for a given SSN does not exist yet.               |                     |
+| Adding a crime to the wrong person's record/SSN.                |                     |
+| Adding a crime that already exists in the person's record.              |                     |
 
 **Develop a service endpoint definition that uses query parameters to determine
 how results are sorted or filtered.** List at least one endpoint that allows
 sorting or filtering of results. Which attribute(s) can be sorted/filtered on?
 
-*Endpoint:*         
+*Endpoint:*     
+/criminalrecords/filter/{state}
+
 *Attribute(s):*  
+* This endpoint uses a GSI to return Criminal Records for only the given state. 
+* 2 optional query parameters for filtering:
+  * minNumCrimes to include Criminal Records with greater than or  equal to the minimum Integer given.
+  * maxNumCrimes to include Criminal Records with less than or  equal to the maximum Integer given.
 
 **Determine whether a given error condition should result in a client or server
 exception.** List one client exception and one server exception that your
@@ -93,33 +111,33 @@ service code throws. List one condition in which this exception is thrown.
 **Decompose a given set of use cases into a set of DynamoDB tables that provides
 efficient data access.** List the DynamoDB tables in your project:
 
-1.  
-2.  
-3. 
-
+1.  CriminalRecords
+2.  Crimes
 
 **Design a DynamoDB table key schema that allows items to be uniquely
 identified.** Describe the primary key structure for your DynamoDB table with
 the most interesting primary key. In a sentence or two, explain your choice of
 partition/sort key(s).
 
-1.
+1. CriminalRecords - partition only primary key using a person's social security number.
+2. Crimes - partition only primary key using a unique case number.
 
 **Design the attributes of a DynamoDB table given a set of use cases.** List a
 DynamoDB table with at least 3 attributes. List one relevant use case that uses
 the attribute. In one sentence, describe why the attribute is included.
 
-**Table name:**   
+**Table name:**   CriminalRecords
  
 **Attributes:**
 
-|Attribute name |(One) relevant use case |attribute purpose |
-|---            |---                     |---               |
-|               |                        |                  |
-|               |                        |                  |
-|               |                        |                  |
-|               |                        |                  |
-|               |                        |                  |
+| Attribute name | (One) relevant use case                                        | attribute purpose                  |
+|----------------|----------------------------------------------------------------|------------------------------------|
+| ssn            | Find a criminal record for a specific person.                  | unique identifier                  |
+| name           | Make sure the person's name is correct for the SSN.            | The criminal's full name.          |
+| dob            | Filtering/sorting by age for statistical purposes.             | Date of birth to determine age.    |
+| state          | Filtering/sorting by state for statistical purposes.           | Location where the criminal lives. |
+| crimeCount     | Filter/sorting by number of crimes to find repeat offenders.   | Total number of crimes committed.  |
+| crimes         | Retrieve a list of Crime object to show details of each crime. | List of the crimes committed.      |
 
 ### DynamoDB Indexes
 
@@ -128,32 +146,33 @@ supported by a provided DynamoDB table.** In one or two sentences, explain why
 you created one of the GSIs that your project uses, including one use case that
 uses that index.
 
-**Table name:**
+**Table name:**  CriminalRecords
 
-**Table keys:**
+**Table keys:**  Partition only primary key of social security number which is a unique identifier.
 
-**GSI keys:**
+**GSI keys:**  StateIndex
 
-**Use case for GSI:**
+**Use case for GSI:**  Find all CriminalRecords for a specific state.
 
 **Implement functionality that uses query() to retrieve items from a provided
 DynamoDB's GSI.** List one of your use cases that uses `query()` on a GSI.
 
-**Table name:**
+**Table name:**  CriminalRecords -> StateIndex
 
-**Use case for `query()` on GDI:**
+**Use case for `query()` on GSI:**
+* Retrieving records for statistical or investigative purposes for Criminal Records in a single state within min/max number of crimes committed.
 
 ## Soft(er) Outcomes
 
 **Learn a new technology.** For each team member, list something new that that
 team member learned:
 
-|Team Member |Something new the team member learned |   
-|---   |---                                   |
-|      |                                      |   
-|      |                                      |     
-|      |                                      |     
-|      |                                      |     
+| Team Member | Something new the team member learned                      |   
+|-------------|------------------------------------------------------------|
+| Brian       | Using DynamoDBQueryExpression and its optional attributes. |   
+| Brian       | Learning how Gradle builds work with dependencies.         |     
+|             |                                                            |     
+|             |                                                            |     
 
 **Identify key words to research to accomplish a technical goal | Use sources
 like sage and stack overflow to solve issues encountered while programming.**
@@ -161,19 +180,23 @@ Give an example of a search term that your team might have used to find an
 answer to a technical question/obstacle that your team ran into. List the
 resource that you found that was helpful.
 
-**Search terms:**      
-**Helpful resource:**      
+**Search terms:**      FilterExpression, ExpressionAttributeName
+
+**Helpful resource:**  https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/welcome.html  
 
 **Find material online to learn new technical topics.** List one resource that
 your team found on your own that helped you on your project.
 
-**Topic:**
+**Topic:**  DynamoDBQueryExpression
 
-**Resource:**
+**Resources:**  
+* https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/dynamodbv2/datamodeling/DynamoDBQueryExpression.html
+* AWS DynamoDB Query Pagination Tutorial  https://www.youtube.com/watch?v=Ifcic-JIw1k&t=633s
+* Load, Save, Query, Delete, with DynamoDB Mapper  https://www.youtube.com/watch?v=m61Uo_PGwVc
 
 **Share what was worked on yesterday, the plan for today, and any blockers as a
 part of a scrum standup.** In one or two sentences, describe what your team
 found to be the most useful outcome from holding daily standups.
 
-1.
+
 
