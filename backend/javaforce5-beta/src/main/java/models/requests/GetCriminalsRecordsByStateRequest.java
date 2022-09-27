@@ -4,6 +4,8 @@ import java.util.Objects;
 
 public class GetCriminalsRecordsByStateRequest {
     private String state;
+    private Integer minNumCrimes;
+    private Integer maxNumCrimes;
 
     public GetCriminalsRecordsByStateRequest() {
     }
@@ -24,23 +26,41 @@ public class GetCriminalsRecordsByStateRequest {
         this.state = state;
     }
 
+    public Integer getMinNumCrimes() {
+        return minNumCrimes;
+    }
+
+    public void setMinNumCrimes(Integer minNumCrimes) {
+        this.minNumCrimes = minNumCrimes;
+    }
+
+    public Integer getMaxNumCrimes() {
+        return maxNumCrimes;
+    }
+
+    public void setMaxNumCrimes(Integer maxNumCrimes) {
+        this.maxNumCrimes = maxNumCrimes;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GetCriminalsRecordsByStateRequest that = (GetCriminalsRecordsByStateRequest) o;
-        return Objects.equals(state, that.state);
+        return Objects.equals(state, that.state) && Objects.equals(minNumCrimes, that.minNumCrimes) && Objects.equals(maxNumCrimes, that.maxNumCrimes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(state);
+        return Objects.hash(state, minNumCrimes, maxNumCrimes);
     }
 
     @Override
     public String toString() {
         return "GetCriminalsRecordsByStateRequest{" +
                 "state='" + state + '\'' +
+                ", minNumCrimes=" + minNumCrimes +
+                ", maxNumCrimes=" + maxNumCrimes +
                 '}';
     }
 
@@ -50,6 +70,8 @@ public class GetCriminalsRecordsByStateRequest {
 
     public static final class Builder {
         String state;
+        Integer minNumCrimes;
+        Integer maxNumCrimes;
 
         private Builder() {}
 
@@ -57,6 +79,15 @@ public class GetCriminalsRecordsByStateRequest {
             this.state = stateToUse;
             return this;
         }
+        public Builder withMinNumCrimes(Integer minNumCrimesToUse) {
+            this.minNumCrimes = minNumCrimesToUse;
+            return this;
+        }
+        public Builder withMaxNumCrimes(Integer maxNumCrimesToUse){
+            this.maxNumCrimes = maxNumCrimesToUse;
+            return this;
+        }
+
         public GetCriminalsRecordsByStateRequest build() {
             return new GetCriminalsRecordsByStateRequest(this);
         }

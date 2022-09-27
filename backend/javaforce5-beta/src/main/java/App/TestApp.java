@@ -29,11 +29,11 @@ public class TestApp {
         System.out.println("-".repeat(150));
 
         //Test get records by state:
-        GetCriminalsRecordsByStateRequest getRecordsCalifornia = GetCriminalsRecordsByStateRequest.builder()
+        GetCriminalsRecordsByStateRequest getRecordsByStateRequest = GetCriminalsRecordsByStateRequest.builder()
                 .withState("AL")
                 .build();
         GetCriminalsRecordsByStateActivity getCriminalsRecordsByStateActivity = new GetCriminalsRecordsByStateActivity(criminalRecordDao);
-        List<CriminalRecord> result = getCriminalsRecordsByStateActivity.handleRequest(getRecordsCalifornia, null);
+        List<CriminalRecord> result = getCriminalsRecordsByStateActivity.handleRequest(getRecordsByStateRequest, null);
         for(CriminalRecord criminalRecord : result) {
             System.out.println(criminalRecord);
         }

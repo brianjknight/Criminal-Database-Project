@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dao.CriminalRecordDaoTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-09-27T14:15:04" hostname="DESKTOP-QFNEL2B" time="0.642">
+  <properties/>
+  <testcase name="getCriminalRecord_provideSSNForNONExistingRecord_throwNoCriminalRecordFoundException()" classname="dao.CriminalRecordDaoTest" time="0.559"/>
+  <testcase name="getCriminalRecordByState_provideStateWithNoCriminalRecords_throwsNoCriminalRecordForStateException()" classname="dao.CriminalRecordDaoTest" time="0.068"/>
+  <testcase name="saveCriminalRecord_provideCriminalRecord_verifyCallsDynamoDBMapperSaveMethod()" classname="dao.CriminalRecordDaoTest" time="0.006"/>
+  <testcase name="getCriminalRecord_provideSSNForExistingRecord_returnCriminalRecord()" classname="dao.CriminalRecordDaoTest" time="0.003"/>
+  <testcase name="getCriminalRecordByState_provideStateWithExistingCriminalRecords_returnListOfCriminalRecords()" classname="dao.CriminalRecordDaoTest" time="0.001"/>
+  <testcase name="saveCriminalRecord_provideIncompleteRecord_throwsMissingAttributeToSaveRecordException()" classname="dao.CriminalRecordDaoTest" time="0.001"/>
+  <testcase name="deleteCriminalRecord_provideExistingRecordToDelete_verifyCallsDynamoDBMapperDeleteMethod()" classname="dao.CriminalRecordDaoTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -7,6 +7,7 @@ import main.java.exceptions.MissingAttributeToSaveRecordException;
 import main.java.exceptions.NoCriminalRecordForStateException;
 import main.java.exceptions.NoCriminalRecordFoundException;
 import main.java.models.CriminalRecord;
+import main.java.models.requests.GetCriminalsRecordsByStateRequest;
 
 import javax.inject.Inject;
 import java.util.List;
@@ -29,7 +30,27 @@ public class CriminalRecordDao {
         return criminalRecord;
     }
 
-    public List<CriminalRecord> getCriminalRecordsByState(String state) {
+    /////////////////////////////////////
+
+    public List<CriminalRecord> getCriminalRecordsByState(GetCriminalsRecordsByStateRequest getCriminalsRecordsByStateRequest) {
+        String state;
+        Integer minNumCrimes;
+        Integer maxNumCrimes;
+
+        state = getCriminalsRecordsByStateRequest.getState();
+        if(getCriminalsRecordsByStateRequest.getMinNumCrimes() == null) {
+            minNumCrimes = 0;
+        }
+        else {
+            minNumCrimes = getCriminalsRecordsByStateRequest.getMinNumCrimes();
+        }
+        if(getCriminalsRecordsByStateRequest.getMaxNumCrimes() == null) {
+            maxNumCrimes = Integer.MAX_VALUE;
+        }
+        else {
+            maxNumCrimes = getCriminalsRecordsByStateRequest.getMaxNumCrimes();
+        }
+
         CriminalRecord criminalRecord = new CriminalRecord();
         criminalRecord.setState(state);
         DynamoDBQueryExpression<CriminalRecord> queryExpression = new DynamoDBQueryExpression<CriminalRecord>()
@@ -43,6 +64,8 @@ public class CriminalRecordDao {
         }
         return criminalRecordsByStateList;
     }
+
+    /////////////////////////////////////
 
     public CriminalRecord saveCriminalRecord(CriminalRecord criminalRecord) {
         boolean missingSSN = criminalRecord.getSsn() == null || "".equals(criminalRecord.getSsn());

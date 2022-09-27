@@ -8,6 +8,7 @@ import main.java.exceptions.MissingAttributeToSaveRecordException;
 import main.java.exceptions.NoCriminalRecordForStateException;
 import main.java.exceptions.NoCriminalRecordFoundException;
 import main.java.models.CriminalRecord;
+import main.java.models.requests.GetCriminalsRecordsByStateRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -88,11 +89,15 @@ public class CriminalRecordDaoTest {
                 .build();
         List<CriminalRecord> criminalRecordList = new ArrayList<>(Arrays.asList(john, bob));
 
+        GetCriminalsRecordsByStateRequest getRecordsCO = GetCriminalsRecordsByStateRequest.builder()
+                .withState("CO")
+                .build();
+
         when(dynamoDBMapper.query(eq(CriminalRecord.class), any(DynamoDBQueryExpression.class)))
                 .thenReturn(mock(PaginatedQueryList.class, withSettings().defaultAnswer(new ForwardsInvocations(criminalRecordList))));
 
         //WHEN
-        List<CriminalRecord> result = criminalRecordDao.getCriminalRecordsByState("CO");
+        List<CriminalRecord> result = criminalRecordDao.getCriminalRecordsByState(getRecordsCO);
 
         //THEN
         assertEquals(criminalRecordList, result, "Expected the resulting list of criminal records to be equal.");
@@ -102,11 +107,17 @@ public class CriminalRecordDaoTest {
     public void getCriminalRecordByState_provideStateWithNoCriminalRecords_throwsNoCriminalRecordForStateException() {
         //GIVEN
         List<CriminalRecord> emptyList = new ArrayList<>();
+
+        GetCriminalsRecordsByStateRequest getRecordsCO = GetCriminalsRecordsByStateRequest.builder()
+                .withState("CO")
+                .build();
+
         when(dynamoDBMapper.query(eq(CriminalRecord.class), any(DynamoDBQueryExpression.class)))
                 .thenReturn(mock(PaginatedQueryList.class, withSettings().defaultAnswer(new ForwardsInvocations(emptyList))));
 
         //WHEN THEN
-        assertThrows(NoCriminalRecordForStateException.class, () -> criminalRecordDao.getCriminalRecordsByState("CO"));
+        assertThrows(NoCriminalRecordForStateException.class, () ->
+                criminalRecordDao.getCriminalRecordsByState(getRecordsCO));
 
     }
 
@@ -115,6 +126,9 @@ public class CriminalRecordDaoTest {
         //GIVEN
         CriminalRecord john = CriminalRecord.builder()
                 .withSsn("000-00-0000")
+                .withName("John")
+                .withDob("01/01/1900")
+                .withState("XX")
                 .build();
 
         //WHEN

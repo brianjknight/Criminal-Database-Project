@@ -48,14 +48,17 @@ public class GetCriminalsRecordsByStateActivityTest {
                 .withCrimeCount(0)
                 .build();
         List<CriminalRecord> expectedList = new ArrayList<>(Arrays.asList(john, bob));
-        when(criminalRecordDao.getCriminalRecordsByState("CO")).thenReturn(expectedList);
 
-        GetCriminalsRecordsByStateRequest getCriminalsRecordsByStateRequest = GetCriminalsRecordsByStateRequest.builder()
+
+        GetCriminalsRecordsByStateRequest getRecordsCO = GetCriminalsRecordsByStateRequest.builder()
                 .withState("CO")
                 .build();
 
+        when(criminalRecordDao.getCriminalRecordsByState(getRecordsCO)).thenReturn(expectedList);
+
+
         //WHEN
-        List<CriminalRecord> actualList = getCriminalsRecordsByStateActivity.handleRequest(getCriminalsRecordsByStateRequest, null);
+        List<CriminalRecord> actualList = getCriminalsRecordsByStateActivity.handleRequest(getRecordsCO, null);
 
         //THEN
         assertEquals(expectedList, actualList, "Expected the list of CriminalRecords to match.");
@@ -64,14 +67,16 @@ public class GetCriminalsRecordsByStateActivityTest {
     @Test
     public void handleRequest_provideStateWithNoCriminalRecords_throwsNoCriminalRecordForStateException() {
         //GIVEN
-        when(criminalRecordDao.getCriminalRecordsByState("NM")).thenThrow(NoCriminalRecordForStateException.class);
-
-        GetCriminalsRecordsByStateRequest getCriminalsRecordsByStateRequest = GetCriminalsRecordsByStateRequest.builder()
+        GetCriminalsRecordsByStateRequest getCriminalsRecordsNM = GetCriminalsRecordsByStateRequest.builder()
                 .withState("NM")
                 .build();
 
+        when(criminalRecordDao.getCriminalRecordsByState(getCriminalsRecordsNM)).thenThrow(NoCriminalRecordForStateException.class);
+
         //WHEN THEN
-        assertThrows(NoCriminalRecordForStateException.class, () -> getCriminalsRecordsByStateActivity.handleRequest(getCriminalsRecordsByStateRequest, null), "Expected exception to be thrown when no records exist for that state.");
+        assertThrows(NoCriminalRecordForStateException.class, () ->
+                getCriminalsRecordsByStateActivity.handleRequest(getCriminalsRecordsNM, null),
+                "Expected exception to be thrown when no records exist for that state.");
     }
 
 }

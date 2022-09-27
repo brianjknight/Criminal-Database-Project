@@ -18,7 +18,7 @@ public class GetCriminalsRecordsByStateActivity implements RequestHandler<GetCri
     }
 
     public List<CriminalRecord> handleRequest(GetCriminalsRecordsByStateRequest getCriminalsRecordsByStateRequest, Context context) {
-        List<CriminalRecord> resultList = criminalRecordDao.getCriminalRecordsByState(getCriminalsRecordsByStateRequest.getState());
+        List<CriminalRecord> resultList = criminalRecordDao.getCriminalRecordsByState(getCriminalsRecordsByStateRequest);
         return resultList;
     }
 }
