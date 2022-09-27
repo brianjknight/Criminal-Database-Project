@@ -4,6 +4,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
+import com.amazonaws.services.dynamodbv2.model.Condition;
 import main.java.exceptions.MissingAttributeToSaveRecordException;
 import main.java.exceptions.NoCriminalRecordForStateException;
 import main.java.exceptions.NoCriminalRecordFoundException;
@@ -33,7 +34,7 @@ public class CriminalRecordDao {
         return criminalRecord;
     }
 
-    /////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public List<CriminalRecord> getCriminalRecordsByState(GetCriminalsRecordsByStateRequest getCriminalsRecordsByStateRequest) {
         String state;
@@ -54,25 +55,21 @@ public class CriminalRecordDao {
             maxNumCrimes = getCriminalsRecordsByStateRequest.getMaxNumCrimes();
         }
 
-
         Map<String, AttributeValue> valueMap = new HashMap<>();
-        valueMap.put(":state",  new AttributeValue().withS(state));
+        valueMap.put(":stateValue",  new AttributeValue().withS(state));
+        valueMap.put(":minCrimeCount", new AttributeValue().withN(Integer.toString(minNumCrimes)));
+        valueMap.put(":maxCrimeCount", new AttributeValue().withN(Integer.toString(maxNumCrimes)));
+
         Map<String, String> valueNames = new HashMap<>();
         valueNames.put("#s", "state");
+
         DynamoDBQueryExpression<CriminalRecord> queryExpression = new DynamoDBQueryExpression<CriminalRecord>()
                 .withIndexName(CriminalRecord.STATE_INDEX)
                 .withConsistentRead(false)
                 .withExpressionAttributeNames(valueNames)
-                .withKeyConditionExpression("#s = :state")
+                .withKeyConditionExpression("#s = :stateValue")
+                .withFilterExpression("crimeCount >= :minCrimeCount and crimeCount <= :maxCrimeCount")
                 .withExpressionAttributeValues(valueMap);
-
-
-//        CriminalRecord criminalRecord = new CriminalRecord();
-//        criminalRecord.setState(state);
-//        DynamoDBQueryExpression<CriminalRecord> queryExpression = new DynamoDBQueryExpression<CriminalRecord>()
-//                .withIndexName(CriminalRecord.STATE_INDEX)
-//                .withConsistentRead(false)
-//                .withHashKeyValues(criminalRecord);
 
         PaginatedQueryList<CriminalRecord> criminalRecordsByStateList = dynamoDBMapper.query(CriminalRecord.class, queryExpression);
         if(criminalRecordsByStateList == null || criminalRecordsByStateList.size() == 0) {
@@ -81,7 +78,7 @@ public class CriminalRecordDao {
         return criminalRecordsByStateList;
     }
 
-    /////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     public CriminalRecord saveCriminalRecord(CriminalRecord criminalRecord) {
         boolean missingSSN = criminalRecord.getSsn() == null || "".equals(criminalRecord.getSsn());

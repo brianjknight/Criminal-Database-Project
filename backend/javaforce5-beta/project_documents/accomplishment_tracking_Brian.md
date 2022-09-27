@@ -80,8 +80,8 @@ instructors by the end of the unit._
     * "@DynamoDBTypeConverted(converter = CrimeListConverter.class)" annotation was added to the attribute in CriminalRecord class.
   * In order to delete an item using DynamoDB mapper.delete() you need to pass in the object not just the key.
   * When classes and files are shown in different colors in IntelliJ's Project directory tree, it represents a status. 
-    * https://www.jetbrains.com/help/idea/file-status-highlights.html#views
-    * ![img_1.png](images/design_document_images/img_1.png)
+    * https://www.jetbrains.com/help/idea/file-status-highlights.html#views <br>
+     ![img_1.png](images/design_document_images/img_1.png) 
   * After reading Module 5 activity Intro to Global Secondary Indexes, 
     I would have taken a different approach to designing my DDB tables.
     It would make more sense to have the Crime table as a composite primary key SSN : Case Number.
@@ -109,17 +109,24 @@ instructors by the end of the unit._
   * Setting up the initial project with a proper structure and Gradle build is crucial.
     * Somehow I initially setup the project with multiple main modules which was causing issues with dependencies, importing classes, and unit tests.
     * The order in which the dependencies are listed is same order in which IntelliJ will process them. I attempted to change this order which fixed some issues but cause other problems.   
-    ![img.png](images/first-project-structure.png)
-      After restructuring the project:
+      <br>
+      ![img.png](images/first-project-structure.png) 
+    <br><br>
+      After restructuring the project: <br><br>
       ![img_1.png](images/fixed-project-structure.png)
+      <br>
+      <br>
   * build.gradle file needs to have the proper dependencies, tasks, sources, etc
     * I had to add some dependencies that were missing.
     * My Unit Tests were failing to build. I read Gradle documentation (https://docs.gradle.org/current/userguide/userguide.html) and tried a tutorial. I figured out the build.gradle file was missing a component for tests to run properly.
-    ![img.png](images/build-fail-unit-test.png)
+      <br><br>
+      ![img.png](images/build-fail-unit-test.png)
+      <br><br>
     Adding these lines fixed the problem:
-    ![img_1.png](images/build-fail-unit-test-fix.png)
+      ![img_1.png](images/build-fail-unit-test-fix.png)
+      <br><br>
 * Mockito has a mocking tool to convert a PaginatedQueryList\<T> returned by DynamoDBMapper query into a List\<T>:
-    ![img.png](images/mockito-return-list-from-query.png)
+      ![img.png](images/mockito-return-list-from-query.png)
 * RequestHandler<I,O> interface and Request POJOs
   * In Unit 4's project I did not understand why Request & Result POJOs were being used. 
   I initially created my activity classes to accept String and Integer parameters instead of Request objects.
@@ -129,18 +136,25 @@ instructors by the end of the unit._
 * Swagger/API Gateway
   * You can use "pattern:" to require a specific formatting for a string.
     * For example with a SSN format ddd-dd-dddd:
-    
+    <br>
     ![img_2.png](images/swagger-string-pattern.png)
- 
+    <br><br>
   * Defining a List type can be done with an array in Swagger broken down into further types string, integer, etc.
     You can also create the List/array as its own component and use the reference:
-    
-  ![img_1.png](images/swagger-array-type.png)
-
-* DynamoDB has reserved keywords.
-  * My attribute for state is a reserved keyword in DDB. By using ExpressionAttributeName you can assign placeholders as an alternative.
-  
-* 
+    <br>
+    ![img_1.png](images/swagger-array-type.png)
+    <br><br>
+* DynamoDBQueryExpression
+  * DDB has reserved keywords. My attribute for state is a reserved keyword in DDB. By using ExpressionAttributeName you can assign placeholders as an alternative:  
+  <br>
+      ![img.png](images/ddb-expression-attribute-name.png)
+  <br>
+  <br>
+  * There is one attribute for FilterExpression, but you can set multiple filters by using keywords like "and".
+  <br><br>
+    ![img.png](images/ddb-filter-expression.png)
+    <br><br>
+  * 
 
 ## Week 4
 

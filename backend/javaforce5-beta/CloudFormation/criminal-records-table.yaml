@@ -20,7 +20,7 @@ Resources:
             - AttributeName: "state"
               KeyType: "HASH"
           Projection:
-            ProjectionType: "INCLUDE"
+            ProjectionType: "ALL"
             NonKeyAttributes:
               - "name"
               - "crimeCount"

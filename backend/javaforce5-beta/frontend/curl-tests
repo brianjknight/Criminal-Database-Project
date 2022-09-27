@@ -12,8 +12,8 @@ curl -X DELETE https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/crimin
 Get records for a specific state
 curl https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/filter/CA
 
-Add Crime to existing record 999-99-9999
-curl -X PUT https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/crimes/999-99-9999 -d '{"caseNumber":"MT333333"}' -H 'Content-Type: application/json'
+Add Crime to existing record 777-66-5555
+curl -X PUT https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/crimes/777-66-5555 -d '{"caseNumber":"BF999999"}' -H 'Content-Type: application/json'
 
 Get list of Crimes for a record
 curl https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/crimes/777-66-5555

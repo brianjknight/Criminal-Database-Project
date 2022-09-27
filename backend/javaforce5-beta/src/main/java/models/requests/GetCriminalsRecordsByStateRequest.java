@@ -16,6 +16,8 @@ public class GetCriminalsRecordsByStateRequest {
 
     public GetCriminalsRecordsByStateRequest(Builder builder) {
         this.state = builder.state;
+        this.minNumCrimes = builder.minNumCrimes;
+        this.maxNumCrimes = builder.maxNumCrimes;
     }
 
     public String getState() {

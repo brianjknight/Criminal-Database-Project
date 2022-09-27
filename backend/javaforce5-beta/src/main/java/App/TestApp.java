@@ -20,17 +20,19 @@ public class TestApp {
         CrimeDao crimeDao = new CrimeDao(mapper);
 
         //Test get one record
-        GetCriminalRecordRequest getBartFart = GetCriminalRecordRequest.builder()
-                .withSsn("777-66-5555")
-                .build();
-        GetCriminalRecordActivity getCriminalRecordActivity = new GetCriminalRecordActivity(criminalRecordDao);
-        CriminalRecord bart = getCriminalRecordActivity.handleRequest(getBartFart, null);
-        System.out.println(bart);
+//        GetCriminalRecordRequest getBartFart = GetCriminalRecordRequest.builder()
+//                .withSsn("777-66-5555")
+//                .build();
+//        GetCriminalRecordActivity getCriminalRecordActivity = new GetCriminalRecordActivity(criminalRecordDao);
+//        CriminalRecord bart = getCriminalRecordActivity.handleRequest(getBartFart, null);
+//        System.out.println(bart);
         System.out.println("-".repeat(150));
 
         //Test get records by state:
         GetCriminalsRecordsByStateRequest getRecordsByStateRequest = GetCriminalsRecordsByStateRequest.builder()
-                .withState("AL")
+                .withState("CA")
+                .withMinNumCrimes(3)
+                .withMaxNumCrimes(5)
                 .build();
         GetCriminalsRecordsByStateActivity getCriminalsRecordsByStateActivity = new GetCriminalsRecordsByStateActivity(criminalRecordDao);
         List<CriminalRecord> result = getCriminalsRecordsByStateActivity.handleRequest(getRecordsByStateRequest, null);

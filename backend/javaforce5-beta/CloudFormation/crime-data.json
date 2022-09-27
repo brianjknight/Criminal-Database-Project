@@ -10,7 +10,7 @@
             "S": "picking nose"
           },
           "date": {
-            "S": "9/9/2022"
+            "S": "09/09/2022"
           },
           "offenseLevel": {
             "S": "felony"
@@ -64,7 +64,7 @@
             "S": "not returning shopping cart to coral"
           },
           "date": {
-            "S": "1/20/2000"
+            "S": "01/20/2000"
           },
           "offenseLevel": {
             "S": "misdemeanor"
@@ -91,7 +91,7 @@
             "S": "driving slow in the passing lane"
           },
           "date": {
-            "S": "1/20/2015"
+            "S": "01/20/2015"
           },
           "offenseLevel": {
             "S": "felony"
@@ -118,7 +118,7 @@
             "S": "wearing socks with sandals"
           },
           "date": {
-            "S": "5/20/2007"
+            "S": "05/20/2007"
           },
           "offenseLevel": {
             "S": "misdemeanor"
@@ -145,7 +145,7 @@
             "S": "falling off bike"
           },
           "date": {
-            "S": "8/27/1984"
+            "S": "08/27/1984"
           },
           "offenseLevel": {
             "S": "misdemeanor"
@@ -199,7 +199,7 @@
             "S": "cutting in line"
           },
           "date": {
-            "S": "3/10/2018"
+            "S": "03/10/2018"
           },
           "offenseLevel": {
             "S": "misdemeanor"
@@ -220,13 +220,94 @@
       "PutRequest": {
         "Item": {
           "caseNumber": {
+            "S": "BF888888"
+          },
+          "charge": {
+            "S": "silent but deadly"
+          },
+          "date": {
+            "S": "10/17/2022"
+          },
+          "offenseLevel": {
+            "S": "misdemeanor"
+          },
+          "sentenceInDays": {
+            "N": "10"
+          },
+          "ssn": {
+            "S": "777-66-5555"
+          },
+          "status": {
+            "S": "guilty"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "BF999999"
+          },
+          "charge": {
+            "S": "pooped in Walmart dressing room"
+          },
+          "date": {
+            "S": "09/20/2020"
+          },
+          "offenseLevel": {
+            "S": "misdemeanor"
+          },
+          "sentenceInDays": {
+            "N": "90"
+          },
+          "ssn": {
+            "S": "777-66-5555"
+          },
+          "status": {
+            "S": "guilty"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "BF777777"
+          },
+          "charge": {
+            "S": "farting on his neighbors dog"
+          },
+          "date": {
+            "S": "09/27/2022"
+          },
+          "offenseLevel": {
+            "S": "misdemeanor"
+          },
+          "sentenceInDays": {
+            "N": "0"
+          },
+          "ssn": {
+            "S": "777-66-5555"
+          },
+          "status": {
+            "S": "pending"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
             "S": "QQ010199"
           },
           "charge": {
             "S": "not wearing deodorant"
           },
           "date": {
-            "S": "6/29/1995"
+            "S": "06/29/1995"
           },
           "offenseLevel": {
             "S": "misdemeanor"
@@ -253,7 +334,7 @@
             "S": "disrespecting the king"
           },
           "date": {
-            "S": "4/15/1585"
+            "S": "04/15/1585"
           },
           "offenseLevel": {
             "S": "felony"
@@ -307,7 +388,7 @@
             "S": "stealing"
           },
           "date": {
-            "S": "9/15/1923"
+            "S": "09/15/1923"
           },
           "offenseLevel": {
             "S": "misdemeanor"
@@ -334,7 +415,7 @@
             "S": "used 'password' for a password"
           },
           "date": {
-            "S": "9/15/2022"
+            "S": "09/15/2022"
           },
           "offenseLevel": {
             "S": "misdemeanor"
@@ -361,13 +442,67 @@
             "S": "chewing with mouth open"
           },
           "date": {
-            "S": "2/20/1995"
+            "S": "02/20/1995"
           },
           "offenseLevel": {
             "S": "misdemeanor"
           },
           "sentenceInDays": {
             "N": "15"
+          },
+          "ssn": {
+            "S": "222-22-2020"
+          },
+          "status": {
+            "S": "guilty"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "DJ111111"
+          },
+          "charge": {
+            "S": "killing his master"
+          },
+          "date": {
+            "S": "05/15/1840"
+          },
+          "offenseLevel": {
+            "S": "felony"
+          },
+          "sentenceInDays": {
+            "N": "3650"
+          },
+          "ssn": {
+            "S": "222-22-2020"
+          },
+          "status": {
+            "S": "appealed"
+          }
+        }
+      }
+    },
+    {
+      "PutRequest": {
+        "Item": {
+          "caseNumber": {
+            "S": "DJ222222"
+          },
+          "charge": {
+            "S": "learning to read"
+          },
+          "date": {
+            "S": "10/20/1835"
+          },
+          "offenseLevel": {
+            "S": "misdemeanor"
+          },
+          "sentenceInDays": {
+            "N": "200"
           },
           "ssn": {
             "S": "222-22-2020"
