@@ -132,7 +132,7 @@ Integer sentence;
   * Optional query parameters for minimum and maximum number of crimeCount to include in results?
 * Retrieves a list of Criminal Records that match the given state and crimeCount.
 
-![img.png](images/get-criminal-record-by-state.puml.png)
+![img.png](images/get-criminal-record-by-state-puml.png)
 
 ## 6.6 Add Crime to CriminalRecord Endpoint
 

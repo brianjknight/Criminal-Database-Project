@@ -1,0 +1,94 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport content="width=device-width, initial-scale="1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="criminal-records.js"></script>
+  <title>Criminal Records Database</title>
+</head>
+
+<body>
+<h1 class="title">Criminal Records Manager</h1>
+
+<div class="container">
+  <h2>View Criminal Record</h2>
+  <form id="get-Criminal-Record-Form">
+    <label>Social Security Number:
+      <input type="text" required id="ssn" placeholder="xxx-xx-xxxx" autofocus>
+    </label>
+   <br><br> 
+   
+    <input type="submit" id="create" class="button" value="Submit Request">
+  
+</form>
+</div>
+
+<div class="container">
+  <h2>Create New Criminal Record</h2>
+  <form id="create-Criminal-Record-Form">
+    <label>Social Security Number:
+      <input type="text" required id="ssn" placeholder="xxx-xx-xxxx">
+    </label>
+    
+    <label>Name
+      <input type="text" required id="name" placeholder="First Last" >
+    </label>
+
+    <label>Date of Birth
+      <input type="text" required id="dob" placeholder="mm/dd/yyyy" >
+    </label>
+
+    <label>State
+      <input type="text" required id="state" placeholder="XX">
+    </label>
+
+    <br><br>
+
+    <input type="submit" id="create" class="button" value="Submit Request">
+  </form>
+</div>
+
+<div class="container">
+  <h2>Expunge Criminal Record</h2>
+  <form id="delete-Criminal-Record-Form">
+    <label>Social Security Number:
+      <input type="text" required id="ssn" placeholder="xxx-xx-xxxx">
+    </label>
+
+    <br><br>
+    
+    <input type="submit" id="create" class="button" value="Submit Request">
+  </form>
+</div>
+
+<div class="container">
+    <h2>View Crimes for Criminal</h2>
+    <form id="get-crimes-Form">
+      <label>Social Security Number:
+        <input type="text" required id="ssn" placeholder="xxx-xx-xxxx" autofocus>
+      </label>
+     <br><br> 
+     
+      <input type="submit" id="create" class="button" value="Submit Request">
+    
+  </form>
+</div>
+
+<div class="container">
+    <h2>Add Crime To Criminal's Record</h2>
+    <form id="add-crime-to-record-Form">
+      <label>Social Security Number:
+        <input type="text" required id="ssn" placeholder="xxx-xx-xxxx" >
+      </label>
+      <label>Case Number:
+        <input type="text" required id="ssn" placeholder="XX000000" >
+      </label>
+     <br><br> 
+     
+      <input type="submit" id="create" class="button" value="Submit Request">
+    
+  </form>
+</div>
+
+</body>
+

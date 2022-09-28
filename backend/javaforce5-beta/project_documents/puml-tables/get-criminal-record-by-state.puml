@@ -12,8 +12,8 @@ CriminalRecordsByStatePage -> GetCriminalRecordsByStateActivity : Send GET reque
 
 GetCriminalRecordsByStateActivity -> CriminalRecordDao
 CriminalRecordDao -> CriminalRecord : load CriminalRecords for state
+CriminalRecord --> CriminalRecord : uses optional query filters for min/max crimeCount
 CriminalRecord -> CriminalRecordDao : return results
-CriminalRecordDao -> CriminalRecordDao : uses optional query filters for min/max crimeCount
 
 alt if SSN does not exist
 CriminalRecordDao --> GetCriminalRecordsByStateActivity : throw NoCriminalRecordForStateException

@@ -3,7 +3,7 @@ curl -X POST https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminal
 {"ssn":"999-99-9999","name":"James Hetfield","dob":"8/3/1963","state":"CA","crimeCount":0}
 
 Get a record
-curl https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/999-77-5555
+curl https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/777-66-5555
 
 Delete a record
 curl -X DELETE https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/999-99-9999

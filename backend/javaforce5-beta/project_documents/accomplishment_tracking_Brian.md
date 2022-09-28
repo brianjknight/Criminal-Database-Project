@@ -163,9 +163,18 @@ instructors by the end of the unit._
 ## Week 4
 
 **Goals:**
+* HTTP responses with exceptions are 200. Determine the difference between Exceptions and 400/500 error responses.
+* Create webpages
+* Complete reflection
+* Present project
 
 **Activity:**
 
 **Important Docs, Commits, or Code Reviews**:
 
 **Things learned:**
+* If you call an operation to an undefined API resource, you receive an error response with the { "message": "Missing Authentication Token" } message.
+  To me this is misleading but you can add a "hint" to responses for more detail.
+  For example: {"message":"Missing Authentication Token", "hint":"The HTTP method or resources may not be supported."}
+* If an API response is an exception, it is still returning a response and considered a 200 HTTP response.
+  * 
