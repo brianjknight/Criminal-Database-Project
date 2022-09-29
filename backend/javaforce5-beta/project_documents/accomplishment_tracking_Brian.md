@@ -177,4 +177,9 @@ instructors by the end of the unit._
   To me this is misleading but you can add a "hint" to responses for more detail.
   For example: {"message":"Missing Authentication Token", "hint":"The HTTP method or resources may not be supported."}
 * If an API response is an exception, it is still returning a response and considered a 200 HTTP response.
+  * adsf
+* HTML, CSS, JavaScript
+  * Placement of \<script> tags at top/bottom of HTML doc and its keywords affects how JS runs
+    * defer keyword for \<script> tags:  This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.
+      --> I didn't include this at first which was causing null pointers when assigning value for the .onsubmit async function.
   * 

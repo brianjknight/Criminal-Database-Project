@@ -2,14 +2,17 @@ body {
     background-color:lightblue;
 }
 
-h1 {
+.title {
     text-align: center;
     text-shadow: 2px 2px red;
     font-size: 50px;
     margin-top: 50px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 25px;
     margin-bottom: 50px;
-    margin-left: 150px;
-    margin-right: 150px;
 }
 
 .container {
@@ -26,12 +29,22 @@ h1 {
 
 .welcome {
     text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    font-size: 20px;
     padding: 20px;
     margin: 10px;
 }
 
+
 #under-construction-image {
-    max-width: 50%;
+    width: 60%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#construction-gif {
+    width: 80%;
     display: block;
     margin-left: auto;
     margin-right: auto;

@@ -3,7 +3,7 @@
     <meta name="viewport content="width=device-width, initial-scale="1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    
+    <script src="criminal-records-filter.js" defer></script>
     <title>Criminal Records Database</title>
 </head>
   
@@ -11,19 +11,23 @@
 
     <h1 class="title">Criminal Records Filter</h1>
 
+    <h3 class="subtitle"> 
+      <a href="index.html">Criminal Records Database Homepage</a>
+    </h3>
+
     <div class="container">
         <h2>Get Criminal Records by State</h2>
         <form id="get-records-by-state-Form">
           <label>State:
-            <input type="text" required id="state" placeholder="XX" autofocus>
+            <input type="text" required id="getState" placeholder="XX" autofocus>
           </label>
           <br><br>
           <label>Minimum Number of Crimes (optional):
-            <input type="text" id="minNumCrimes">
+            <input type="text" id="getMinNumCrimes">
           </label>
           <br><br>
           <label>Maximum Number of Crimes (optional):
-            <input type="text" id="maxNumCrimes">
+            <input type="text" id="getMaxNumCrimes">
           </label>
           
          <br><br> 
@@ -32,8 +36,6 @@
         
       </form>
     </div>
-
-
 
 
 </body>
