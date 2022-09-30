@@ -16,6 +16,10 @@ const headers = {
 
   getRecordsByStateForm.onsubmit = async function(evt) {
     evt.preventDefault();
+
+    document.getElementById("filterResultImage").innerHTML = 
+    "<img src='images/loading.gif'>";
+
     console.log("Getting criminal records by state...");
     const givenState = document.querySelector("#getState").value;
     let getURL = getURLPrefix + givenState;
@@ -35,7 +39,38 @@ const headers = {
     }
 
     axios.get(getURL, headers).then((res) => {
-        console.log(res.data);
-    })
+      console.log(res.data);
 
+      if ("errorMessage" in res.data) {
+        document.getElementById("filterResult").innerHTML = res.data.errorMessage;
+      }
+      else {
+        if (res.data.length === 0) {
+          document.getElementById("filterResult").innerHTML = "No results found."
+        }
+        else {
+          let result = "";
+
+          for (const element of res.data) {
+            let tempResult = 
+              "SSN: " + element.ssn + "<br>" + 
+              "Name: " + element.name + "<br>" +
+              "State: " + element.state + "<br>" +
+              "Crime count: " + element.crimeCount + "<br>" +
+              "---------------------------" + "<br>";
+            result += tempResult;
+          }
+
+          document.getElementById("filterResult").innerHTML = result;
+        }
+        
+      }
+      document.getElementById("filterResultImage").innerHTML = "";
+    })
   }
+
+const clearFilterRecordForm = document.querySelector("#clearFilterRecordForm");
+clearFilterRecordForm.onsubmit = async function(event) {
+  event.preventDefault();
+  document.getElementById("filterResult").innerHTML = "";
+}

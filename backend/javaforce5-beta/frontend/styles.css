@@ -2,6 +2,11 @@ body {
     background-color:lightblue;
 }
 
+p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
 .title {
     text-align: center;
     text-shadow: 2px 2px red;
@@ -35,6 +40,21 @@ body {
     margin: 10px;
 }
 
+table, th, td {
+    border: 1px solid;
+    margin-top: 10px;
+}
+
+table {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th, td {
+    text-align: center;
+    height: 35px;
+}
 
 #under-construction-image {
     width: 60%;
@@ -44,7 +64,7 @@ body {
 }
 
 #construction-gif {
-    width: 80%;
+    width: 35%;
     display: block;
     margin-left: auto;
     margin-right: auto;

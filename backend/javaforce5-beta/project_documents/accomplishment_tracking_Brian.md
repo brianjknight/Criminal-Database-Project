@@ -182,4 +182,7 @@ instructors by the end of the unit._
   * Placement of \<script> tags at top/bottom of HTML doc and its keywords affects how JS runs
     * defer keyword for \<script> tags:  This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.
       --> I didn't include this at first which was causing null pointers when assigning value for the .onsubmit async function.
-  * 
+  * HTML DOM 
+    * I was able to add a loading image gif and remove it when the API response returned to let the user know the request was working and finished.
+    * Used JS to manipulate the HTML to show results of the API request.
+    * 
