@@ -11,16 +11,25 @@ DEMONSTRATION
 
 0. Homepage and Links before interacting with API
 
+
+
 1. View Criminal Record
+
+	Show DDB table with Joe B record
+	
 	000-99-4444
 	000-00-0000
 	
 
 2. Expunge Criminal Record
+
 	000-99-4444
-		> Confirmation Diaglog
+		> Confirmation Diaglog  cancel nothing happens
 
 	again 000-99-4444
+
+	Show DDB record was deleted
+	
 
 3. Create New Criminal Record
 	000-99-4444
