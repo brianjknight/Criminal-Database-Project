@@ -194,9 +194,7 @@ your team found on your own that helped you on your project.
 * AWS DynamoDB Query Pagination Tutorial  https://www.youtube.com/watch?v=Ifcic-JIw1k&t=633s
 * Load, Save, Query, Delete, with DynamoDB Mapper  https://www.youtube.com/watch?v=m61Uo_PGwVc
 
-**Share what was worked on yesterday, the plan for today, and any blockers as a
-part of a scrum standup.** In one or two sentences, describe what your team
-found to be the most useful outcome from holding daily standups.
+**Topic:**  HTML DOM
 
-
-
+**Resources:**
+* https://www.w3schools.com/js/js_htmldom.asp

@@ -174,7 +174,6 @@ sentence // integer
 ```
 
 # 8. Pages
+![](images/design_document_images/criminal-records-webpage.png)
 
-![img_5.png](images/design_document_images/criminal-records-webpage.png)
-
-![img_6.png](images/design_document_images/crimes-webpage.png)
+![](images/design_document_images/criminal-record-filter-page.png)

@@ -184,5 +184,8 @@ instructors by the end of the unit._
       --> I didn't include this at first which was causing null pointers when assigning value for the .onsubmit async function.
   * HTML DOM 
     * I was able to add a loading image gif and remove it when the API response returned to let the user know the request was working and finished.
+      ![](images/design_document_images/loading-example.png)
     * Used JS to manipulate the HTML to show results of the API request.
-    * 
+  * Add Confirmation dialog box to button even. 
+    The user is warned and prompted to confirm they wish to delete a record from the database.
+    ![](images/design_document_images/expunge-record-dialog.png)
