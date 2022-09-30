@@ -49,7 +49,8 @@ const headers = {
           document.getElementById("filterResult").innerHTML = "No results found."
         }
         else {
-          let result = "";
+          let result = res.data.length + " records were found for the state of " + givenState + ": " +
+          "<br>" + "---------------------------" + "<br>";
 
           for (const element of res.data) {
             let tempResult = 

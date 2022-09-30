@@ -1,0 +1,65 @@
+000-99-4444
+Joe Biden
+05/11/1942
+CA
+
+[
+{"caseNumber":"PP010101","ssn":"000-99-4444","charge":"falling off bike","offenseLevel":"misdemeanor","status":"pending","date":"8/27/1984","sentenceInDays":60},{"caseNumber":"XY987654","ssn":"000-99-4444","charge":"wearing socks with sandals","offenseLevel":"misdemeanor","status":"pending","date":"5/20/2007","sentenceInDays":0},{"caseNumber":"BB009900","ssn":"000-99-4444","charge":"driving slow in the passing lane","offenseLevel":"felony","status":"guilty","date":"1/20/2015","sentenceInDays":365}
+]
+
+DEMONSTRATION
+
+0. Homepage and Links before interacting with API
+
+1. View Criminal Record
+	000-99-4444
+	000-00-0000
+	
+
+2. Expunge Criminal Record
+	000-99-4444
+		> Confirmation Diaglog
+
+	again 000-99-4444
+
+3. Create New Criminal Record
+	000-99-4444
+	Joe Biden
+	05/11/1942
+	CA
+
+
+	create record without all fields
+
+
+4. View Criminal Record again showing 0 crimes
+
+
+5. View List of crimes which is empty
+
+
+6. Add Crime to Criminal Record
+	SSN 00000  caseNumber 00000   >   case does not exist
+	SSN 00000  caseNumber PP010101  >   criminal record does not exist
+	SSN 111-22-0000  caseNumber PP010101  >   Case does not belong to person
+
+	Then add real crimes for Joe 
+	000-99-4444
+
+	PP010101
+	XY987654
+	BB009900
+
+7. Criminal Records Filter
+	- State AK
+
+	- State AL
+
+	- State CA
+	
+	- CA  MIN  3  & MIN 4
+
+	- CA  MAX 3  & MAX 1
+
+	- CA  MIN 2 MAX 4
+	

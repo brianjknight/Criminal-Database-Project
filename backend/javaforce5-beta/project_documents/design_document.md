@@ -3,7 +3,7 @@
 ## Criminal Records Database Design
 
 ## 1. Problem Statement
-Many crimes are committed every day which each have a lot of associated information. It is important to keep a detailed database of these criminal records. They are used by a number of entities such as police, states, employers, landlords, stalkers, etc.  
+Many crimes are committed every day which each have a lot of associated information. It is important to keep a detailed database of these criminal records. They are used by a number of entities such as police, states, employers, landlords, etc.  
 
 This design document describes a basic criminal records service that allows an agency such as a police department to read, add, update, and delete criminal records.
 ## 2. Top Questions to Resolve in Review
