@@ -77,12 +77,11 @@ most 3 error cases.
 
 U4. As a customer, I want to add a new crime to person's list of crimes.
 
-|**Endpoint:**  |  /criminalrecords/crimes                   |
-|---            |---                  |
-|**Error case** |**Service response** |
-| CriminalRecord for a given SSN does not exist yet.               |                     |
-| Adding a crime to the wrong person's record/SSN.                |                     |
-| Adding a crime that already exists in the person's record.              |                     |
+| **Endpoint:**                                 | /criminalrecords/{ssn} |
+|-----------------------------------------------|------------------------|
+| **Error case**                                | **Service response**   |
+| Using '[ ]' brackets in request                 | HTTP Error 400         |
+| Bad endpoint:  criminalrecordsXXX/111-22-0000 | HTTP Error 403         |
 
 **Develop a service endpoint definition that uses query parameters to determine
 how results are sorted or filtered.** List at least one endpoint that allows
@@ -101,10 +100,10 @@ sorting or filtering of results. Which attribute(s) can be sorted/filtered on?
 exception.** List one client exception and one server exception that your
 service code throws. List one condition in which this exception is thrown.
 
-|                       |**Exception** |**One case in which it is thrown** |
-|---	                |---	       |---	                               |
-|**Client exception:**  |	           |	                               |
-|**Service exception:** |	           |	                               |
+|                     | **Exception**    | **One case in which it is thrown** |
+|---	                |------------------|------------------------------------|
+|**Client exception:**  | HTTP Error 403 	 | 	 Using a bad endpoint             |
+|**Service exception:** | 	HTTP Error 500  | 	 Server times out                 |
 
 ### DynamoDB Table Design
 
@@ -171,8 +170,7 @@ team member learned:
 |-------------|------------------------------------------------------------|
 | Brian       | Using DynamoDBQueryExpression and its optional attributes. |   
 | Brian       | Learning how Gradle builds work with dependencies.         |     
-|             |                                                            |     
-|             |                                                            |     
+| Brian       | HTML DOM manipulating HTML with JavaSript                  |     
 
 **Identify key words to research to accomplish a technical goal | Use sources
 like sage and stack overflow to solve issues encountered while programming.**

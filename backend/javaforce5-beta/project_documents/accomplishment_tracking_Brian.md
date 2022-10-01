@@ -173,11 +173,13 @@ instructors by the end of the unit._
 **Important Docs, Commits, or Code Reviews**:
 
 **Things learned:**
-* If you call an operation to an undefined API resource, you receive an error response with the { "message": "Missing Authentication Token" } message.
-  To me this is misleading but you can add a "hint" to responses for more detail.
-  For example: {"message":"Missing Authentication Token", "hint":"The HTTP method or resources may not be supported."}
-* If an API response is an exception, it is still returning a response and considered a 200 HTTP response.
-  * adsf
+* HTTP Responses & Status Codes
+  * If you call an operation to an undefined API resource, you receive a 403 error response with the { "message": "Missing Authentication Token" } message.
+    * To me this is misleading since the resource is not there. If it were there and you were using the correct AWS authentication keys it would work.
+  * If an API response is an exception, it is still returning a response and considered a successful 200 HTTP response.
+  * Resources: 
+    * https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+    * https://www.hostinger.com/tutorials/http-status-codes
 * HTML, CSS, JavaScript
   * Placement of \<script> tags at top/bottom of HTML doc and its keywords affects how JS runs
     * defer keyword for \<script> tags:  This Boolean attribute is set to indicate to a browser that the script is meant to be executed after the document has been parsed, but before firing DOMContentLoaded.

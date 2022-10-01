@@ -14,7 +14,7 @@ Add Crime to existing record 777-66-5555
 curl -X PUT https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/crimes/777-66-5555 -d '{"caseNumber":"BF999999"}' -H 'Content-Type: application/json'
 
 Get list of Crimes for a record
-curl https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/crimes/777-66-5555
+curl -i https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/crimes/777-66-5555
 
 
 Get records for a specific state
@@ -29,3 +29,16 @@ Get records for a specific state
 
     minNumCrimes & maxNumCrimes
     curl https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/filter/CA?maxNumCrimes=4&minNumCrimes=2
+
+
+ERRORS
+    400
+    CLI:  curl -i https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecords/[111-22-0000]
+    >> curl: (3) bad range in URL position 81:
+
+    Browser: This page isn’t workingIf the problem continues, contact the site owner. HTTP ERROR 400
+
+    403
+    curl -i https://rj3uvek7qk.execute-api.us-west-2.amazonaws.com/dev/criminalrecordsXXX/111-22-0000
+
+
