@@ -6,7 +6,11 @@
 * How closely did you follow your design document after the review was complete?
 Did your implementation need to change based on what you learned once you were
 underway? 
-  * I was able to follow my design document relatively close to the original. The biggest change was incorporating optional query parameters for the criminalrecords/filter/{state} endpoint. When I first built the method in the API Gateway, query parameters were not included.
+
+  * I was able to follow my design document relatively close to the original. The biggest changes were incorporating optional query parameters for the criminalrecords/filter/{state} endpoint and incorporating RequestHanlder interface & Request POJOs.
+  When I first built the GetCriminalRecordsByState activity in the API Gateway, query parameters were not included and the endpoint was different. I went back changing these things and updating the PUML flow diagram. This was a solo project but I realize the implications this would have had the frontend already started working on the endpoint.
+
+
 
 ## Project
 
@@ -20,7 +24,7 @@ underway?
   
 * How did you deal with getting stuck on a problem? What strategies did you
   employ to get yourself unblocked?
-  * Being the first time we created  a project from sctracth rather than starter code, I found it overwhelming at times.
+  * Being the first time we created  a project from scratch rather than starter code, I found it overwhelming at times.
   * Breaking down problems into smaller, more manageable tasks was very helpful. Using cards on Trello is a great tool for this.
   * On specific problems for tasks, I searched resources like StackOverflow, W3Schools, and AWS documentation for examples and syntax explanations. 
   <br><br>
