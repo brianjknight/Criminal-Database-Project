@@ -2,11 +2,21 @@ package main.java.models.requests;
 
 import java.util.Objects;
 
+/**
+ * Request object with required attributes ssn to retrieve a list of Crimes from a CriminalRecord.
+ */
 public class GetCrimesForCriminalRecordRequest {
     private String ssn;
 
+    /**
+     * No parameter constructor.
+     */
     public GetCrimesForCriminalRecordRequest() {}
 
+    /**
+     * Parameterized constructor.
+     * @param ssn social security number.
+     */
     public GetCrimesForCriminalRecordRequest(String ssn) {
         this.ssn = ssn;
     }

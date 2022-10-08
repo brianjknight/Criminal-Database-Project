@@ -7,6 +7,9 @@ import main.java.dao.CrimeDao;
 import main.java.dao.CriminalRecordDao;
 import main.java.models.requests.AddCrimeToCriminalRecordRequest;
 
+/**
+ * Class to add all of the preconfigured Crimes example data to the corresponding CriminalRecords.
+ */
 public class AddCrimeDataToCriminalRecords {
     public static void main(String[] args) {
         DynamoDBMapper mapper = new DynamoDBMapper(DynamoDbClientProvider.getDynamoDBClient());

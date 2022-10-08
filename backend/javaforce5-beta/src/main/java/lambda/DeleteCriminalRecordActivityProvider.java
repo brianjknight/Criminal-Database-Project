@@ -7,8 +7,9 @@ import main.java.dependency.CriminalRecordServiceComponent;
 import main.java.dependency.DaggerCriminalRecordServiceComponent;
 import main.java.models.requests.DeleteCriminalRecordRequest;
 
-import java.awt.*;
-
+/**
+ * Class to provide interaction with AWS Lambda function for DeleteCriminalRecordActivity.
+ */
 public class DeleteCriminalRecordActivityProvider implements RequestHandler<DeleteCriminalRecordRequest, String> {
     private CriminalRecordServiceComponent dagger = DaggerCriminalRecordServiceComponent.create();
     private DeleteCriminalRecordActivity deleteCriminalRecordActivity = dagger.provideDeleteCriminalRecordActivity();

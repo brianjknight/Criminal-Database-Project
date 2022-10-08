@@ -2,11 +2,21 @@ package main.java.models.requests;
 
 import java.util.Objects;
 
+/**
+ * Request object with required attributes ssn.
+ */
 public class DeleteCriminalRecordRequest {
     private String ssn;
 
+    /**
+     * No parameter constructor.
+     */
     public DeleteCriminalRecordRequest() {}
 
+    /**
+     * Parameterized constructor.
+     * @param ssn social security number.
+     */
     public DeleteCriminalRecordRequest(String ssn) {
         this.ssn = ssn;
     }

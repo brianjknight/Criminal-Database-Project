@@ -37,7 +37,7 @@ public class AddCrimeToCriminalRecordActivity implements RequestHandler<AddCrime
     }
 
     /**
-     * This method handles the input request by adding a Crime to a Criminal Record.
+     * This method handles the input request object by adding a Crime to a Criminal Record.
      *
      * @param addCrimeToCriminalRecordRequest request object containing a SSN and caseNumber.
      * @param context The Lambda execution environment context object.

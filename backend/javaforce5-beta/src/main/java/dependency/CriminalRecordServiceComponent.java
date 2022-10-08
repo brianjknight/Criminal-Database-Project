@@ -10,6 +10,9 @@ import dagger.Component;
 
 import javax.inject.Singleton;
 
+/**
+ * Dagger component interface for dependency injection.
+ */
 @Singleton
 @Component(modules = {MapperModule.class})
 public interface CriminalRecordServiceComponent {

@@ -8,8 +8,9 @@ import main.java.dependency.DaggerCriminalRecordServiceComponent;
 import main.java.models.CriminalRecord;
 import main.java.models.requests.AddCrimeToCriminalRecordRequest;
 
-import java.util.List;
-
+/**
+ * Class to provide interaction with AWS Lambda function for AddCrimeToCriminalRecordActivity.
+ */
 public class AddCrimeToCriminalRecordActivityProvider implements RequestHandler<AddCrimeToCriminalRecordRequest, CriminalRecord> {
     CriminalRecordServiceComponent dagger = DaggerCriminalRecordServiceComponent.create();
     AddCrimeToCriminalRecordActivity addCrimeToCriminalRecordActivity = dagger.provideAddCrimeToCriminalRecordActivity();

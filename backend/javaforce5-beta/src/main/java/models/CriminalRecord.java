@@ -10,6 +10,9 @@ import main.java.converter.CrimeListConverter;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * CriminalRecord POJO class represents an item in the CriminalRecords DynamoDB table.
+ */
 @DynamoDBTable(tableName = "CriminalRecords")
 public class CriminalRecord {
     public static final String STATE_INDEX = "StateIndex";

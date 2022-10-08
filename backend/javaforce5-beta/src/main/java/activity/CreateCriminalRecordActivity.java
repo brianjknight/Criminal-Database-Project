@@ -15,14 +15,22 @@ public class CreateCriminalRecordActivity implements RequestHandler<CreateCrimin
     private final CriminalRecordDao criminalRecordDao;
 
     /**
-     * 
-     * @param criminalRecordDao
+     * Instantiate a new CreateCriminalRecordActivity object.
+     *
+     * @param criminalRecordDao CriminalRecordDao to access CriminalRecords table.
      */
     @Inject
     public CreateCriminalRecordActivity(CriminalRecordDao criminalRecordDao) {
         this.criminalRecordDao = criminalRecordDao;
     }
 
+    /**
+     * This method handles the input request object by creating a new CriminalRecord.
+     *
+     * @param createCriminalRecordRequest request object containing a SSN, name, dob, and state.
+     * @param context The Lambda execution environment context object.
+     * @return returns the newly created CriminalRecord.
+     */
     public CriminalRecord handleRequest(CreateCriminalRecordRequest createCriminalRecordRequest, Context context) {
         CriminalRecord criminalRecord = CriminalRecord.builder()
                 .withSsn(createCriminalRecordRequest.getSsn())

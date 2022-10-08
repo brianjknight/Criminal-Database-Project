@@ -2,15 +2,28 @@ package main.java.models.requests;
 
 import java.util.Objects;
 
+/**
+ * Request object with required attributes ssn, name, dob, and state to create a new CriminalRecord.
+ */
 public class CreateCriminalRecordRequest {
     private String ssn;
     private String name;
     private String dob;
     private String state;
 
+    /**
+     * No parameter constructor.
+     */
     public CreateCriminalRecordRequest() {
     }
 
+    /**
+     * Parameterized constructor.
+     * @param ssn social security number.
+     * @param name full name.
+     * @param dob date of birth.
+     * @param state state of residence.
+     */
     public CreateCriminalRecordRequest(String ssn, String name, String dob, String state) {
         this.ssn = ssn;
         this.name = name;

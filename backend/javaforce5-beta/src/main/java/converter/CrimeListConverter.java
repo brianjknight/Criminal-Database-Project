@@ -7,6 +7,9 @@ import main.java.models.Crime;
 
 import java.util.List;
 
+/**
+ * Class for converting DynamoDB string JSON into a list of CriminalRecord obejcts.
+ */
 public class CrimeListConverter implements DynamoDBTypeConverter<String, List> {
     private static final Gson GSON = new Gson();
 

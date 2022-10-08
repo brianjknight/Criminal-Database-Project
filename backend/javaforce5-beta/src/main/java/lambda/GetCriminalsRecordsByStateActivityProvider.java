@@ -10,6 +10,9 @@ import main.java.models.requests.GetCriminalsRecordsByStateRequest;
 
 import java.util.List;
 
+/**
+ * Class to provide interaction with AWS Lambda function for GetCriminalsRecordsByStateActivity.
+ */
 public class GetCriminalsRecordsByStateActivityProvider implements RequestHandler<GetCriminalsRecordsByStateRequest, List<CriminalRecord>> {
     CriminalRecordServiceComponent dagger = DaggerCriminalRecordServiceComponent.create();
     GetCriminalsRecordsByStateActivity getCriminalsRecordsByStateActivity = dagger.provideGetCriminalsRecordsByStateActivity();

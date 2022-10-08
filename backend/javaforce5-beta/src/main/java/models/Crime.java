@@ -6,6 +6,9 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
 import java.util.Objects;
 
+/**
+ * Crime POJO class represents an item in the Crimes DynamoDB table.
+ */
 @DynamoDBTable(tableName = "Crimes")
 public class Crime {
     private String caseNumber;

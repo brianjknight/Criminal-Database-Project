@@ -2,16 +2,30 @@ package main.java.models.requests;
 
 import java.util.Objects;
 
+/**
+ * Request object with required attribute state and optional minimum and maximum number of crimes.
+ */
 public class GetCriminalsRecordsByStateRequest {
     private String state;
     private Integer minNumCrimes;
     private Integer maxNumCrimes;
 
+    /**
+     * No parameter constructor.
+     */
     public GetCriminalsRecordsByStateRequest() {
     }
 
-    public GetCriminalsRecordsByStateRequest(String state) {
+    /**
+     * Parameterized constructor.
+     * @param state state to search records for.
+     * @param minNumCrimes minimum number to filter crimeCount attribute.
+     * @param maxNumCrimes maximum number to filter crimeCount attribute.
+     */
+    public GetCriminalsRecordsByStateRequest(String state, Integer minNumCrimes, Integer maxNumCrimes) {
         this.state = state;
+        this.minNumCrimes = getMinNumCrimes();
+        this.maxNumCrimes = getMaxNumCrimes();
     }
 
     public GetCriminalsRecordsByStateRequest(Builder builder) {

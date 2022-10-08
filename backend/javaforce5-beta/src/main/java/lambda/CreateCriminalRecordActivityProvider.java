@@ -8,6 +8,9 @@ import main.java.dependency.DaggerCriminalRecordServiceComponent;
 import main.java.models.CriminalRecord;
 import main.java.models.requests.CreateCriminalRecordRequest;
 
+/**
+ * Class to provide interaction with AWS Lambda function for CreateCriminalRecordActivity.
+ */
 public class CreateCriminalRecordActivityProvider implements RequestHandler<CreateCriminalRecordRequest, CriminalRecord> {
     private CriminalRecordServiceComponent dagger = DaggerCriminalRecordServiceComponent.create();
     private CreateCriminalRecordActivity createCriminalRecordActivity = dagger.provideCreateCriminalRecordActivity();

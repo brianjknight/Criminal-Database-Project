@@ -7,6 +7,9 @@ import dagger.Provides;
 
 import javax.inject.Singleton;
 
+/**
+ * Module for providing DynamoDB mapper to dependency chain.
+ */
 @Module
 public class MapperModule {
     @Provides

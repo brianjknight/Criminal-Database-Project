@@ -12,6 +12,9 @@ import main.java.models.requests.GetCriminalsRecordsByStateRequest;
 
 import java.util.List;
 
+/**
+ * App for testing activities and accessing the DynamoDB tables.
+ */
 public class TestApp {
     public static void main(String[] args) {
 

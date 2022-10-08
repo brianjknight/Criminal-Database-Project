@@ -2,12 +2,23 @@ package main.java.models.requests;
 
 import java.util.Objects;
 
+/**
+ * Request object with required attributes ssn and caseNumber to add a Crime to a CriminalRecord.
+ */
 public class AddCrimeToCriminalRecordRequest {
     private String ssn;
     private String caseNumber;
 
+    /**
+     * No parameter constructor.
+     */
     public AddCrimeToCriminalRecordRequest() {}
 
+    /**
+     * Parameterized constructor.
+     * @param ssn social security number.
+     * @param caseNumber case number.
+     */
     public AddCrimeToCriminalRecordRequest(String ssn, String caseNumber) {
         this.ssn = ssn;
         this.caseNumber = caseNumber;
