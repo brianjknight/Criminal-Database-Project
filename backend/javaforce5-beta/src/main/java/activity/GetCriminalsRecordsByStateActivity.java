@@ -10,9 +10,11 @@ import javax.inject.Inject;
 import java.util.List;
 
 /**
- * Implementation of the Criminal Record Service API for retrieving CriminalRecords by state with optional crimeCount query.
+ * Implementation of the Criminal Record Service API for retrieving
+ * CriminalRecords by state with optional crimeCount query.
  */
-public class GetCriminalsRecordsByStateActivity implements RequestHandler<GetCriminalsRecordsByStateRequest, List<CriminalRecord>> {
+public class GetCriminalsRecordsByStateActivity implements
+        RequestHandler<GetCriminalsRecordsByStateRequest, List<CriminalRecord>> {
     CriminalRecordDao criminalRecordDao;
 
     /**
@@ -32,7 +34,8 @@ public class GetCriminalsRecordsByStateActivity implements RequestHandler<GetCri
      * @param context The Lambda execution environment context object.
      * @return returns a list of CriminalRecord objects.
      */
-    public List<CriminalRecord> handleRequest(GetCriminalsRecordsByStateRequest getCriminalsRecordsByStateRequest, Context context) {
+    public List<CriminalRecord> handleRequest(GetCriminalsRecordsByStateRequest getCriminalsRecordsByStateRequest,
+                                              Context context) {
         List<CriminalRecord> resultList = criminalRecordDao.getCriminalRecordsByState(getCriminalsRecordsByStateRequest);
         return resultList;
     }

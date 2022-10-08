@@ -7,14 +7,15 @@ import main.java.models.Crime;
 import main.java.models.CriminalRecord;
 import main.java.models.requests.GetCrimesForCriminalRecordRequest;
 
-import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
+import javax.inject.Inject;
 
 /**
  * Implementation of the Criminal Record Service API for retrieving the Crimes for a given CriminalRecord.
  */
-public class GetCrimesForCriminalRecordActivity implements RequestHandler<GetCrimesForCriminalRecordRequest, List<Crime>> {
+public class GetCrimesForCriminalRecordActivity implements
+        RequestHandler<GetCrimesForCriminalRecordRequest, List<Crime>> {
 
     CriminalRecordDao criminalRecordDao;
 
@@ -35,10 +36,11 @@ public class GetCrimesForCriminalRecordActivity implements RequestHandler<GetCri
      * @param context The Lambda execution environment context object.
      * @return returns a list of Crime objects for the given SSN.
      */
-    public List<Crime> handleRequest(GetCrimesForCriminalRecordRequest getCrimesForCriminalRecordRequest, Context context) {
+    public List<Crime> handleRequest(GetCrimesForCriminalRecordRequest getCrimesForCriminalRecordRequest,
+                                     Context context) {
         CriminalRecord requestCriminalRecord = criminalRecordDao.getCriminalRecord(getCrimesForCriminalRecordRequest.getSsn());
         List<Crime> crimeList = requestCriminalRecord.getCrimes();
-        if(crimeList == null) {
+        if (crimeList == null) {
             crimeList = new ArrayList<>();
         }
 

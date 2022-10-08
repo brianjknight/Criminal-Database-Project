@@ -4,17 +4,16 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.amazonaws.services.dynamodbv2.datamodeling.PaginatedQueryList;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
-import com.amazonaws.services.dynamodbv2.model.Condition;
 import main.java.exceptions.MissingAttributeToSaveRecordException;
 import main.java.exceptions.NoCriminalRecordForStateException;
 import main.java.exceptions.NoCriminalRecordFoundException;
 import main.java.models.CriminalRecord;
 import main.java.models.requests.GetCriminalsRecordsByStateRequest;
 
-import javax.inject.Inject;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.inject.Inject;
 
 /**
  * Accesses data in the CriminalRecords table in DynamoDB.
@@ -49,9 +48,11 @@ public class CriminalRecordDao {
     }
 
     /**
-     * This method retrieves a list of CriminalRecords matching the given state and filtering on optional number of crimes.
+     * This method retrieves a list of CriminalRecords matching the given state and
+     * filtering on optional number of crimes.
      *
-     * @param getCriminalsRecordsByStateRequest request object containing a state and optional minimum and maximum number of crimes.
+     * @param getCriminalsRecordsByStateRequest request object containing a state and optional minimum and
+     * maximum number of crimes.
      * @return returns a list of CriminalRecord objects.
      */
     public List<CriminalRecord> getCriminalRecordsByState(GetCriminalsRecordsByStateRequest getCriminalsRecordsByStateRequest) {
@@ -60,16 +61,14 @@ public class CriminalRecordDao {
         Integer maxNumCrimes;
 
         state = getCriminalsRecordsByStateRequest.getState();
-        if(getCriminalsRecordsByStateRequest.getMinNumCrimes() == null) {
+        if (getCriminalsRecordsByStateRequest.getMinNumCrimes() == null) {
             minNumCrimes = 0;
-        }
-        else {
+        } else {
             minNumCrimes = getCriminalsRecordsByStateRequest.getMinNumCrimes();
         }
-        if(getCriminalsRecordsByStateRequest.getMaxNumCrimes() == null) {
+        if (getCriminalsRecordsByStateRequest.getMaxNumCrimes() == null) {
             maxNumCrimes = Integer.MAX_VALUE;
-        }
-        else {
+        } else {
             maxNumCrimes = getCriminalsRecordsByStateRequest.getMaxNumCrimes();
         }
 
@@ -90,7 +89,7 @@ public class CriminalRecordDao {
                 .withExpressionAttributeValues(valueMap);
 
         PaginatedQueryList<CriminalRecord> criminalRecordsByStateList = dynamoDBMapper.query(CriminalRecord.class, queryExpression);
-        if(criminalRecordsByStateList == null || criminalRecordsByStateList.size() == 0) {
+        if (criminalRecordsByStateList == null || criminalRecordsByStateList.size() == 0) {
             throw new NoCriminalRecordForStateException(state);
         }
         return criminalRecordsByStateList;
@@ -108,7 +107,7 @@ public class CriminalRecordDao {
         boolean missingDob = criminalRecord.getDob() == null || "".equals(criminalRecord.getDob());
         boolean missingState = criminalRecord.getState() == null || "".equals(criminalRecord.getState());
 
-        if(missingSSN || missingName || missingDob || missingState) {
+        if (missingSSN || missingName || missingDob || missingState) {
             throw new MissingAttributeToSaveRecordException();
         }
 

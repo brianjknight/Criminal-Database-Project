@@ -10,16 +10,17 @@ import main.java.models.Crime;
 import main.java.models.CriminalRecord;
 import main.java.models.requests.AddCrimeToCriminalRecordRequest;
 
-import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
+import javax.inject.Inject;
 
 
 /**
  * Implementation of the Criminal Record Service API for adding a crime to a criminal record.
  *
  */
-public class AddCrimeToCriminalRecordActivity implements RequestHandler<AddCrimeToCriminalRecordRequest, CriminalRecord> {
+public class AddCrimeToCriminalRecordActivity implements
+        RequestHandler<AddCrimeToCriminalRecordRequest, CriminalRecord> {
 
     private CriminalRecordDao criminalRecordDao;
     private CrimeDao crimeDao;
@@ -43,23 +44,24 @@ public class AddCrimeToCriminalRecordActivity implements RequestHandler<AddCrime
      * @param context The Lambda execution environment context object.
      * @return returns the updated CriminalRecord.
      */
-    public CriminalRecord handleRequest(AddCrimeToCriminalRecordRequest addCrimeToCriminalRecordRequest, Context context) {
+    public CriminalRecord handleRequest(AddCrimeToCriminalRecordRequest addCrimeToCriminalRecordRequest,
+                                        Context context) {
         String ssn = addCrimeToCriminalRecordRequest.getSsn();
         String caseNumber = addCrimeToCriminalRecordRequest.getCaseNumber();
 
         Crime requestedCrime = crimeDao.getCrime(caseNumber);
         CriminalRecord requestedCriminalRecord = criminalRecordDao.getCriminalRecord(ssn);
 
-        if(!ssn.equals(requestedCrime.getSsn())) {
+        if (!ssn.equals(requestedCrime.getSsn())) {
             throw new CriminalRecordCrimeMismatchException(ssn, caseNumber);
         }
 
         List<Crime> crimeList = requestedCriminalRecord.getCrimes();
 
-        if(crimeList == null) {
+        if (crimeList == null) {
             crimeList = new ArrayList<>();
         }
-        if(crimeList.contains(requestedCrime)) {
+        if (crimeList.contains(requestedCrime)) {
             throw new CrimeAlreadyInCriminalRecordException(caseNumber);
         }
 

@@ -41,7 +41,8 @@ public class CreateCriminalRecordActivity implements RequestHandler<CreateCrimin
                 .withCrimes(null)
                 .build();
 
-        //TODO make an exception to throw if a criminal record already exists for the person you are trying to create a new record for.
+        //TODO make an exception to throw if a criminal record already
+        // exists for the person you are trying to create a new record for.
 
         criminalRecordDao.saveCriminalRecord(criminalRecord);
 

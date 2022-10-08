@@ -1,5 +1,10 @@
 plugins {
     id 'java'
+    id 'checkstyle'
+    id 'jacoco'
+    id 'com.github.spotbugs' version '4.7.1'
+    id 'com.adarshr.test-logger' version '3.0.0'
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
 }
 
 group 'org.example'
@@ -9,10 +14,29 @@ repositories {
     mavenCentral()
 }
 
+checkstyle {
+//    sourceSets = [sourceSets.main, sourceSets.test]
+    sourceSets = [sourceSets.main]
+    configFile = file("$rootDir/LibrariesAndUtilities/ATACheckstyle/configuration/checkstyle/checkstyle.xml")
+    configProperties.put('checkstyle.suppression.filter', "$rootDir/LibrariesAndUtilities/ATACheckstyle/configuration/checkstyle/suppressions.xml")
+    ignoreFailures = true
+}
+
 tasks.withType(Checkstyle) {
     reports {
         xml.enabled false
         html.enabled true
+    }
+}
+
+check.dependsOn jacocoTestCoverageVerification
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.40
+            }
+        }
     }
 }
 
@@ -32,6 +56,19 @@ sourceSets {
         }
         resources {
             srcDirs = ['tst/resources/']
+        }
+    }
+}
+
+spotbugs {
+    spotbugsTest.enabled = false
+    ignoreFailures = true
+}
+
+spotbugsMain {
+    reports {
+        html {
+            enabled = true
         }
     }
 }

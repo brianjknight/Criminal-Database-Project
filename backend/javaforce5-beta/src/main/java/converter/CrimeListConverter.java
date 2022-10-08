@@ -20,6 +20,6 @@ public class CrimeListConverter implements DynamoDBTypeConverter<String, List> {
 
     @Override
     public List unconvert(String dynamoDbRepresentation) {
-        return GSON.fromJson(dynamoDbRepresentation, new TypeToken<List<Crime>>() {} .getType());
+        return GSON.fromJson(dynamoDbRepresentation, new TypeToken<List<Crime>>() { } .getType());
     }
 }
