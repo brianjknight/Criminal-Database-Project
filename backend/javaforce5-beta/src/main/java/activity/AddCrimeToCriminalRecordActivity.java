@@ -14,17 +14,35 @@ import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Implementation of the Criminal Record Service API for adding a crime to a criminal record.
+ *
+ */
 public class AddCrimeToCriminalRecordActivity implements RequestHandler<AddCrimeToCriminalRecordRequest, CriminalRecord> {
 
     private CriminalRecordDao criminalRecordDao;
     private CrimeDao crimeDao;
 
+    /**
+     * Instantiate a new AddCrimeToCriminalRecordActivity object.
+     *
+     * @param criminalRecordDao CriminalRecordDao to access CriminalRecords table.
+     * @param crimeDao CrimeDao to access the Crimes table.
+     */
     @Inject
     public AddCrimeToCriminalRecordActivity(CriminalRecordDao criminalRecordDao, CrimeDao crimeDao) {
         this.criminalRecordDao = criminalRecordDao;
         this.crimeDao = crimeDao;
     }
 
+    /**
+     * This method handles the input request by adding a Crime to a Criminal Record.
+     *
+     * @param addCrimeToCriminalRecordRequest request object containing a SSN and caseNumber.
+     * @param context The Lambda execution environment context object.
+     * @return returns the updated CriminalRecord.
+     */
     public CriminalRecord handleRequest(AddCrimeToCriminalRecordRequest addCrimeToCriminalRecordRequest, Context context) {
         String ssn = addCrimeToCriminalRecordRequest.getSsn();
         String caseNumber = addCrimeToCriminalRecordRequest.getCaseNumber();

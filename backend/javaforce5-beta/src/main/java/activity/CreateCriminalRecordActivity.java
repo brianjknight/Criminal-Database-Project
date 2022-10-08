@@ -8,9 +8,16 @@ import main.java.models.requests.CreateCriminalRecordRequest;
 
 import javax.inject.Inject;
 
+/**
+ * Implementation of the Criminal Record Service API for creating a new CriminalRecord.
+ */
 public class CreateCriminalRecordActivity implements RequestHandler<CreateCriminalRecordRequest, CriminalRecord> {
     private final CriminalRecordDao criminalRecordDao;
 
+    /**
+     * 
+     * @param criminalRecordDao
+     */
     @Inject
     public CreateCriminalRecordActivity(CriminalRecordDao criminalRecordDao) {
         this.criminalRecordDao = criminalRecordDao;
