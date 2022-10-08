@@ -29,7 +29,8 @@ public class TestApp {
         //        GetCriminalRecordRequest getBartFart = GetCriminalRecordRequest.builder()
         //                .withSsn("777-66-5555")
         //                .build();
-        //        GetCriminalRecordActivity getCriminalRecordActivity = new GetCriminalRecordActivity(criminalRecordDao);
+        //        GetCriminalRecordActivity getCriminalRecordActivity =
+        //        new GetCriminalRecordActivity(criminalRecordDao);
         //        CriminalRecord bart = getCriminalRecordActivity.handleRequest(getBartFart, null);
         //        System.out.println(bart);
         System.out.println("-".repeat(150));

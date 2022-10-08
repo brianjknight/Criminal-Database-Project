@@ -6,8 +6,8 @@ import main.java.dao.CriminalRecordDao;
 import main.java.models.CriminalRecord;
 import main.java.models.requests.GetCriminalsRecordsByStateRequest;
 
-import javax.inject.Inject;
 import java.util.List;
+import javax.inject.Inject;
 
 /**
  * Implementation of the Criminal Record Service API for retrieving
@@ -30,13 +30,15 @@ public class GetCriminalsRecordsByStateActivity implements
     /**
      * This method handles the input request object by creating a new CriminalRecord.
      *
-     * @param getCriminalsRecordsByStateRequest request object containing a state and optional minimum and maximum number of crimes.
+     * @param getCriminalsRecordsByStateRequest request object containing a state
+     *                                          and optional minimum and maximum number of crimes.
      * @param context The Lambda execution environment context object.
      * @return returns a list of CriminalRecord objects.
      */
     public List<CriminalRecord> handleRequest(GetCriminalsRecordsByStateRequest getCriminalsRecordsByStateRequest,
                                               Context context) {
-        List<CriminalRecord> resultList = criminalRecordDao.getCriminalRecordsByState(getCriminalsRecordsByStateRequest);
+        List<CriminalRecord> resultList =
+                criminalRecordDao.getCriminalRecordsByState(getCriminalsRecordsByStateRequest);
         return resultList;
     }
 }

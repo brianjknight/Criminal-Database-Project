@@ -38,7 +38,8 @@ public class GetCrimesForCriminalRecordActivity implements
      */
     public List<Crime> handleRequest(GetCrimesForCriminalRecordRequest getCrimesForCriminalRecordRequest,
                                      Context context) {
-        CriminalRecord requestCriminalRecord = criminalRecordDao.getCriminalRecord(getCrimesForCriminalRecordRequest.getSsn());
+        CriminalRecord requestCriminalRecord =
+                criminalRecordDao.getCriminalRecord(getCrimesForCriminalRecordRequest.getSsn());
         List<Crime> crimeList = requestCriminalRecord.getCrimes();
         if (crimeList == null) {
             crimeList = new ArrayList<>();

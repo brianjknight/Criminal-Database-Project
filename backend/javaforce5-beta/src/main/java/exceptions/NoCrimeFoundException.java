@@ -3,7 +3,7 @@ package main.java.exceptions;
 /**
  * Exception thrown when trying retrieve a Crime from DDB Crimes table but it does not exist.
  */
-public class NoCrimeFoundException extends RuntimeException{
+public class NoCrimeFoundException extends RuntimeException {
 
     private static final long serialVersionUID = -7715647062639847713L;
     private String caseNumber;

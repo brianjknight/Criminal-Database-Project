@@ -1,9 +1,10 @@
 package main.java.exceptions;
 
 /**
- * Exception thrown when trying to create or save a CriminalRecord that does not contain the required attributes ssn, name, dob, and state.
+ * Exception thrown when trying to create or save a CriminalRecord that
+ * does not contain the required attributes ssn, name, dob, and state.
  */
-public class MissingAttributeToSaveRecordException extends RuntimeException{
+public class MissingAttributeToSaveRecordException extends RuntimeException {
 
     private static final long serialVersionUID = -3592874481640674253L;
 

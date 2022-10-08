@@ -3,7 +3,7 @@ package main.java.exceptions;
 /**
  * Exception thrown when trying to retrieve a CriminalRecord that does not exist for the given SSN.
  */
-public class NoCriminalRecordFoundException extends RuntimeException{
+public class NoCriminalRecordFoundException extends RuntimeException {
     private static final long serialVersionUID = -1069711839422000753L;
     private String ssn;
 

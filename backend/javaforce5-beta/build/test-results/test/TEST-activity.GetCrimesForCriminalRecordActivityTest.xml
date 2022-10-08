@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="activity.GetCrimesForCriminalRecordActivityTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2022-10-08T15:58:13" hostname="DESKTOP-QFNEL2B" time="0.012">
+  <properties/>
+  <testcase name="handleRequest_getCrimeListForExistingCriminalRecord_verifyCallToGetCriminalRecord()" classname="activity.GetCrimesForCriminalRecordActivityTest" time="0.004"/>
+  <testcase name="handleRequest_getCrimeListForExistingCriminalRecordWithNullCrime_returnsEmptyCrimeList()" classname="activity.GetCrimesForCriminalRecordActivityTest" time="0.003"/>
+  <testcase name="handleRequest_getCrimeListForExistingCriminalRecordWithACrime_returnCrimeList()" classname="activity.GetCrimesForCriminalRecordActivityTest" time="0.002"/>
+  <testcase name="handleRequest_getCrimeListForNonExistingCriminalRecord_throwsNoCriminalRecordFoundException()" classname="activity.GetCrimesForCriminalRecordActivityTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

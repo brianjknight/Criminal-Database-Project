@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="activity.AddCrimeToCriminalRecordActivityTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2022-10-08T15:58:12" hostname="DESKTOP-QFNEL2B" time="0.784">
+  <properties/>
+  <testcase name="handleRequest_addCrimeForNonExistingCriminalRecord_throwsNoCriminalRecordFoundException()" classname="activity.AddCrimeToCriminalRecordActivityTest" time="0.731"/>
+  <testcase name="handleRequest_addCrimeToCriminalRecordAlreadyContainsCrime_throwsCrimeAlreadyInCriminalRecordException()" classname="activity.AddCrimeToCriminalRecordActivityTest" time="0.018"/>
+  <testcase name="handleRequest_addCrimeToExistingCriminalRecordWithNoCrimes_returnsCriminalRecordsWithCrimeCountIncremented()" classname="activity.AddCrimeToCriminalRecordActivityTest" time="0.005"/>
+  <testcase name="handleRequest_addCrimeToExistingCriminalRecordWithNoCrimes_makesCallToSaveCriminalRecord()" classname="activity.AddCrimeToCriminalRecordActivityTest" time="0.015"/>
+  <testcase name="handleRequest_addCrimeToCriminalRecordWrongSSN_throwsCriminalRecordCrimeMismatchException()" classname="activity.AddCrimeToCriminalRecordActivityTest" time="0.01"/>
+  <testcase name="handleRequest_addCrimeToExistingCriminalRecordWithNoCrimes_returnsCriminalRecordsWithCrimeAdded()" classname="activity.AddCrimeToCriminalRecordActivityTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

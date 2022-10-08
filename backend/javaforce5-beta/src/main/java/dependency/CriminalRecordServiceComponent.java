@@ -1,12 +1,12 @@
 package main.java.dependency;
 
+import dagger.Component;
 import main.java.activity.AddCrimeToCriminalRecordActivity;
 import main.java.activity.CreateCriminalRecordActivity;
 import main.java.activity.DeleteCriminalRecordActivity;
 import main.java.activity.GetCrimesForCriminalRecordActivity;
 import main.java.activity.GetCriminalRecordActivity;
 import main.java.activity.GetCriminalsRecordsByStateActivity;
-import dagger.Component;
 
 import javax.inject.Singleton;
 

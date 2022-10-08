@@ -11,11 +11,14 @@ import main.java.models.requests.AddCrimeToCriminalRecordRequest;
 /**
  * Class to provide interaction with AWS Lambda function for AddCrimeToCriminalRecordActivity.
  */
-public class AddCrimeToCriminalRecordActivityProvider implements RequestHandler<AddCrimeToCriminalRecordRequest, CriminalRecord> {
+public class AddCrimeToCriminalRecordActivityProvider implements
+        RequestHandler<AddCrimeToCriminalRecordRequest, CriminalRecord> {
     CriminalRecordServiceComponent dagger = DaggerCriminalRecordServiceComponent.create();
-    AddCrimeToCriminalRecordActivity addCrimeToCriminalRecordActivity = dagger.provideAddCrimeToCriminalRecordActivity();
+    AddCrimeToCriminalRecordActivity addCrimeToCriminalRecordActivity =
+            dagger.provideAddCrimeToCriminalRecordActivity();
 
-    public CriminalRecord handleRequest(AddCrimeToCriminalRecordRequest addCrimeToCriminalRecordRequest, Context context) {
+    public CriminalRecord handleRequest(AddCrimeToCriminalRecordRequest addCrimeToCriminalRecordRequest,
+                                        Context context) {
         return addCrimeToCriminalRecordActivity.handleRequest(addCrimeToCriminalRecordRequest, context);
     }
 }

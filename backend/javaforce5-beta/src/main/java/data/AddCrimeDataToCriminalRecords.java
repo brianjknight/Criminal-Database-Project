@@ -1,8 +1,8 @@
 package main.java.data;
 
-import main.java.activity.AddCrimeToCriminalRecordActivity;
 import com.amazon.ata.aws.dynamodb.DynamoDbClientProvider;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import main.java.activity.AddCrimeToCriminalRecordActivity;
 import main.java.dao.CrimeDao;
 import main.java.dao.CriminalRecordDao;
 import main.java.models.requests.AddCrimeToCriminalRecordRequest;
@@ -11,6 +11,11 @@ import main.java.models.requests.AddCrimeToCriminalRecordRequest;
  * Class to add all of the preconfigured Crimes example data to the corresponding CriminalRecords.
  */
 public class AddCrimeDataToCriminalRecords {
+
+    /**
+     * Main method in data class to add Crimes to Criminal Records.
+     * @param args no args.
+     */
     public static void main(String[] args) {
         DynamoDBMapper mapper = new DynamoDBMapper(DynamoDbClientProvider.getDynamoDBClient());
         CriminalRecordDao criminalRecordDao = new CriminalRecordDao(mapper);
@@ -46,7 +51,7 @@ public class AddCrimeDataToCriminalRecords {
                 .withSsn("123-45-8888")
                 .withCaseNumber("QQ010199")
                 .build();
-        addCrime.handleRequest(request5,null);
+        addCrime.handleRequest(request5, null);
 
         AddCrimeToCriminalRecordRequest request6 = AddCrimeToCriminalRecordRequest.builder()
                 .withSsn("222-22-2020")

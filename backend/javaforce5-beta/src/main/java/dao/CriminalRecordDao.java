@@ -55,7 +55,8 @@ public class CriminalRecordDao {
      * maximum number of crimes.
      * @return returns a list of CriminalRecord objects.
      */
-    public List<CriminalRecord> getCriminalRecordsByState(GetCriminalsRecordsByStateRequest getCriminalsRecordsByStateRequest) {
+    public List<CriminalRecord> getCriminalRecordsByState(GetCriminalsRecordsByStateRequest
+                                                                  getCriminalsRecordsByStateRequest) {
         String state;
         Integer minNumCrimes;
         Integer maxNumCrimes;

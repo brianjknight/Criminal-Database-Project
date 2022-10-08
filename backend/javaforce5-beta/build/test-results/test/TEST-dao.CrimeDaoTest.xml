@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="dao.CrimeDaoTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-10-08T15:58:13" hostname="DESKTOP-QFNEL2B" time="0.255">
+  <properties/>
+  <testcase name="getCrime_provideCaseNumberExistingCrime_returnCrime()" classname="dao.CrimeDaoTest" time="0.252"/>
+  <testcase name="getCrime_provideNonExistingCaseNumber_throwsNoCrimeFoundException()" classname="dao.CrimeDaoTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

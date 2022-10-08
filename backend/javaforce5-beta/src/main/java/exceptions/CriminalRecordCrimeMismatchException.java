@@ -4,7 +4,7 @@ package main.java.exceptions;
  * Exception thrown when trying to add a Crime to a CriminalRecord that belongs to a different SSN.
  * SSN attributes of Crime and CriminalRecord must match.
  */
-public class CriminalRecordCrimeMismatchException extends RuntimeException{
+public class CriminalRecordCrimeMismatchException extends RuntimeException {
 
     private static final long serialVersionUID = -3705778411794007532L;
     private String ssn;

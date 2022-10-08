@@ -63,7 +63,9 @@ public class GetCriminalsRecordsByStateRequest {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GetCriminalsRecordsByStateRequest that = (GetCriminalsRecordsByStateRequest) o;
-        return Objects.equals(state, that.state) && Objects.equals(minNumCrimes, that.minNumCrimes) && Objects.equals(maxNumCrimes, that.maxNumCrimes);
+        return Objects.equals(state, that.state) &&
+                Objects.equals(minNumCrimes, that.minNumCrimes) &&
+                Objects.equals(maxNumCrimes, that.maxNumCrimes);
     }
 
     @Override
@@ -99,7 +101,7 @@ public class GetCriminalsRecordsByStateRequest {
             this.minNumCrimes = minNumCrimesToUse;
             return this;
         }
-        public Builder withMaxNumCrimes(Integer maxNumCrimesToUse){
+        public Builder withMaxNumCrimes(Integer maxNumCrimesToUse) {
             this.maxNumCrimes = maxNumCrimesToUse;
             return this;
         }

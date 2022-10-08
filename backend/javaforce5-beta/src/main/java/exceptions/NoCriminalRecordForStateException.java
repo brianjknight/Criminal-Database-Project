@@ -3,7 +3,7 @@ package main.java.exceptions;
 /**
  * Exception thrown when trying to retrieve CriminalRecords for a given state and optional filter for number of crimes.
  */
-public class NoCriminalRecordForStateException extends RuntimeException{
+public class NoCriminalRecordForStateException extends RuntimeException {
     private static final long serialVersionUID = -1069711839422000753L;
     private String state;
 
