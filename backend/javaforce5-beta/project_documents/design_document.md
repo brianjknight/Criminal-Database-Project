@@ -3,13 +3,10 @@
 ## Criminal Records Database Design
 
 ## 1. Problem Statement
-Many crimes are committed every day which each have a lot of associated information. It is important to keep a detailed database of these criminal records. They are used by a number of entities such as police, states, employers, landlords, etc.  
+Many crimes are committed every day which each have a lot of associated data. It is important to keep a detailed database of these criminal records. They are used by a number of entities such as police, states, employers, landlords, etc.  
 
 This design document describes a basic criminal records service that allows an agency such as a police department to read, add, update, and delete criminal records.
 ## 2. Top Questions to Resolve in Review
-
-*List the most important questions you have about your design, or things that
-you are still debating internally that you might like help working through.*
 
 1. Should I create separate tables for Crimes, CriminalRecord, and Criminal/Person? I could possibly have a crime with multiple criminals and criminals with multiple crimes.
    1. Maybe have a CriminalRecord for a person with their personal data and a list of Crimes committed.
@@ -70,8 +67,7 @@ We will use API Gateway and Lambda to create four endpoints (`CreateCriminalReco
  `UpdateCriminalRecord`, and `DeleteCriminalRecord`)
 that will handle the creation, updating, retrieval, and deleting criminal records to satisfy the requirements.
 
-Criminal records will be stored in DynamoDB table using a composite primary key of 
-Social Security Number for the partition key and case number for sort key.
+Criminal records will be stored in DynamoDB table using a Social Security Number for the partition primary key.
 
 We will provide a web interface for users to manage the criminal record database.
 
@@ -114,8 +110,6 @@ Integer sentence;
 
 * Accepts POST requests to /criminalrecords
 * Accepts data to create a new CriminalRecord with SSN, name, DOB, and state.
-* For security concerns, we will validate the provided playlist name does not contain any invalid characters: " ' \`
-  If the playlist name contains any of the invalid characters, will throw an InvalidAttributeValueException.
 
 ![img_1.png](images/design_document_images/create-criminal-record.png)
 

@@ -24,7 +24,7 @@ DEMONSTRATION
 2. Expunge Criminal Record
 
 	000-99-4444
-		> Confirmation Diaglog  cancel nothing happens
+		> Confirmation Dialog cancel nothing happens
 
 	again 000-99-4444
 

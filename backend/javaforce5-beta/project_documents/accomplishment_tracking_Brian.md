@@ -78,7 +78,7 @@ instructors by the end of the unit._
   * In previous projects for DDB table we stored a List<Type> as a string in JSON format. 
    In order for DDB mapper to load a table item with a List in this format, a DynamoDBTypeConverter is needed. 
     * "@DynamoDBTypeConverted(converter = CrimeListConverter.class)" annotation was added to the attribute in CriminalRecord class.
-  * In order to delete an item using DynamoDB mapper.delete() you need to pass in the object not just the key.
+  * In order to delete an item using DynamoDB mapper.delete() you need to pass in the object with the key not just the key itself.
   * When classes and files are shown in different colors in IntelliJ's Project directory tree, it represents a status. 
     * https://www.jetbrains.com/help/idea/file-status-highlights.html#views <br>
      ![img_1.png](images/design_document_images/img_1.png) 
@@ -89,7 +89,6 @@ instructors by the end of the unit._
     querying for statistical purposes on other attributes.
   * AWS CloudFormation would not let me update a table with multiple GSIs at the same time.
     I had to do them one at a time using CLI commands to "aws cloudformation update-stack"
-  * 
   
 
 ## Week 3
@@ -131,7 +130,7 @@ instructors by the end of the unit._
   * In Unit 4's project I did not understand why Request & Result POJOs were being used. 
   I initially created my activity classes to accept String and Integer parameters instead of Request objects.
   When trying to test my AWS Lambda functions with a JSON event, I ran into issues. If there was a single string parameter, I could get it to work but not otherwise. 
-  Implementing the RequestHandler interface and Request objects, is more versatile for executing the Lambda functions. 
+  Implementing the RequestHandler interface and Request objects is more versatile for executing the Lambda functions. 
   *This caused a significant amount of reworking my code needing to implement the interface and updating methods, contructors, and unit tests.* 
 * Swagger/API Gateway
   * You can use "pattern:" to require a specific formatting for a string.
@@ -186,7 +185,8 @@ instructors by the end of the unit._
       --> I didn't include this at first which was causing null pointers when assigning value for the .onsubmit async function.
   * HTML DOM 
     * I was able to add a loading image gif and remove it when the API response returned to let the user know the request was working and finished.
-      ![](images/design_document_images/loading-example.png)
+      
+    ![](images/design_document_images/loading-example.png)
     * Used JS to manipulate the HTML to show results of the API request.
   * Add Confirmation dialog box to button even. 
     The user is warned and prompted to confirm they wish to delete a record from the database.

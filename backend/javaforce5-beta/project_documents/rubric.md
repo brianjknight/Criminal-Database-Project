@@ -126,7 +126,7 @@ the attribute. In one sentence, describe why the attribute is included.
  
 **Attributes:**
 
-| Attribute name | (One) relevant use case                                        | attribute purpose                  |
+| Attribute name | Relevant use case                                              | attribute purpose                  |
 |----------------|----------------------------------------------------------------|------------------------------------|
 | ssn            | Find a criminal record for a specific person.                  | unique identifier                  |
 | name           | Make sure the person's name is correct for the SSN.            | The criminal's full name.          |
