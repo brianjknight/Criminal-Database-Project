@@ -1,3 +1,8 @@
+# Criminal-Database-Project
+A criminal records database and functioning website to view, add, remove, and filter criminal records.  The service is built using AWS Lambda and API Gateway to perform CRUD operations on DynamoDB databases.
+
+[Criminal Records Database Website](https://criminal-records-website.s3.us-west-2.amazonaws.com/index.html)
+
 # Learn and Be Curious Project Files
 
 Welcome to your Learn and Be Curious Project Repository! As you already know, Learn and Be Curious is a unique experience from your other sprints here at Bloomtech. The most significant difference is that instead of being given a partially built project with mastery tasks that you need to complete, you will be creating a project from scratch, putting it onto AWS, and presenting your work.
