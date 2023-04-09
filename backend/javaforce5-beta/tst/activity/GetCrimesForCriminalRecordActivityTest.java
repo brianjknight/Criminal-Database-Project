@@ -1,7 +1,7 @@
 package activity;
 
 import main.java.activity.GetCrimesForCriminalRecordActivity;
-import main.java.dao.CriminalRecordDao;
+import main.java.activity.dao.CriminalRecordDao;
 import main.java.exceptions.NoCriminalRecordFoundException;
 import main.java.models.Crime;
 import main.java.models.CriminalRecord;

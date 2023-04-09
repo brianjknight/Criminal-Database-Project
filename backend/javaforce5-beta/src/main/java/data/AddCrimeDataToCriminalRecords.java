@@ -3,8 +3,8 @@ package main.java.data;
 import com.amazon.ata.aws.dynamodb.DynamoDbClientProvider;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import main.java.activity.AddCrimeToCriminalRecordActivity;
-import main.java.dao.CrimeDao;
-import main.java.dao.CriminalRecordDao;
+import main.java.activity.dao.CrimeDao;
+import main.java.activity.dao.CriminalRecordDao;
 import main.java.models.requests.AddCrimeToCriminalRecordRequest;
 
 /**

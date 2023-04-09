@@ -2,7 +2,7 @@ package main.java.activity;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
-import main.java.dao.CriminalRecordDao;
+import main.java.activity.dao.CriminalRecordDao;
 import main.java.models.CriminalRecord;
 import main.java.models.requests.GetCriminalRecordRequest;
 

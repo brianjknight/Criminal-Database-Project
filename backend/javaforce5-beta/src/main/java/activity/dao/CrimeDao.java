@@ -1,4 +1,4 @@
-package main.java.dao;
+package main.java.activity.dao;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import main.java.exceptions.NoCrimeFoundException;

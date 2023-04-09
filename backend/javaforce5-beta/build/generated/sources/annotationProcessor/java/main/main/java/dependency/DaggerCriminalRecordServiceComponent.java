@@ -11,8 +11,8 @@ import main.java.activity.DeleteCriminalRecordActivity;
 import main.java.activity.GetCrimesForCriminalRecordActivity;
 import main.java.activity.GetCriminalRecordActivity;
 import main.java.activity.GetCriminalsRecordsByStateActivity;
-import main.java.dao.CrimeDao;
-import main.java.dao.CriminalRecordDao;
+import main.java.activity.dao.CrimeDao;
+import main.java.activity.dao.CriminalRecordDao;
 
 @Generated(
   value = "dagger.internal.codegen.ComponentProcessor",

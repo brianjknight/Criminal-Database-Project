@@ -1,7 +1,7 @@
 package dao;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
-import main.java.dao.CrimeDao;
+import main.java.activity.dao.CrimeDao;
 import main.java.exceptions.NoCrimeFoundException;
 import main.java.models.Crime;
 import org.junit.jupiter.api.BeforeEach;

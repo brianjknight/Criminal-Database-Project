@@ -1,7 +1,7 @@
 package activity;
 
 import main.java.activity.DeleteCriminalRecordActivity;
-import main.java.dao.CriminalRecordDao;
+import main.java.activity.dao.CriminalRecordDao;
 import main.java.exceptions.NoCriminalRecordFoundException;
 import main.java.models.requests.DeleteCriminalRecordRequest;
 import org.junit.jupiter.api.BeforeEach;

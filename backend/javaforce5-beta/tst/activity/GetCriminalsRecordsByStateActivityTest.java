@@ -1,7 +1,7 @@
 package activity;
 
 import main.java.activity.GetCriminalsRecordsByStateActivity;
-import main.java.dao.CriminalRecordDao;
+import main.java.activity.dao.CriminalRecordDao;
 import main.java.exceptions.NoCriminalRecordForStateException;
 import main.java.models.CriminalRecord;
 import main.java.models.requests.GetCriminalsRecordsByStateRequest;

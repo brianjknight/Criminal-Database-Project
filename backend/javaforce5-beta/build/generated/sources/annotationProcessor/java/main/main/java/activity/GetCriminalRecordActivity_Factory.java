@@ -3,7 +3,7 @@ package main.java.activity;
 import dagger.internal.Factory;
 import javax.annotation.processing.Generated;
 import javax.inject.Provider;
-import main.java.dao.CriminalRecordDao;
+import main.java.activity.dao.CriminalRecordDao;
 
 @Generated(
   value = "dagger.internal.codegen.ComponentProcessor",

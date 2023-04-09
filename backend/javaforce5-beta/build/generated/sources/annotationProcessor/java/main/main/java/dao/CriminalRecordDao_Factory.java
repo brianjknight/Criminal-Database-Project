@@ -2,6 +2,8 @@ package main.java.dao;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import dagger.internal.Factory;
+import main.java.activity.dao.CriminalRecordDao;
+
 import javax.annotation.processing.Generated;
 import javax.inject.Provider;
 

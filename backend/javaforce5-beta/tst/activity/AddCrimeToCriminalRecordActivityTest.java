@@ -1,8 +1,8 @@
 package activity;
 
 import main.java.activity.AddCrimeToCriminalRecordActivity;
-import main.java.dao.CrimeDao;
-import main.java.dao.CriminalRecordDao;
+import main.java.activity.dao.CrimeDao;
+import main.java.activity.dao.CriminalRecordDao;
 import main.java.exceptions.CrimeAlreadyInCriminalRecordException;
 import main.java.exceptions.CriminalRecordCrimeMismatchException;
 import main.java.exceptions.NoCriminalRecordFoundException;

@@ -1,7 +1,7 @@
 package activity;
 
 import main.java.activity.CreateCriminalRecordActivity;
-import main.java.dao.CriminalRecordDao;
+import main.java.activity.dao.CriminalRecordDao;
 import main.java.models.CriminalRecord;
 import main.java.models.requests.CreateCriminalRecordRequest;
 import org.junit.jupiter.api.BeforeEach;
