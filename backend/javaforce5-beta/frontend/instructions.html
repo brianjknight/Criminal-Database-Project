@@ -1,0 +1,327 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport content="width=device-width, initial-scale="1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!--    <script src="criminal-records.js" defer></script>-->
+    <title>Criminal Records Database</title>
+</head>
+
+<body>
+<h1 class="title">Instructions</h1>
+
+<h3 class="subtitle">
+    <a href="index.html">Criminal Records Database Homepage</a>
+</h3>
+
+<h2 class="subtitle">Instructions</h2>
+<div class="paragraph">
+<p>This is a database of criminal records consisting of 2 tables; Criminal Records & Crimes.
+    Two tables were used for the scope of this project for purposes of interacting with multiple entities.
+    The service is built using AWS Lambda and API Gateway to perform CRUD operations on the DynamoDB tables.</p>
+<p>For the scope of this project, the Crime Manager page is not functional.
+    Below you can find the dataset for the Criminal Records and Crimes tables.
+    <em><b>Note that in order to add a crime to a criminal record, the crime must exist with a matching SSN.</b></em>
+    To test, expunge(delete) a criminal record, create a new record, then add crime(s) with that SSN to the criminal record.</p>
+<p>The Criminal Records Filter page currently has only one filter available.
+    It uses a global secondary index (GSI) on the Criminal Records table with optional min and max number corresponding to the crime count field.</p>
+</div>
+
+<br></br>
+
+<h2 class="subtitle">Criminal Records Table</h2>
+<table>
+    <tr>
+        <td>ssn</td>
+        <td>crimeCount </td>
+        <td>List&lt;crimes&gt;</td>
+        <td>dob</td>
+        <td>name</td>
+        <td>state </td>
+    </tr>
+    <tr>
+        <td nowrap>000-99-4444</td>
+        <td>3 </td>
+        <td>[{"caseNumber":"XY987654","ssn":"000-99-4444","charge":"wearing socks with sandals","offenseLevel":"misdemeanor","status":"pending","date":"5/20/2007","sentenceInDays":0},{"caseNumber":"BB009900","ssn":"000-99-4444","charge":"driving slow in the passing lane","offenseLevel":"felony","status":"guilty ... </td>
+        <td>1/1/1940</td>
+        <td>Joe Biden</td>
+        <td>MA </td>
+    </tr>
+    <tr>
+        <td nowrap>111-22-0000</td>
+        <td>1 </td>
+        <td>[{"caseNumber":"AB110033","ssn":"111-22-0000","charge":"Taking up 2 parking spaces","offenseLevel":"misdemeanor","status":"pending","date":"10/10/1954","sentenceInDays":0}] </td>
+        <td>1/30/1953</td>
+        <td>John McClane</td>
+        <td>CA </td>
+    </tr>
+    <tr>
+        <td nowrap>121-99-7777</td>
+        <td>1 </td>
+        <td>[{"caseNumber":"VC991133","ssn":"121-99-7777","charge":"used \u0027password\u0027 for a password","offenseLevel":"misdemeanor","status":"guilty","date":"9/15/2022","sentenceInDays":45}] </td>
+        <td>10/31/1948</td>
+        <td>Marsellus Wallace</td>
+        <td>CA </td>
+    </tr>
+    <tr>
+        <td nowrap>123-11-8888</td>
+        <td>1 </td>
+        <td>[{"caseNumber":"LM123132","ssn":"123-11-8888","charge":"stealing","offenseLevel":"misdemeanor","status":"appealing","date":"9/15/1923","sentenceInDays":60}] </td>
+        <td>3/1/2010</td>
+        <td>Billy Joe Bob III</td>
+        <td>AL </td>
+    </tr>
+    <tr>
+        <td nowrap>123-45-6789</td>
+        <td>1 </td>
+        <td>[{"caseNumber":"XY123456","ssn":"123-45-6789","charge":"picking nose","offenseLevel":"felony","status":"guilty","date":"9/9/2022","sentenceInDays":100}] </td>
+        <td>8/27/1970</td>
+        <td>Mr. Pink</td>
+        <td>CA </td>
+    </tr>
+    <tr>
+        <td nowrap>123-45-8888</td>
+        <td>1 </td>
+        <td>[{"caseNumber":"QQ010199","ssn":"123-45-8888","charge":"not wearing deodorant","offenseLevel":"misdemeanor","status":"guilty","date":"6/29/1995","sentenceInDays":30}] </td>
+        <td>10/20/1977</td>
+        <td>Beatrix Kiddo</td>
+        <td>CA </td>
+    </tr>
+    <tr>
+        <td nowrap>222-22-2020</td>
+        <td>3 </td>
+        <td>[{"caseNumber":"HH112200","ssn":"222-22-2020","charge":"chewing with mouth open","offenseLevel":"misdemeanor","status":"guilty","date":"2/20/1995","sentenceInDays":15},{"caseNumber":"DJ111111","ssn":"222-22-2020","charge":"killing his master","offenseLevel":"felony","status":"appealed","date":"05/15 ... </td>
+        <td>07/05/1825</td>
+        <td>Django</td>
+        <td>CA </td>
+    </tr>
+    <tr>
+        <td nowrap>333-22-1111</td>
+        <td>1 </td>
+        <td>[{"caseNumber":"DD242424","ssn":"333-22-1111","charge":"not returning shopping cart to coral","offenseLevel":"misdemeanor","status":"guilty","date":"1/20/2000","sentenceInDays":30}] </td>
+        <td>6/6/1915</td>
+        <td>Lt. Aldo Raine</td>
+        <td>AL </td>
+    </tr>
+    <tr>
+        <td nowrap>555-00-5555</td>
+        <td>1 </td>
+        <td>[{"caseNumber":"KK990099","ssn":"555-00-5555","charge":"stealing religious relic","offenseLevel":"misdemeanor","status":"pending","date":"12/31/2020","sentenceInDays":0}] </td>
+        <td>4/20/1905</td>
+        <td>Indiana Jones</td>
+        <td>AL </td>
+    </tr>
+    <tr>
+        <td nowrap>777-66-5555</td>
+        <td>6 </td>
+        <td>[{"caseNumber":"EW001122","ssn":"777-66-5555","charge":"cutting in line","offenseLevel":"misdemeanor","status":"guilty","date":"3/10/2018","sentenceInDays":30},{"caseNumber":"TR440912","ssn":"777-66-5555","charge":"one-upping","offenseLevel":"felony","status":"guilty","date":"12/17/1999","sentenceIn ... </td>
+        <td>1/1/2015</td>
+        <td>Frankie FausPas</td>
+        <td>CA </td>
+    </tr>
+    <tr>
+        <td nowrap>999-77-5555</td>
+        <td>1 </td>
+        <td>[{"caseNumber":"TU789789","ssn":"999-77-5555","charge":"disrespecting the king","offenseLevel":"felony","status":"guilty","date":"4/15/1585","sentenceInDays":10000}] </td>
+        <td>01/01/1398</td>
+        <td>Ivan the Insubordinate</td>
+        <td>Russian Empire </td>
+    </tr>
+</table>
+
+<br></br>
+<h2 class="subtitle">Crimes Table</h2>
+<table>
+    <tr>
+        <td>caseNumber</td>
+        <td>charge</td>
+        <td>date</td>
+        <td>offenseLevel</td>
+        <td>sentenceInDays</td>
+        <td>ssn</td>
+        <td>status </td>
+    </tr>
+    <tr>
+        <td>XY987654</td>
+        <td>wearing socks with sandals</td>
+        <td>5/20/2007</td>
+        <td>misdemeanor</td>
+        <td>0</td>
+        <td nowrap>000-99-4444</td>
+        <td>pending </td>
+    </tr>
+    <tr>
+        <td>BB009900</td>
+        <td>driving slow in the passing lane</td>
+        <td>1/20/2015</td>
+        <td>felony</td>
+        <td>365</td>
+        <td nowrap>000-99-4444</td>
+        <td>guilty </td>
+    </tr>
+    <tr>
+        <td>PP010101</td>
+        <td>falling off bike</td>
+        <td>8/27/1984</td>
+        <td>misdemeanor</td>
+        <td>60</td>
+        <td nowrap>000-99-4444</td>
+        <td>pending </td>
+    </tr>
+    <tr>
+        <td>AB110033</td>
+        <td>Taking up 2 parking spaces</td>
+        <td>10/10/1954</td>
+        <td>misdemeanor</td>
+        <td>0</td>
+        <td nowrap>111-22-0000</td>
+        <td>pending </td>
+    </tr>
+    <tr>
+        <td>VC991133</td>
+        <td>used &#39;password&#39; for a password</td>
+        <td>9/15/2022</td>
+        <td>misdemeanor</td>
+        <td>45</td>
+        <td nowrap>121-99-7777</td>
+        <td>guilty </td>
+    </tr>
+    <tr>
+        <td>LM123132</td>
+        <td>stealing</td>
+        <td>9/15/1923</td>
+        <td>misdemeanor</td>
+        <td>60</td>
+        <td nowrap>123-11-8888</td>
+        <td>appealing </td>
+    </tr>
+    <tr>
+        <td>XY123456</td>
+        <td>picking nose</td>
+        <td>9/9/2022</td>
+        <td>felony</td>
+        <td>100</td>
+        <td nowrap>123-45-6789</td>
+        <td>guilty </td>
+    </tr>
+    <tr>
+        <td>QQ010199</td>
+        <td>not wearing deodorant</td>
+        <td>6/29/1995</td>
+        <td>misdemeanor</td>
+        <td>30</td>
+        <td nowrap>123-45-8888</td>
+        <td>guilty </td>
+    </tr>
+    <tr>
+        <td>DJ111111</td>
+        <td>killing his master</td>
+        <td>05/15/1840</td>
+        <td>felony</td>
+        <td>3650</td>
+        <td nowrap>222-22-2020</td>
+        <td>appealed </td>
+    </tr>
+    <tr>
+        <td>DJ222222</td>
+        <td>learning to read</td>
+        <td>10/20/1835</td>
+        <td>misdemeanor</td>
+        <td>200</td>
+        <td nowrap>222-22-2020</td>
+        <td>guilty </td>
+    </tr>
+    <tr>
+        <td>HH112200</td>
+        <td>chewing with mouth open</td>
+        <td>2/20/1995</td>
+        <td>misdemeanor</td>
+        <td>15</td>
+        <td nowrap>222-22-2020</td>
+        <td>guilty </td>
+    </tr>
+    <tr>
+        <td>DD242424</td>
+        <td>not returning shopping cart to coral</td>
+        <td>1/20/2000</td>
+        <td>misdemeanor</td>
+        <td>30</td>
+        <td nowrap>333-22-1111</td>
+        <td>guilty </td>
+    </tr>
+    <tr>
+        <td>KK990099</td>
+        <td>stealing religious relic</td>
+        <td>12/31/2020</td>
+        <td>misdemeanor</td>
+        <td>0</td>
+        <td nowrap>555-00-5555</td>
+        <td>pending </td>
+    </tr>
+    <tr>
+        <td>BF999999</td>
+        <td>parking in handicap space</td>
+        <td>9/20/2020</td>
+        <td>misdemeanor</td>
+        <td>90</td>
+        <td>777-66-5555</td>
+        <td>guilty </td>
+    </tr>
+    <tr>
+        <td>BF777777</td>
+        <td>talking during a movie</td>
+        <td>9/27/2022</td>
+        <td>misdemeanor</td>
+        <td>0</td>
+        <td nowrap>777-66-5555</td>
+        <td>pending </td>
+    </tr>
+    <tr>
+        <td>EW001122</td>
+        <td>cutting in line</td>
+        <td>3/10/2018</td>
+        <td>misdemeanor</td>
+        <td>30</td>
+        <td nowrap>777-66-5555</td>
+        <td>guilty </td>
+    </tr>
+    <tr>
+        <td>BF888888</td>
+        <td>not using turn signal</td>
+        <td>10/17/2022</td>
+        <td>misdemeanor</td>
+        <td>10</td>
+        <td nowrap>777-66-5555</td>
+        <td>guilty </td>
+    </tr>
+    <tr>
+        <td>TR440912</td>
+        <td>one-upping</td>
+        <td>12/17/1999</td>
+        <td>felony</td>
+        <td>180</td>
+        <td nowrap>777-66-5555</td>
+        <td>guilty </td>
+    </tr>
+    <tr>
+        <td>TU789789</td>
+        <td>disrespecting the king</td>
+        <td>4/15/1585</td>
+        <td>felony</td>
+        <td>10000</td>
+        <td nowrap>999-77-5555</td>
+        <td>guilty </td>
+    </tr>
+    <tr>
+        <td>MT333333</td>
+        <td>rocking too hard</td>
+        <td>7/7/1999</td>
+        <td>misdemeanor</td>
+        <td>0</td>
+        <td nowrap>999-99-9999</td>
+        <td>not guilty </td>
+    </tr>
+</table>
+
+
+</body>
