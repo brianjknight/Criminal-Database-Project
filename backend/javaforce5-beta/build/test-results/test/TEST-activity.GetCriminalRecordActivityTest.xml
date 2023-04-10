@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="activity.GetCriminalRecordActivityTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-10-08T15:58:13" hostname="DESKTOP-QFNEL2B" time="0.007">
-  <properties/>
-  <testcase name="handleRequest_provideSSN_verifyCallToGetCriminalRecord()" classname="activity.GetCriminalRecordActivityTest" time="0.003"/>
-  <testcase name="handleRequest_provideSSNWithNoRecords_throwsNoCriminalRecordFoundException()" classname="activity.GetCriminalRecordActivityTest" time="0.002"/>
-  <testcase name="handleRequest_provideSSN_returnCriminalRecord()" classname="activity.GetCriminalRecordActivityTest" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
