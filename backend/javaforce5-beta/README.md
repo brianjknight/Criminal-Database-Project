@@ -1,7 +1,8 @@
 # Criminal-Database-Project
 A criminal records database and functioning website to view, add, remove, and filter criminal records.  The service is built using AWS Lambda and API Gateway to perform CRUD operations on DynamoDB databases.
 
-[Criminal Records Database Website](https://criminal-records-website.s3.us-west-2.amazonaws.com/index.html)
+[Criminal Records Database Website (click here to view my website)](https://criminal-records-website.s3.us-west-2.amazonaws.com/index.html)  
+[Video Overview (click here to watch a brief review of the project)](https://www.loom.com/share/62a5b26a1dc94e12acb6f097adf8c24f)
 
 # Learn and Be Curious Project Files
 
