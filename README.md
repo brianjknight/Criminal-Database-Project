@@ -1,7 +1,8 @@
 # Criminal-Database-Project
 A criminal records database and functioning website to view, add, remove, and filter criminal records.  The service is built using AWS Lambda and API Gateway to perform CRUD operations on DynamoDB databases.
 
-[Criminal Records Database Website](https://criminal-records-website.s3.us-west-2.amazonaws.com/index.html)
+[Criminal Records Database Website (click here to view my website)](https://criminal-records-website.s3.us-west-2.amazonaws.com/index.html)  
+[Video Overview (click here to watch a brief review of the project)](https://www.loom.com/share/62a5b26a1dc94e12acb6f097adf8c24f)
 
 # Learn and Be Curious Project Files
 
@@ -19,30 +20,30 @@ We've included a template Java project and webpages. Feel free to use these exam
 
 ## Deadlines
 
-All project deadlines can be found in the [rubric](project_documents/templates/rubric_template.md).
+All project deadlines can be found in the [rubric](https://github.com/brianjknight/Criminal-Database-Project/blob/main/backend/javaforce5-beta/project_documents/rubric.md).  
   
 ## What Files are in This Repository?
 
-#### [Design Document](project_documents/templates/design_document_template.md)
+#### [Design Document](https://github.com/brianjknight/Criminal-Database-Project/blob/main/backend/javaforce5-beta/project_documents/design_document.md)  
 
 The design document is what you need to complete before you start coding. This document lays out what you will be building and how you will build it, and the more you put into it, the easier your implementation will be.
 
-#### [Project Rubric](project_documents/templates/rubric_template.md)
+#### [Project Rubric](https://github.com/brianjknight/Criminal-Database-Project/blob/main/backend/javaforce5-beta/project_documents/rubric.md)  
 
 The rubric contains the requirements for your project. You will fill out the rubric to show that your project successfully covers all the requirements.
 
-#### [Final Presentation Outline](project_documents/final_presentation_outline.pdf)
+#### [Final Presentation Outline](https://github.com/brianjknight/Criminal-Database-Project/blob/main/backend/javaforce5-beta/project_documents/Team%20JavaForce5%20Presentation.pptx)  
 
 This outline lays out what we expect to see in your final presentation. The outline is more of a guideline, so feel free to do things in a different order and put your style on your presentation. 
 
-#### [Accomplishment Tracking](project_documents/templates/accomplishment_tracking_template.md)
+#### [Accomplishment Tracking](https://github.com/brianjknight/Criminal-Database-Project/blob/main/backend/javaforce5-beta/project_documents/accomplishment_tracking_Brian.md)  
 
 We encourage you to keep track of your accomplishments throughout your time in Learn and Be Curious. This experience will give you plenty to share during interviews, and having accomplishments written down will help you remember highlights you can share.
 
-#### [Team Charter](project_documents/team_charter.md)
+#### [Team Charter](https://github.com/brianjknight/Criminal-Database-Project/blob/main/backend/javaforce5-beta/project_documents/team_charter.md)  
 
 If you are working with a team, you must complete a team charter. This document will establish team norms and expectations, such as how you should communicate your work, how the team will create deadlines, what each person wants to get out of this experience, etc. Building your team charter will help your team work more effectively throughout this project.
 
-#### [Reflection](project_documents/templates/reflection_template.md)
+#### [Reflection](https://github.com/brianjknight/Criminal-Database-Project/blob/main/backend/javaforce5-beta/project_documents/reflection.md)  
 
 You will complete your reflection in Canvas, but feel free to see what questions we may ask here.

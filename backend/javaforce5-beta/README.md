@@ -20,7 +20,7 @@ We've included a template Java project and webpages. Feel free to use these exam
 
 ## Deadlines
 
-All project deadlines can be found in the [rubric](project_documents/templates/rubric_template.md).
+All project deadlines can be found in the [rubric](https://github.com/brianjknight/Criminal-Database-Project/blob/main/backend/javaforce5-beta/project_documents/rubric.md).  
   
 ## What Files are in This Repository?
 
