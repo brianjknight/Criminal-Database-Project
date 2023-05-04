@@ -9,7 +9,7 @@ public class GetCrimesForCriminalRecordRequest {
     private String ssn;
 
     /**
-     * No parameter constructor.
+     * No args constructor.
      */
     public GetCrimesForCriminalRecordRequest() {}
 
@@ -19,10 +19,6 @@ public class GetCrimesForCriminalRecordRequest {
      */
     public GetCrimesForCriminalRecordRequest(String ssn) {
         this.ssn = ssn;
-    }
-
-    public GetCrimesForCriminalRecordRequest(Builder builder) {
-        this.ssn = builder.ssn;
     }
 
     public String getSsn() {
@@ -51,6 +47,14 @@ public class GetCrimesForCriminalRecordRequest {
         return "GetCrimesForCriminalRecordRequest{" +
                 "ssn='" + ssn + '\'' +
                 '}';
+    }
+
+    /**
+     * Builder pattern for instantiating a new object.
+     * @param builder
+     */
+    public GetCrimesForCriminalRecordRequest(Builder builder) {
+        this.ssn = builder.ssn;
     }
 
     public static Builder builder() {

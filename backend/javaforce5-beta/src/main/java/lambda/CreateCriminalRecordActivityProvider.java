@@ -16,6 +16,12 @@ public class CreateCriminalRecordActivityProvider implements
     private CriminalRecordServiceComponent dagger = DaggerCriminalRecordServiceComponent.create();
     private CreateCriminalRecordActivity createCriminalRecordActivity = dagger.provideCreateCriminalRecordActivity();
 
+    /**
+     * Request handler layer to access adding new criminal record activity class and DAO.
+     * @param createCriminalRecordRequest The Lambda Function input
+     * @param context The Lambda execution environment context object.
+     * @return
+     */
     public CriminalRecord handleRequest(CreateCriminalRecordRequest createCriminalRecordRequest, Context context) {
         return createCriminalRecordActivity.handleRequest(createCriminalRecordRequest, context);
     }

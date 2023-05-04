@@ -14,6 +14,12 @@ public class DeleteCriminalRecordActivityProvider implements RequestHandler<Dele
     private CriminalRecordServiceComponent dagger = DaggerCriminalRecordServiceComponent.create();
     private DeleteCriminalRecordActivity deleteCriminalRecordActivity = dagger.provideDeleteCriminalRecordActivity();
 
+    /**
+     * Request handler layer to access deleting criminal record activity class and DAO.
+     * @param deleteCriminalRecordRequest The Lambda Function input
+     * @param context The Lambda execution environment context object.
+     * @return
+     */
     public String handleRequest(DeleteCriminalRecordRequest deleteCriminalRecordRequest, Context context) {
         return deleteCriminalRecordActivity.handleRequest(deleteCriminalRecordRequest, context);
     }

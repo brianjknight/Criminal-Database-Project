@@ -4,13 +4,11 @@ import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 import main.java.activity.dao.CriminalRecordDao;
 import main.java.exceptions.CriminalRecordAlreadyExistsException;
-import main.java.exceptions.NoCrimeFoundException;
 import main.java.exceptions.NoCriminalRecordFoundException;
 import main.java.models.CriminalRecord;
 import main.java.models.requests.CreateCriminalRecordRequest;
 
 import javax.inject.Inject;
-import java.util.Objects;
 
 /**
  * Implementation of the Criminal Record Service API for creating a new CriminalRecord.

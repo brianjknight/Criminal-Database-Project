@@ -17,6 +17,12 @@ public class AddCrimeToCriminalRecordActivityProvider implements
     AddCrimeToCriminalRecordActivity addCrimeToCriminalRecordActivity =
             dagger.provideAddCrimeToCriminalRecordActivity();
 
+    /**
+     * Request handler layer to access adding crime to a criminal record activity class and DAO.
+     * @param addCrimeToCriminalRecordRequest The Lambda Function input
+     * @param context The Lambda execution environment context object.
+     * @return
+     */
     public CriminalRecord handleRequest(AddCrimeToCriminalRecordRequest addCrimeToCriminalRecordRequest,
                                         Context context) {
         return addCrimeToCriminalRecordActivity.handleRequest(addCrimeToCriminalRecordRequest, context);

@@ -11,7 +11,7 @@ public class GetCriminalsRecordsByStateRequest {
     private Integer maxNumCrimes;
 
     /**
-     * No parameter constructor.
+     * No args constructor.
      */
     public GetCriminalsRecordsByStateRequest() {
     }
@@ -26,12 +26,6 @@ public class GetCriminalsRecordsByStateRequest {
         this.state = state;
         this.minNumCrimes = getMinNumCrimes();
         this.maxNumCrimes = getMaxNumCrimes();
-    }
-
-    public GetCriminalsRecordsByStateRequest(Builder builder) {
-        this.state = builder.state;
-        this.minNumCrimes = builder.minNumCrimes;
-        this.maxNumCrimes = builder.maxNumCrimes;
     }
 
     public String getState() {
@@ -80,6 +74,16 @@ public class GetCriminalsRecordsByStateRequest {
                 ", minNumCrimes=" + minNumCrimes +
                 ", maxNumCrimes=" + maxNumCrimes +
                 '}';
+    }
+
+    /**
+     * Builder pattern for instantiating a new object.
+     * @param builder
+     */
+    public GetCriminalsRecordsByStateRequest(Builder builder) {
+        this.state = builder.state;
+        this.minNumCrimes = builder.minNumCrimes;
+        this.maxNumCrimes = builder.maxNumCrimes;
     }
 
     public static Builder builder() {

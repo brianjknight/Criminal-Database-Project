@@ -12,7 +12,7 @@ public class CreateCriminalRecordRequest {
     private String state;
 
     /**
-     * No parameter constructor.
+     * No args constructor.
      */
     public CreateCriminalRecordRequest() {
     }
@@ -29,13 +29,6 @@ public class CreateCriminalRecordRequest {
         this.name = name;
         this.dob = dob;
         this.state = state;
-    }
-
-    public CreateCriminalRecordRequest(Builder builder) {
-        this.ssn = builder.ssn;
-        this.name = builder.name;
-        this.dob = builder.dob;
-        this.state = builder.state;
     }
 
     public String getSsn() {
@@ -91,6 +84,17 @@ public class CreateCriminalRecordRequest {
                 ", dob='" + dob + '\'' +
                 ", state='" + state + '\'' +
                 '}';
+    }
+
+    /**
+     * Builder pattern for instantiating a new object.
+     * @param builder
+     */
+    public CreateCriminalRecordRequest(Builder builder) {
+        this.ssn = builder.ssn;
+        this.name = builder.name;
+        this.dob = builder.dob;
+        this.state = builder.state;
     }
 
     public static Builder builder() {

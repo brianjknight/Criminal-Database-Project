@@ -17,6 +17,12 @@ public class GetCriminalsRecordsByStateActivityProvider implements RequestHandle
     CriminalRecordServiceComponent dagger = DaggerCriminalRecordServiceComponent.create();
     GetCriminalsRecordsByStateActivity getCriminalsRecordsByStateActivity = dagger.provideGetCriminalsRecordsByStateActivity();
 
+    /**
+     * Request handler layer to access getting criminal records by state activity class and DAO.
+     * @param getCriminalsRecordsByStateRequest The Lambda Function input
+     * @param context The Lambda execution environment context object.
+     * @return
+     */
     public List<CriminalRecord> handleRequest(GetCriminalsRecordsByStateRequest getCriminalsRecordsByStateRequest, Context context) {
         return getCriminalsRecordsByStateActivity.handleRequest(getCriminalsRecordsByStateRequest, context);
     }
